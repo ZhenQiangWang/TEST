@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AutoCanelTrackIn/AutoCanelTrackIn.iml" filepath="$PROJECT_DIR$/AutoCanelTrackIn/AutoCanelTrackIn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AutoTrackInService/AutoTrackInService.iml" filepath="$PROJECT_DIR$/AutoTrackInService/AutoTrackInService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AutoTrackOutService/AutoTrackOutService.iml" filepath="$PROJECT_DIR$/AutoTrackOutService/AutoTrackOutService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChangeEqpStatusService/ChangeEqpStatusService.iml" filepath="$PROJECT_DIR$/ChangeEqpStatusService/ChangeEqpStatusService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CheckMaterialService/CheckMaterialService.iml" filepath="$PROJECT_DIR$/CheckMaterialService/CheckMaterialService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/ERP.iml" filepath="$PROJECT_DIR$/ERP/ERP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetEqpStatusService/GetEqpStatusService.iml" filepath="$PROJECT_DIR$/GetEqpStatusService/GetEqpStatusService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetHoldCodeService/GetHoldCodeService.iml" filepath="$PROJECT_DIR$/GetHoldCodeService/GetHoldCodeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetLotInfoService/GetLotInfoService.iml" filepath="$PROJECT_DIR$/GetLotInfoService/GetLotInfoService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetPMDueTimeService/GetPMDueTimeService.iml" filepath="$PROJECT_DIR$/GetPMDueTimeService/GetPMDueTimeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetProductListService/GetProductListService.iml" filepath="$PROJECT_DIR$/GetProductListService/GetProductListService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GetReasonCodeService/GetReasonCodeService.iml" filepath="$PROJECT_DIR$/GetReasonCodeService/GetReasonCodeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HoldLotService/HoldLotService.iml" filepath="$PROJECT_DIR$/HoldLotService/HoldLotService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestApi/TestApi.iml" filepath="$PROJECT_DIR$/TestApi/TestApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" filepath="$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testWebService.iml" filepath="$PROJECT_DIR$/testWebService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transferToWms/transferToWms.iml" filepath="$PROJECT_DIR$/transferToWms/transferToWms.iml" />
+    </modules>
+  </component>
+</project>

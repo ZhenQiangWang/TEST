@@ -1,0 +1,513 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservices.e1.cy.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="DemoService" targetNamespace="http://webservices.e1.cy.com">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservices.e1.cy.com" elementFormDefault="unqualified" targetNamespace="http://webservices.e1.cy.com" version="1.0">
+
+  <xs:element name="changeFaStatus" type="tns:changeFaStatus"/>
+
+  <xs:element name="changeFaStatusResponse" type="tns:changeFaStatusResponse"/>
+
+  <xs:element name="createTxt4Ftp" type="tns:createTxt4Ftp"/>
+
+  <xs:element name="createTxt4FtpResponse" type="tns:createTxt4FtpResponse"/>
+
+  <xs:element name="genBpia" type="tns:genBpia"/>
+
+  <xs:element name="genBpiaResponse" type="tns:genBpiaResponse"/>
+
+  <xs:element name="getFrUrl" type="tns:getFrUrl"/>
+
+  <xs:element name="getFrUrlResponse" type="tns:getFrUrlResponse"/>
+
+  <xs:element name="getTxtLog" type="tns:getTxtLog"/>
+
+  <xs:element name="getTxtLogResponse" type="tns:getTxtLogResponse"/>
+
+  <xs:element name="savePrintList" type="tns:savePrintList"/>
+
+  <xs:element name="savePrintListResponse" type="tns:savePrintListResponse"/>
+
+  <xs:element name="sayHello" type="tns:sayHello"/>
+
+  <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+
+  <xs:element name="syncBaseItemStock" type="tns:syncBaseItemStock"/>
+
+  <xs:element name="syncBaseItemStockResponse" type="tns:syncBaseItemStockResponse"/>
+
+  <xs:element name="webGen" type="tns:webGen"/>
+
+  <xs:element name="webGenResponse" type="tns:webGenResponse"/>
+
+  <xs:complexType name="createTxt4Ftp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:erpDocInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="erpDocInfo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="argvs" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="cnt" type="xs:int"/>
+      <xs:element minOccurs="0" name="db" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="details" nillable="true" type="tns:docnoInfo"/>
+      <xs:element minOccurs="0" name="docno" type="xs:string"/>
+      <xs:element minOccurs="0" name="plant" type="xs:string"/>
+      <xs:element minOccurs="0" name="refdocno" type="xs:string"/>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="docnoInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="banzu" type="xs:string"/>
+      <xs:element minOccurs="0" name="batch" type="xs:string"/>
+      <xs:element minOccurs="0" name="cnt" type="xs:int"/>
+      <xs:element minOccurs="0" name="custom" type="xs:string"/>
+      <xs:element minOccurs="0" name="docno" type="xs:string"/>
+      <xs:element minOccurs="0" name="itemno" type="xs:string"/>
+      <xs:element minOccurs="0" name="modprice" type="xs:string"/>
+      <xs:element minOccurs="0" name="needextrainfo" type="xs:string"/>
+      <xs:element minOccurs="0" name="nullnum" type="xs:int"/>
+      <xs:element minOccurs="0" name="num" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="numCustom" type="xs:string"/>
+      <xs:element minOccurs="0" name="numb" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="numw" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="packqtytype" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+      <xs:element minOccurs="0" name="wounit" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="createTxt4FtpResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bcode" type="xs:int"/>
+      <xs:element minOccurs="0" name="data" type="xs:anyType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="errorMac" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="lang" type="xs:string"/>
+      <xs:element minOccurs="0" name="mess" type="xs:string"/>
+      <xs:element minOccurs="0" name="msg" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="success" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="taskId" nillable="true" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="threadInfos" nillable="true" type="tns:threadInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="threadInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="db" type="xs:string"/>
+      <xs:element minOccurs="0" name="key0" type="xs:string"/>
+      <xs:element minOccurs="0" name="key1" type="xs:string"/>
+      <xs:element minOccurs="0" name="key2" type="xs:string"/>
+      <xs:element minOccurs="0" name="key3" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="stringSet" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="threadName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="genBpia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="genBpiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFrUrl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getFrUrlResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeFaStatus">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="tns:infos"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="infos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="info0" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info1" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info10" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info2" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info3" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info4" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info5" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info6" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info7" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info8" type="xs:anyType"/>
+      <xs:element minOccurs="0" name="info9" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="changeFaStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="savePrintList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:printListEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="printListEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="copy" type="xs:int"/>
+      <xs:element minOccurs="0" name="direction" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="memo" type="xs:string"/>
+      <xs:element minOccurs="0" name="paper" type="xs:string"/>
+      <xs:element minOccurs="0" name="print" type="xs:string"/>
+      <xs:element minOccurs="0" name="pskey" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="url" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="savePrintListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sayHello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="sayHelloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="syncBaseItemStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:syncInfo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg1" type="tns:baseItemStockEntity"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="syncInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:string"/>
+      <xs:element minOccurs="0" name="application" type="xs:string"/>
+      <xs:element minOccurs="0" name="key" type="xs:string"/>
+      <xs:element name="mst">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string"/>
+                  <xs:element minOccurs="0" name="value" type="xs:anyType"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="msts" nillable="true" type="tns:jsonObject"/>
+      <xs:element minOccurs="0" name="plant" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="jsonObject">
+    <xs:complexContent>
+      <xs:extension base="tns:json">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType abstract="true" name="json">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="baseItemStockEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="blegal" type="xs:string"/>
+      <xs:element minOccurs="0" name="bplant" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="isBatch" type="xs:string"/>
+      <xs:element minOccurs="0" name="isItemno" type="xs:string"/>
+      <xs:element minOccurs="0" name="isQty" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="isStore" type="xs:string"/>
+      <xs:element minOccurs="0" name="isUnit" type="xs:string"/>
+      <xs:element minOccurs="0" name="isWare" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="syncBaseItemStockResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="webGen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="webGenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTxtLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:erpDocInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTxtLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="createTxt4FtpResponse">
+    <wsdl:part element="tns:createTxt4FtpResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genBpiaResponse">
+    <wsdl:part element="tns:genBpiaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTxt4Ftp">
+    <wsdl:part element="tns:createTxt4Ftp" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="genBpia">
+    <wsdl:part element="tns:genBpia" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="savePrintListResponse">
+    <wsdl:part element="tns:savePrintListResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFrUrl">
+    <wsdl:part element="tns:getFrUrl" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeFaStatus">
+    <wsdl:part element="tns:changeFaStatus" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="syncBaseItemStock">
+    <wsdl:part element="tns:syncBaseItemStock" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTxtLogResponse">
+    <wsdl:part element="tns:getTxtLogResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="webGen">
+    <wsdl:part element="tns:webGen" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTxtLog">
+    <wsdl:part element="tns:getTxtLog" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="syncBaseItemStockResponse">
+    <wsdl:part element="tns:syncBaseItemStockResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="webGenResponse">
+    <wsdl:part element="tns:webGenResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part element="tns:sayHelloResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeFaStatusResponse">
+    <wsdl:part element="tns:changeFaStatusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFrUrlResponse">
+    <wsdl:part element="tns:getFrUrlResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="savePrintList">
+    <wsdl:part element="tns:savePrintList" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHello">
+    <wsdl:part element="tns:sayHello" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DemoService">
+    <wsdl:operation name="createTxt4Ftp">
+      <wsdl:input message="tns:createTxt4Ftp" name="createTxt4Ftp">
+    </wsdl:input>
+      <wsdl:output message="tns:createTxt4FtpResponse" name="createTxt4FtpResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genBpia">
+      <wsdl:input message="tns:genBpia" name="genBpia">
+    </wsdl:input>
+      <wsdl:output message="tns:genBpiaResponse" name="genBpiaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFrUrl">
+      <wsdl:input message="tns:getFrUrl" name="getFrUrl">
+    </wsdl:input>
+      <wsdl:output message="tns:getFrUrlResponse" name="getFrUrlResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeFaStatus">
+      <wsdl:input message="tns:changeFaStatus" name="changeFaStatus">
+    </wsdl:input>
+      <wsdl:output message="tns:changeFaStatusResponse" name="changeFaStatusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePrintList">
+      <wsdl:input message="tns:savePrintList" name="savePrintList">
+    </wsdl:input>
+      <wsdl:output message="tns:savePrintListResponse" name="savePrintListResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="tns:sayHello" name="sayHello">
+    </wsdl:input>
+      <wsdl:output message="tns:sayHelloResponse" name="sayHelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncBaseItemStock">
+      <wsdl:input message="tns:syncBaseItemStock" name="syncBaseItemStock">
+    </wsdl:input>
+      <wsdl:output message="tns:syncBaseItemStockResponse" name="syncBaseItemStockResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webGen">
+      <wsdl:input message="tns:webGen" name="webGen">
+    </wsdl:input>
+      <wsdl:output message="tns:webGenResponse" name="webGenResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTxtLog">
+      <wsdl:input message="tns:getTxtLog" name="getTxtLog">
+    </wsdl:input>
+      <wsdl:output message="tns:getTxtLogResponse" name="getTxtLogResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DemoServiceSoapBinding" type="tns:DemoService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createTxt4Ftp">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createTxt4Ftp">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createTxt4FtpResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="genBpia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="genBpia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="genBpiaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFrUrl">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFrUrl">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFrUrlResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="changeFaStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="changeFaStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeFaStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="savePrintList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="savePrintList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="savePrintListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncBaseItemStock">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="syncBaseItemStock">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="syncBaseItemStockResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="webGen">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="webGen">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="webGenResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTxtLog">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTxtLog">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTxtLogResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DemoService">
+    <wsdl:port binding="tns:DemoServiceSoapBinding" name="DemoServiceImplPort">
+      <soap:address location="http://192.168.68.159:9191/services/api/webGen"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

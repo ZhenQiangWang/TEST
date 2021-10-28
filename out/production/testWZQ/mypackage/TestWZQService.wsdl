@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://xml.fa-software.com/mycim/wsdd/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://xml.fa-software.com/mycim/wsdd/" xmlns:intf="http://xml.fa-software.com/mycim/wsdd/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="testWZQWebServiceResponse">
+
+      <wsdl:part name="testWZQWebServiceReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="testWZQWebServiceRequest">
+
+      <wsdl:part name="testJson" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TestWZQService">
+
+      <wsdl:operation name="testWZQWebService" parameterOrder="testJson">
+
+         <wsdl:input message="impl:testWZQWebServiceRequest" name="testWZQWebServiceRequest"/>
+
+         <wsdl:output message="impl:testWZQWebServiceResponse" name="testWZQWebServiceResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TestWZQServiceSoapBinding" type="impl:TestWZQService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="testWZQWebService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testWZQWebServiceRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testWZQWebServiceResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TestWZQServiceService">
+
+      <wsdl:port binding="impl:TestWZQServiceSoapBinding" name="TestWZQService">
+
+         <wsdlsoap:address location="http://192.168.68.60:7001/mycim2/services/TestWZQService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

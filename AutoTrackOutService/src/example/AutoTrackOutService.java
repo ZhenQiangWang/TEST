@@ -13,15 +13,15 @@ public class AutoTrackOutService {
       AutoTrackOutServiceServiceLocator autoTrackOutServiceServiceLocator = new AutoTrackOutServiceServiceLocator();
       AutoTrackOutService_PortType autoTrackOutService = autoTrackOutServiceServiceLocator.getAutoTrackOutService();
       AutoTrackOutDTO autoTrackOutDTO = new AutoTrackOutDTO();
-      autoTrackOutDTO.setLotId("D2130001");
+      autoTrackOutDTO.setLotId("D2144005");
       autoTrackOutDTO.setOperId("595");
-      autoTrackOutDTO.setEqpId("PWWB02");
+      autoTrackOutDTO.setEqpId("PUUT01");
       autoTrackOutDTO.setMaterialBoxBarCode("52,lc");
       List<outputList> outputLists = new ArrayList<>();
       List<materialInfo> materialInfos = new ArrayList<>();
       outputList outputList1 = new outputList();
       outputList1.setType("Normal");
-      outputList1.setOutput("21");
+      outputList1.setOutput("97");
       /*List<reasonList> reasonLists1 = new ArrayList<>();
       reasonList reasonList = new reasonList();
       reasonList.setReasonQty("4");

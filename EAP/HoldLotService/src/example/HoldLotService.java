@@ -10,7 +10,7 @@ public class HoldLotService {
           HoldLotServiceServiceLocator holdLotServiceServiceLocator = new HoldLotServiceServiceLocator();
           HoldLotService_PortType holdLotService = holdLotServiceServiceLocator.getHoldLotService();
           HoldLotDTO holdLotDTO = new HoldLotDTO();
-          holdLotDTO.setLotId("D2113001");
+          holdLotDTO.setLotId("D2046037_1");
 //          holdLotDTO.setLotId("aa");
           holdLotDTO.setDepartment("MA");
           holdLotDTO.setHoldCode("001-A");

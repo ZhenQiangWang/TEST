@@ -1,5 +1,5 @@
 /**
- * AutoTrackOutServiceServiceLocator.java
+ * TipTopSetProductServiceServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,54 +7,53 @@
 
 package mypackage;
 
-public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Service implements mypackage.AutoTrackOutServiceService {
+public class TipTopSetProductServiceServiceLocator extends org.apache.axis.client.Service implements mypackage.TipTopSetProductServiceService {
 
-    public AutoTrackOutServiceServiceLocator() {
+    public TipTopSetProductServiceServiceLocator() {
     }
 
 
-    public AutoTrackOutServiceServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public TipTopSetProductServiceServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public AutoTrackOutServiceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public TipTopSetProductServiceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for AutoTrackOutService
-    private java.lang.String AutoTrackOutService_address = "http://192.168.68.95/mycim2/services/AutoTrackOutService";
-//    private java.lang.String AutoTrackOutService_address = "http://localhost:7001/mycim2/services/AutoTrackOutService";
+    // Use to get a proxy class for TipTopSetProductService
+    private java.lang.String TipTopSetProductService_address = "http://localhost:7001/mycim2/services/TipTopSetProductService";
 
-    public java.lang.String getAutoTrackOutServiceAddress() {
-        return AutoTrackOutService_address;
+    public java.lang.String getTipTopSetProductServiceAddress() {
+        return TipTopSetProductService_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String AutoTrackOutServiceWSDDServiceName = "AutoTrackOutService";
+    private java.lang.String TipTopSetProductServiceWSDDServiceName = "TipTopSetProductService";
 
-    public java.lang.String getAutoTrackOutServiceWSDDServiceName() {
-        return AutoTrackOutServiceWSDDServiceName;
+    public java.lang.String getTipTopSetProductServiceWSDDServiceName() {
+        return TipTopSetProductServiceWSDDServiceName;
     }
 
-    public void setAutoTrackOutServiceWSDDServiceName(java.lang.String name) {
-        AutoTrackOutServiceWSDDServiceName = name;
+    public void setTipTopSetProductServiceWSDDServiceName(java.lang.String name) {
+        TipTopSetProductServiceWSDDServiceName = name;
     }
 
-    public mypackage.AutoTrackOutService_PortType getAutoTrackOutService() throws javax.xml.rpc.ServiceException {
+    public mypackage.TipTopSetProductService_PortType getTipTopSetProductService() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(AutoTrackOutService_address);
+            endpoint = new java.net.URL(TipTopSetProductService_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getAutoTrackOutService(endpoint);
+        return getTipTopSetProductService(endpoint);
     }
 
-    public mypackage.AutoTrackOutService_PortType getAutoTrackOutService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public mypackage.TipTopSetProductService_PortType getTipTopSetProductService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            mypackage.AutoTrackOutServiceSoapBindingStub _stub = new mypackage.AutoTrackOutServiceSoapBindingStub(portAddress, this);
-            _stub.setPortName(getAutoTrackOutServiceWSDDServiceName());
+            mypackage.TipTopSetProductServiceSoapBindingStub _stub = new mypackage.TipTopSetProductServiceSoapBindingStub(portAddress, this);
+            _stub.setPortName(getTipTopSetProductServiceWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -62,8 +61,8 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
         }
     }
 
-    public void setAutoTrackOutServiceEndpointAddress(java.lang.String address) {
-        AutoTrackOutService_address = address;
+    public void setTipTopSetProductServiceEndpointAddress(java.lang.String address) {
+        TipTopSetProductService_address = address;
     }
 
     /**
@@ -73,9 +72,9 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (mypackage.AutoTrackOutService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                mypackage.AutoTrackOutServiceSoapBindingStub _stub = new mypackage.AutoTrackOutServiceSoapBindingStub(new java.net.URL(AutoTrackOutService_address), this);
-                _stub.setPortName(getAutoTrackOutServiceWSDDServiceName());
+            if (mypackage.TipTopSetProductService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                mypackage.TipTopSetProductServiceSoapBindingStub _stub = new mypackage.TipTopSetProductServiceSoapBindingStub(new java.net.URL(TipTopSetProductService_address), this);
+                _stub.setPortName(getTipTopSetProductServiceWSDDServiceName());
                 return _stub;
             }
         }
@@ -95,8 +94,8 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("AutoTrackOutService".equals(inputPortName)) {
-            return getAutoTrackOutService();
+        if ("TipTopSetProductService".equals(inputPortName)) {
+            return getTipTopSetProductService();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -106,7 +105,7 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "AutoTrackOutServiceService");
+        return new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "TipTopSetProductServiceService");
     }
 
     private java.util.HashSet ports = null;
@@ -114,7 +113,7 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "AutoTrackOutService"));
+            ports.add(new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "TipTopSetProductService"));
         }
         return ports.iterator();
     }
@@ -124,8 +123,8 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("AutoTrackOutService".equals(portName)) {
-            setAutoTrackOutServiceEndpointAddress(address);
+if ("TipTopSetProductService".equals(portName)) {
+            setTipTopSetProductServiceEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

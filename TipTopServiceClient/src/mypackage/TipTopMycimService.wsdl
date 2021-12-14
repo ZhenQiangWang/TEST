@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://xml.fa-software.com/mycim/wsdd/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://xml.fa-software.com/mycim/wsdd/" xmlns:intf="http://xml.fa-software.com/mycim/wsdd/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="TipTopReciveWorkOrderRequest">
+
+      <wsdl:part name="tblOEMOBasis" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopSetMaterialRequest">
+
+      <wsdl:part name="tblMTLMaterialBasis" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopSetProductRequest">
+
+      <wsdl:part name="tblPRDProductBasis" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopReciveWorkOrderResponse">
+
+      <wsdl:part name="TipTopReciveWorkOrderReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopReciveMaterialRequest">
+
+      <wsdl:part name="materialInfo" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopReciveMaterialResponse">
+
+      <wsdl:part name="TipTopReciveMaterialReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopSetProductResponse">
+
+      <wsdl:part name="TipTopSetProductReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TipTopSetMaterialResponse">
+
+      <wsdl:part name="TipTopSetMaterialReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TipTopMycimService">
+
+      <wsdl:operation name="TipTopSetMaterial" parameterOrder="tblMTLMaterialBasis">
+
+         <wsdl:input message="impl:TipTopSetMaterialRequest" name="TipTopSetMaterialRequest"/>
+
+         <wsdl:output message="impl:TipTopSetMaterialResponse" name="TipTopSetMaterialResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopSetProduct" parameterOrder="tblPRDProductBasis">
+
+         <wsdl:input message="impl:TipTopSetProductRequest" name="TipTopSetProductRequest"/>
+
+         <wsdl:output message="impl:TipTopSetProductResponse" name="TipTopSetProductResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopReciveWorkOrder" parameterOrder="tblOEMOBasis">
+
+         <wsdl:input message="impl:TipTopReciveWorkOrderRequest" name="TipTopReciveWorkOrderRequest"/>
+
+         <wsdl:output message="impl:TipTopReciveWorkOrderResponse" name="TipTopReciveWorkOrderResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopReciveMaterial" parameterOrder="materialInfo">
+
+         <wsdl:input message="impl:TipTopReciveMaterialRequest" name="TipTopReciveMaterialRequest"/>
+
+         <wsdl:output message="impl:TipTopReciveMaterialResponse" name="TipTopReciveMaterialResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TipTopMycimServiceSoapBinding" type="impl:TipTopMycimService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="TipTopSetMaterial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="TipTopSetMaterialRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="TipTopSetMaterialResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopSetProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="TipTopSetProductRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="TipTopSetProductResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopReciveWorkOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="TipTopReciveWorkOrderRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="TipTopReciveWorkOrderResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TipTopReciveMaterial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="TipTopReciveMaterialRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="TipTopReciveMaterialResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://xml.fa-software.com/mycim/wsdd/" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TipTopMycimServiceService">
+
+      <wsdl:port binding="impl:TipTopMycimServiceSoapBinding" name="TipTopMycimService">
+
+         <wsdlsoap:address location="http://localhost:7001/mycim2/services/TipTopMycimService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

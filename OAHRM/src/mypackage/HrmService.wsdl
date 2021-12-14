@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost/services/HrmService" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/services/HrmService" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://webservice.hrm.weaver" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://localhost/services/HrmService">
+<xsd:element name="changeUserPassword">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="changeUserPasswordResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmJobTitleInfoXML">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmJobTitleInfoXMLResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkInvokeClient">
+<xsd:complexType/>
+</xsd:element>
+<xsd:element name="checkInvokeClientResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getDepartmentInfoWithPage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getDepartmentInfoWithPageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmDepartmentInfoXML">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmDepartmentInfoXMLResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynSubCompany">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynSubCompanyResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmJobTitleInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmJobTitleInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfJobTitleBean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfSubCompanyBean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getOneUserInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getOneUserInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynDepartment">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynDepartmentResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUseridByWorkcode">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUseridByWorkcodeResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfUserBean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkUser">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="checkUserResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getJobtitleInfoWithPage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getJobtitleInfoWithPageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynHrmResource">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynHrmResourceResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserImage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserImageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="sycHrmUserImage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="sycHrmUserImageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmDepartmentInfo">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmDepartmentInfoResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfDepartmentBean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfoWithPage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfoWithPageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfoWithPage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfoWithPageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynJobtitle">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="SynJobtitleResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfoXML">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmSubcompanyInfoXMLResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfoXML">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getHrmUserInfoXMLResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://webservice.hrm.weaver">
+<xsd:complexType name="ArrayOfJobTitleBean">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="JobTitleBean" nillable="true" type="ns1:JobTitleBean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="JobTitleBean">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="_code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_departmentid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_fullname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_jobcompetency" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_jobdoc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_jobresponsibility" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_jobtitleid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_jobtitleremark" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_lastChangdate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_shortname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="action" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfSubCompanyBean">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="SubCompanyBean" nillable="true" type="ns1:SubCompanyBean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SubCompanyBean">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="_canceled" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_fullname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_shortname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_showorder" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_subcompanyid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_supsubcompanyid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_website" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="action" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lastChangdate" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfUserBean">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="UserBean" nillable="true" type="ns1:UserBean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UserBean">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="accounttype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="assistantid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="bememberdate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="bepartydate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="birthday" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="certificatenum" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="createdate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="degree" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="departmentcode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="departmentid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="departmentname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="dsporder" type="xsd:float"/>
+<xsd:element minOccurs="0" name="educationlevel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="email" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="enddate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="fax" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="folk" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="healthinfo" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="height" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="homeaddress" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="islabouunion" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobactivitydesc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobactivityid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobcall" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobgroupid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="joblevel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="jobtitle" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lastChangdate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lastname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="locationid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="loginid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="managerid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="maritalstatus" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="mobile" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="mobilecall" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="nativeplace" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="policy" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="regresidentplace" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="residentplace" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="seclevel" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="sex" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="startdate" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="subcompanycode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="subcompanyid1" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="subcompanyname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="systemlanguage" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="telephone" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="tempresidentnumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userid" type="xsd:int"/>
+<xsd:element minOccurs="0" name="weight" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="workcode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="workroom" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfDepartmentBean">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="DepartmentBean" nillable="true" type="ns1:DepartmentBean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="DepartmentBean">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="_canceled" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_departmentid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_fullname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_shortname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_showorder" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_subcompanyid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="_supdepartmentid" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="action" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="lastChangdate" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="changeUserPasswordResponse">
+    <wsdl:part name="parameters" element="tns:changeUserPasswordResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmJobTitleInfoResponse">
+    <wsdl:part name="parameters" element="tns:getHrmJobTitleInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkInvokeClientRequest">
+    <wsdl:part name="parameters" element="tns:checkInvokeClient">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoRequest">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynDepartmentRequest">
+    <wsdl:part name="parameters" element="tns:SynDepartment">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynJobtitleRequest">
+    <wsdl:part name="parameters" element="tns:SynJobtitle">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoXMLResponse">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfoXMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkUserResponse">
+    <wsdl:part name="parameters" element="tns:checkUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynDepartmentResponse">
+    <wsdl:part name="parameters" element="tns:SynDepartmentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOneUserInfoRequest">
+    <wsdl:part name="parameters" element="tns:getOneUserInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmDepartmentInfoXMLResponse">
+    <wsdl:part name="parameters" element="tns:getHrmDepartmentInfoXMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynSubCompanyRequest">
+    <wsdl:part name="parameters" element="tns:SynSubCompany">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOneUserInfoResponse">
+    <wsdl:part name="parameters" element="tns:getOneUserInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJobtitleInfoWithPageRequest">
+    <wsdl:part name="parameters" element="tns:getJobtitleInfoWithPage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sycHrmUserImageResponse">
+    <wsdl:part name="parameters" element="tns:sycHrmUserImageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoWithPageRequest">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfoWithPage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserImageResponse">
+    <wsdl:part name="parameters" element="tns:getHrmUserImageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmDepartmentInfoRequest">
+    <wsdl:part name="parameters" element="tns:getHrmDepartmentInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoWithPageRequest">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfoWithPage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUseridByWorkcodeResponse">
+    <wsdl:part name="parameters" element="tns:getUseridByWorkcodeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynHrmResourceRequest">
+    <wsdl:part name="parameters" element="tns:SynHrmResource">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynHrmResourceResponse">
+    <wsdl:part name="parameters" element="tns:SynHrmResourceResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJobtitleInfoWithPageResponse">
+    <wsdl:part name="parameters" element="tns:getJobtitleInfoWithPageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynSubCompanyResponse">
+    <wsdl:part name="parameters" element="tns:SynSubCompanyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDepartmentInfoWithPageResponse">
+    <wsdl:part name="parameters" element="tns:getDepartmentInfoWithPageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="changeUserPasswordRequest">
+    <wsdl:part name="parameters" element="tns:changeUserPassword">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkInvokeClientResponse">
+    <wsdl:part name="parameters" element="tns:checkInvokeClientResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoWithPageResponse">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfoWithPageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmDepartmentInfoXMLRequest">
+    <wsdl:part name="parameters" element="tns:getHrmDepartmentInfoXML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDepartmentInfoWithPageRequest">
+    <wsdl:part name="parameters" element="tns:getDepartmentInfoWithPage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoResponse">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoResponse">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoRequest">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmJobTitleInfoXMLResponse">
+    <wsdl:part name="parameters" element="tns:getHrmJobTitleInfoXMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sycHrmUserImageRequest">
+    <wsdl:part name="parameters" element="tns:sycHrmUserImage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmJobTitleInfoRequest">
+    <wsdl:part name="parameters" element="tns:getHrmJobTitleInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserImageRequest">
+    <wsdl:part name="parameters" element="tns:getHrmUserImage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoWithPageResponse">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfoWithPageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmUserInfoXMLRequest">
+    <wsdl:part name="parameters" element="tns:getHrmUserInfoXML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoXMLResponse">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfoXMLResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUseridByWorkcodeRequest">
+    <wsdl:part name="parameters" element="tns:getUseridByWorkcode">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmJobTitleInfoXMLRequest">
+    <wsdl:part name="parameters" element="tns:getHrmJobTitleInfoXML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmDepartmentInfoResponse">
+    <wsdl:part name="parameters" element="tns:getHrmDepartmentInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getHrmSubcompanyInfoXMLRequest">
+    <wsdl:part name="parameters" element="tns:getHrmSubcompanyInfoXML">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SynJobtitleResponse">
+    <wsdl:part name="parameters" element="tns:SynJobtitleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkUserRequest">
+    <wsdl:part name="parameters" element="tns:checkUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HrmServicePortType">
+    <wsdl:operation name="changeUserPassword">
+      <wsdl:input name="changeUserPasswordRequest" message="tns:changeUserPasswordRequest">
+    </wsdl:input>
+      <wsdl:output name="changeUserPasswordResponse" message="tns:changeUserPasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmJobTitleInfoXML">
+      <wsdl:input name="getHrmJobTitleInfoXMLRequest" message="tns:getHrmJobTitleInfoXMLRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmJobTitleInfoXMLResponse" message="tns:getHrmJobTitleInfoXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkInvokeClient">
+      <wsdl:input name="checkInvokeClientRequest" message="tns:checkInvokeClientRequest">
+    </wsdl:input>
+      <wsdl:output name="checkInvokeClientResponse" message="tns:checkInvokeClientResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentInfoWithPage">
+      <wsdl:input name="getDepartmentInfoWithPageRequest" message="tns:getDepartmentInfoWithPageRequest">
+    </wsdl:input>
+      <wsdl:output name="getDepartmentInfoWithPageResponse" message="tns:getDepartmentInfoWithPageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmDepartmentInfoXML">
+      <wsdl:input name="getHrmDepartmentInfoXMLRequest" message="tns:getHrmDepartmentInfoXMLRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmDepartmentInfoXMLResponse" message="tns:getHrmDepartmentInfoXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynSubCompany">
+      <wsdl:input name="SynSubCompanyRequest" message="tns:SynSubCompanyRequest">
+    </wsdl:input>
+      <wsdl:output name="SynSubCompanyResponse" message="tns:SynSubCompanyResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmJobTitleInfo">
+      <wsdl:input name="getHrmJobTitleInfoRequest" message="tns:getHrmJobTitleInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmJobTitleInfoResponse" message="tns:getHrmJobTitleInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfo">
+      <wsdl:input name="getHrmSubcompanyInfoRequest" message="tns:getHrmSubcompanyInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoResponse" message="tns:getHrmSubcompanyInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOneUserInfo">
+      <wsdl:input name="getOneUserInfoRequest" message="tns:getOneUserInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getOneUserInfoResponse" message="tns:getOneUserInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynDepartment">
+      <wsdl:input name="SynDepartmentRequest" message="tns:SynDepartmentRequest">
+    </wsdl:input>
+      <wsdl:output name="SynDepartmentResponse" message="tns:SynDepartmentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUseridByWorkcode">
+      <wsdl:input name="getUseridByWorkcodeRequest" message="tns:getUseridByWorkcodeRequest">
+    </wsdl:input>
+      <wsdl:output name="getUseridByWorkcodeResponse" message="tns:getUseridByWorkcodeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfo">
+      <wsdl:input name="getHrmUserInfoRequest" message="tns:getHrmUserInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmUserInfoResponse" message="tns:getHrmUserInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUser">
+      <wsdl:input name="checkUserRequest" message="tns:checkUserRequest">
+    </wsdl:input>
+      <wsdl:output name="checkUserResponse" message="tns:checkUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJobtitleInfoWithPage">
+      <wsdl:input name="getJobtitleInfoWithPageRequest" message="tns:getJobtitleInfoWithPageRequest">
+    </wsdl:input>
+      <wsdl:output name="getJobtitleInfoWithPageResponse" message="tns:getJobtitleInfoWithPageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynHrmResource">
+      <wsdl:input name="SynHrmResourceRequest" message="tns:SynHrmResourceRequest">
+    </wsdl:input>
+      <wsdl:output name="SynHrmResourceResponse" message="tns:SynHrmResourceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserImage">
+      <wsdl:input name="getHrmUserImageRequest" message="tns:getHrmUserImageRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmUserImageResponse" message="tns:getHrmUserImageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sycHrmUserImage">
+      <wsdl:input name="sycHrmUserImageRequest" message="tns:sycHrmUserImageRequest">
+    </wsdl:input>
+      <wsdl:output name="sycHrmUserImageResponse" message="tns:sycHrmUserImageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmDepartmentInfo">
+      <wsdl:input name="getHrmDepartmentInfoRequest" message="tns:getHrmDepartmentInfoRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmDepartmentInfoResponse" message="tns:getHrmDepartmentInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfoWithPage">
+      <wsdl:input name="getHrmUserInfoWithPageRequest" message="tns:getHrmUserInfoWithPageRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmUserInfoWithPageResponse" message="tns:getHrmUserInfoWithPageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfoWithPage">
+      <wsdl:input name="getHrmSubcompanyInfoWithPageRequest" message="tns:getHrmSubcompanyInfoWithPageRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoWithPageResponse" message="tns:getHrmSubcompanyInfoWithPageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynJobtitle">
+      <wsdl:input name="SynJobtitleRequest" message="tns:SynJobtitleRequest">
+    </wsdl:input>
+      <wsdl:output name="SynJobtitleResponse" message="tns:SynJobtitleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfoXML">
+      <wsdl:input name="getHrmSubcompanyInfoXMLRequest" message="tns:getHrmSubcompanyInfoXMLRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoXMLResponse" message="tns:getHrmSubcompanyInfoXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfoXML">
+      <wsdl:input name="getHrmUserInfoXMLRequest" message="tns:getHrmUserInfoXMLRequest">
+    </wsdl:input>
+      <wsdl:output name="getHrmUserInfoXMLResponse" message="tns:getHrmUserInfoXMLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HrmServiceHttpBinding" type="tns:HrmServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="changeUserPassword">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.changeUserPassword"/>
+      <wsdl:input name="changeUserPasswordRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeUserPasswordResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmJobTitleInfoXML">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmJobTitleInfoXML"/>
+      <wsdl:input name="getHrmJobTitleInfoXMLRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmJobTitleInfoXMLResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkInvokeClient">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.checkInvokeClient"/>
+      <wsdl:input name="checkInvokeClientRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkInvokeClientResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentInfoWithPage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getDepartmentInfoWithPage"/>
+      <wsdl:input name="getDepartmentInfoWithPageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDepartmentInfoWithPageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmDepartmentInfoXML">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmDepartmentInfoXML"/>
+      <wsdl:input name="getHrmDepartmentInfoXMLRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmDepartmentInfoXMLResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynSubCompany">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.SynSubCompany"/>
+      <wsdl:input name="SynSubCompanyRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SynSubCompanyResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmJobTitleInfo">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmJobTitleInfo"/>
+      <wsdl:input name="getHrmJobTitleInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmJobTitleInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfo">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmSubcompanyInfo"/>
+      <wsdl:input name="getHrmSubcompanyInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOneUserInfo">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getOneUserInfo"/>
+      <wsdl:input name="getOneUserInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOneUserInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynDepartment">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.SynDepartment"/>
+      <wsdl:input name="SynDepartmentRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SynDepartmentResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUseridByWorkcode">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getUseridByWorkcode"/>
+      <wsdl:input name="getUseridByWorkcodeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUseridByWorkcodeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfo">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmUserInfo"/>
+      <wsdl:input name="getHrmUserInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmUserInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUser">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.checkUser"/>
+      <wsdl:input name="checkUserRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkUserResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJobtitleInfoWithPage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getJobtitleInfoWithPage"/>
+      <wsdl:input name="getJobtitleInfoWithPageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getJobtitleInfoWithPageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynHrmResource">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.SynHrmResource"/>
+      <wsdl:input name="SynHrmResourceRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SynHrmResourceResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserImage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmUserImage"/>
+      <wsdl:input name="getHrmUserImageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmUserImageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sycHrmUserImage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.sycHrmUserImage"/>
+      <wsdl:input name="sycHrmUserImageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sycHrmUserImageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmDepartmentInfo">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmDepartmentInfo"/>
+      <wsdl:input name="getHrmDepartmentInfoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmDepartmentInfoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfoWithPage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmUserInfoWithPage"/>
+      <wsdl:input name="getHrmUserInfoWithPageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmUserInfoWithPageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfoWithPage">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmSubcompanyInfoWithPage"/>
+      <wsdl:input name="getHrmSubcompanyInfoWithPageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoWithPageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SynJobtitle">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.SynJobtitle"/>
+      <wsdl:input name="SynJobtitleRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SynJobtitleResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmSubcompanyInfoXML">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmSubcompanyInfoXML"/>
+      <wsdl:input name="getHrmSubcompanyInfoXMLRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmSubcompanyInfoXMLResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHrmUserInfoXML">
+      <wsdlsoap:operation soapAction="urn:weaver.hrm.webservice.HrmService.getHrmUserInfoXML"/>
+      <wsdl:input name="getHrmUserInfoXMLRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHrmUserInfoXMLResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HrmService">
+    <wsdl:port name="HrmServiceHttpPort" binding="tns:HrmServiceHttpBinding">
+      <wsdlsoap:address location="http://192.168.68.172:8008/services/HrmService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

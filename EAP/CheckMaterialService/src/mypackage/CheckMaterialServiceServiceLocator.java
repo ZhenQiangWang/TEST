@@ -23,6 +23,7 @@ public class CheckMaterialServiceServiceLocator extends org.apache.axis.client.S
 
     // Use to get a proxy class for CheckMaterialService
     private java.lang.String CheckMaterialService_address = "http://192.168.90.160:7001/mycim2/services/CheckMaterialService";
+//    private java.lang.String CheckMaterialService_address = "http://192.168.68.95/mycim2/services/CheckMaterialService";
 
     public java.lang.String getCheckMaterialServiceAddress() {
         return CheckMaterialService_address;

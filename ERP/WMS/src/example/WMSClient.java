@@ -1,6 +1,7 @@
 package example;
 
 import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
 import example.Bean.materialVO;
 import example.tool.XmlJsonTransform;
 import mypackage.DemoService_PortType;
@@ -21,17 +22,23 @@ public class WMSClient {
             trayId.add("tray2");
             materialVO materialVO = new materialVO();
             materialVO.setMaterialId("料号");
-            materialVO.setQty(10.00);
+            materialVO.setQTY(10.00);
             materialVO.setBillId("调拨单号");
             materialVO.setTrnflinwarehouse("拨出仓库");
             materialVO.setLotNumber("物料批次号");
             materialVO.setExpirationDate("失效日期dd/MM/yyyy");
             materialVO.setWaferId("waferId");
             materialVO.setTrayId(trayId);
-            materialVO.setComments("备注");
-            String xml = XML.toString(new JSONObject(JSON.toJSONString(materialVO)));
-            System.out.println(xml);
-            String transfer =
+            materialVO.setComments("");
+            Gson gson = new Gson();
+            String jsonStr = JSON.toJSONString(materialVO);
+            String gsonStr = gson.toJson(materialVO);
+
+            String jsonXml = XML.toString(new JSONObject(jsonStr));
+            String gsonXml = XML.toString(new JSONObject(gsonStr));
+            System.out.println(jsonXml);
+            System.out.println(gsonXml);
+            /*String transfer =
 //                    "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
                     "<MST>\n" +
                     "<source>SYMES</source>\n" +
@@ -120,13 +127,42 @@ public class WMSClient {
                     "  <bibb32>20/12/20</bibb32>\n" +
                     "  <bin>BIN01</bin>\n" +
                     "  </DTL> \n" +
-                    "</MST> ";
+                    "</MST> ";*/
+
+            String mesCompleteStr = "<MST>\n" +
+                    " <center>DX</center>\n" +
+                    " <source>SYMES</source>\n" +
+                    " <service>mes_Completion</service>\n" +
+                    " <keyno>QAZWSXEDC</keyno>\n" +
+                    " <DTL>\n" +
+//                    "  <attkey></attkey>\n" +
+                    "  <attkey/>\n" +
+                    "  <bibb32>21/11/30</bibb32>\n" +
+                    "  <bibb181>D2010001</bibb181>\n" +
+                    "  <meslot>D2010001</meslot>\n" +
+//                    "  <bin1></bin1>\n" +
+                    "  <bin1/>\n" +
+                    "  <bibb27>Z</bibb27>\n" +
+                    "  <bsfv11>NG05-21110006</bsfv11>\n" +
+//                    "  <attvalue1></attvalue1>\n" +
+                    "  <attvalue1/>\n" +
+                    "  <bibb25>0</bibb25>\n" +
+                    "  <sfv03>sy211129_Product</sfv03>\n" +
+                    "  <sfv08>Pcs</sfv08>\n" +
+                    "  <sfv06>C0002</sfv06>\n" +
+                    "  <wflot>D2010001</wflot>\n" +
+                    "  <sfv09>100.0</sfv09>\n" +
+                    "  <bin>P</bin>\n" +
+                    "  <bibb011>123321</bibb011>\n" +
+                    " </DTL>\n" +
+                    " <user>tiptop</user>\n" +
+                    "</MST>";
             DemoService_ServiceLocator demoService_serviceLocator = new DemoService_ServiceLocator();
             demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9191/services/api");
             DemoService_PortType demoServiceImplPort = demoService_serviceLocator.getDemoServiceImplPort();
             XmlJsonTransform xmlJsonTransform = new XmlJsonTransform();
-            JSONObject xmltojson = xmlJsonTransform.XMLTOJSON(Completion);
-            Result result = demoServiceImplPort.webGen(transfer);
+//            JSONObject xmltojson = xmlJsonTransform.XMLTOJSON(Completion);
+            Result result = demoServiceImplPort.webGen(mesCompleteStr);
             System.out.println(result.getMsg());
         } catch (Exception ex) {
             ex.printStackTrace();

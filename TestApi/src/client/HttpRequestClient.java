@@ -32,7 +32,7 @@ public class HttpRequestClient {
     private final String EAPURL = "http://localhost:8080";
     private final static String TEST = "http://192.168.90.160:7001/mycim2/labelField.do?action=saveOrUpdate";
     private final static String LOGIN = "http://192.168.90.160:7001/mycim2/securitylogin.do?Content-Type";
-    private final static String testEAP = "http://192.168.68.221/api/tms/DynaxInterface/SendAlarm";
+    private final static String testEAP = "http://192.168.68.219:8100/tms/DynaxInterface/GetMeasureData";
 
     private HttpClient httpClient = HttpClientBuilder.create()
             .setDefaultRequestConfig(getRequestConfig(DEFAULT_CONNECT_TIMEOUT, DEFAULT_READ_TIMEOUT))

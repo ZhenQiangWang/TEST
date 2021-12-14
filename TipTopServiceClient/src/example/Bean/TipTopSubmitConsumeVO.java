@@ -1,4 +1,4 @@
-package com.mycim.erp.model;
+package example.Bean;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

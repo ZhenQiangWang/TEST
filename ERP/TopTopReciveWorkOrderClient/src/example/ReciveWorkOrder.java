@@ -21,7 +21,7 @@ public class ReciveWorkOrder {
                   "     <mono>\n" +
                   "        <name>MONo</name>\n" +
                   "        <type>String</type>\n" +
-                  "        <value>TIPTOPWORKORDER</value>\n" +
+                  "        <value>99999</value>\n" +
                   "        <desc></desc>\n" +
                   "     </mono>\n" +
                   "     <rono>\n" +

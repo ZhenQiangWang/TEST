@@ -9,7 +9,7 @@ public class materialVO {
 
     private String 		materialId; 		// 	物料号
 
-    private Double 		qty; 				// 	接收数量
+    private Double QTY; 				// 	接收数量
 
     private String 		lotNumber; 			// 物料接收批次号
 

@@ -1,4 +1,4 @@
-package com.mycim.erp.model.TipTopResultVO;
+package example;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

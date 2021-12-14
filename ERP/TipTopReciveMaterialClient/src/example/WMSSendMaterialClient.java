@@ -107,8 +107,8 @@ public class WMSSendMaterialClient {
 
 
           String request =  XML.toString(new JSONObject(JSON.toJSONString(tipTopReciveMaterialVOS)));
-//          String response = tipTopReciveMaterialService.tipTopReciveMaterialService(request);
-//          System.out.println(response);
+          String response = tipTopReciveMaterialService.tipTopReciveMaterialService(request);
+          System.out.println(response);
       } catch ( Exception ex) {
           ex.printStackTrace();
       }

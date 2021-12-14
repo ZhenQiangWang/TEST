@@ -2,24 +2,37 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AutoCanelTrackIn/AutoCanelTrackIn.iml" filepath="$PROJECT_DIR$/AutoCanelTrackIn/AutoCanelTrackIn.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AutoTrackInService/AutoTrackInService.iml" filepath="$PROJECT_DIR$/AutoTrackInService/AutoTrackInService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AutoTrackOutService/AutoTrackOutService.iml" filepath="$PROJECT_DIR$/AutoTrackOutService/AutoTrackOutService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ChangeEqpStatusService/ChangeEqpStatusService.iml" filepath="$PROJECT_DIR$/ChangeEqpStatusService/ChangeEqpStatusService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CheckMaterialService/CheckMaterialService.iml" filepath="$PROJECT_DIR$/CheckMaterialService/CheckMaterialService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/AutoCanelTrackIn/AutoCanelTrackIn.iml" filepath="$PROJECT_DIR$/EAP/AutoCanelTrackIn/AutoCanelTrackIn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/AutoTrackInService/AutoTrackInService.iml" filepath="$PROJECT_DIR$/EAP/AutoTrackInService/AutoTrackInService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/AutoTrackOutService/AutoTrackOutService.iml" filepath="$PROJECT_DIR$/EAP/AutoTrackOutService/AutoTrackOutService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/ChangeEqpStatusService/ChangeEqpStatusService.iml" filepath="$PROJECT_DIR$/EAP/ChangeEqpStatusService/ChangeEqpStatusService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/CheckMaterialService/CheckMaterialService.iml" filepath="$PROJECT_DIR$/EAP/CheckMaterialService/CheckMaterialService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/ERP.iml" filepath="$PROJECT_DIR$/ERP/ERP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetEqpStatusService/GetEqpStatusService.iml" filepath="$PROJECT_DIR$/GetEqpStatusService/GetEqpStatusService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetHoldCodeService/GetHoldCodeService.iml" filepath="$PROJECT_DIR$/GetHoldCodeService/GetHoldCodeService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetLotInfoService/GetLotInfoService.iml" filepath="$PROJECT_DIR$/GetLotInfoService/GetLotInfoService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetPMDueTimeService/GetPMDueTimeService.iml" filepath="$PROJECT_DIR$/GetPMDueTimeService/GetPMDueTimeService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetProductListService/GetProductListService.iml" filepath="$PROJECT_DIR$/GetProductListService/GetProductListService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GetReasonCodeService/GetReasonCodeService.iml" filepath="$PROJECT_DIR$/GetReasonCodeService/GetReasonCodeService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HoldLotService/HoldLotService.iml" filepath="$PROJECT_DIR$/HoldLotService/HoldLotService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/ERPTest/ERPTest.iml" filepath="$PROJECT_DIR$/ERP/ERPTest/ERPTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/ERPZS/ERPZS.iml" filepath="$PROJECT_DIR$/ERP/ERPZS/ERPZS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/EapGetMaterialInfo/EapGetMaterialInfo.iml" filepath="$PROJECT_DIR$/EAP/EapGetMaterialInfo/EapGetMaterialInfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetEqpStatusService/GetEqpStatusService.iml" filepath="$PROJECT_DIR$/EAP/GetEqpStatusService/GetEqpStatusService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetHoldCodeService/GetHoldCodeService.iml" filepath="$PROJECT_DIR$/EAP/GetHoldCodeService/GetHoldCodeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetLotInfoService/GetLotInfoService.iml" filepath="$PROJECT_DIR$/EAP/GetLotInfoService/GetLotInfoService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetPMDueTimeService/GetPMDueTimeService.iml" filepath="$PROJECT_DIR$/EAP/GetPMDueTimeService/GetPMDueTimeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetProductListService/GetProductListService.iml" filepath="$PROJECT_DIR$/EAP/GetProductListService/GetProductListService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/GetReasonCodeService/GetReasonCodeService.iml" filepath="$PROJECT_DIR$/EAP/GetReasonCodeService/GetReasonCodeService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/HoldLotService/HoldLotService.iml" filepath="$PROJECT_DIR$/EAP/HoldLotService/HoldLotService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IMES/IMES.iml" filepath="$PROJECT_DIR$/IMES/IMES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OAHRM/OAHRM.iml" filepath="$PROJECT_DIR$/OAHRM/OAHRM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OA/OA_Model/OA_Model.iml" filepath="$PROJECT_DIR$/OA/OA_Model/OA_Model.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestApi/TestApi.iml" filepath="$PROJECT_DIR$/TestApi/TestApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" filepath="$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/TipTopErpReciveWorkOrderClient/TipTopErpReciveWorkOrderClient.iml" filepath="$PROJECT_DIR$/ERP/TipTopErpReciveWorkOrderClient/TipTopErpReciveWorkOrderClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/TipTopReciveMaterialClient/TipTopReciveMaterialClient.iml" filepath="$PROJECT_DIR$/ERP/TipTopReciveMaterialClient/TipTopReciveMaterialClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TipTopServiceClient/TipTopServiceClient.iml" filepath="$PROJECT_DIR$/TipTopServiceClient/TipTopServiceClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/TipTopSetMaterialClient/TipTopSetMaterialClient.iml" filepath="$PROJECT_DIR$/ERP/TipTopSetMaterialClient/TipTopSetMaterialClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/TipTopSetProductClient/TipTopSetProductClient.iml" filepath="$PROJECT_DIR$/ERP/TipTopSetProductClient/TipTopSetProductClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/TopTopReciveWorkOrderClient/TopTopReciveWorkOrderClient.iml" filepath="$PROJECT_DIR$/ERP/TopTopReciveWorkOrderClient/TopTopReciveWorkOrderClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ERP/WMS/WMS.iml" filepath="$PROJECT_DIR$/ERP/WMS/WMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/testWebService.iml" filepath="$PROJECT_DIR$/testWebService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/transferToWms/transferToWms.iml" filepath="$PROJECT_DIR$/transferToWms/transferToWms.iml" />
     </modules>
   </component>
 </project>

@@ -1,14 +1,10 @@
 package example;
 
 import com.alibaba.fastjson.JSON;
-import mypackage.QueryDataRequest_QueryDataRequest;
-import mypackage.QueryDataResponse_QueryDataResponse;
-import mypackage.TIPTOPServiceGateWayLocator;
-import mypackage.TIPTOPServiceGateWayPortType_PortType;
+import mypackage.*;
 import org.json.JSONObject;
 import org.json.XML;
 
-import javax.xml.rpc.ServiceException;
 
 public class ERPZSClient {
   public static void main(String[] argv) {
@@ -56,11 +52,75 @@ public class ERPZSClient {
               "    </Parameter>\n" +
               "  </RequestContent>\n" +
               "</Request>\n");
+
+
       QueryDataResponse_QueryDataResponse queryDataResponse_queryDataResponse = tiptopServiceGateWayPortType.queryData(queryDataRequest_queryDataRequest);
       String response = queryDataResponse_queryDataResponse.getResponse();
       JSONObject xmlJSONObj = XML.toJSONObject(response);
       QueryDataVo queryDataVo = JSON.parseObject(xmlJSONObj.toString(), QueryDataVo.class);
-      System.out.println(response);
+//      System.out.println(response);
+
+      String completionStr = "<Request>\n" +
+              "\t<Access>\n" +
+              "\t\t<Authentication password=\"tiptop\" user=\"tiptop\"/>\n" +
+              "\t\t<Organization name=\"营运中心\"/>\n" +
+              "\t\t<Locale language=\"zh_CN\"/>\n" +
+              "\t\t<Connection source=\"1234\" application=\"asfi300\"/>\n" +
+              "\t\t<Appdevice timestamp=\"2021-01-01 00:00:00\" appmodule=\"\" appid=\"DJ-IMES-BGD\"/>\n" +
+              "\t</Access>\n" +
+              "\t<RequestContent>\n" +
+              "\t\t<Parameter>\n" +
+              "\t\t\t<Record>\n" +
+              "\t\t\t\t<Document>\n" +
+              "\t\t\t\t\t<RecordSet id=\"1\">\n" +
+              "\t\t\t\t\t\t<Master name=\"Master\">\n" +
+              "\t\t\t\t\t\t\t<Record>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"BGD_01\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"status\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srf01\" value=\"\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srf02\" value=\"2021/08/30\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srforiu\" value=\"20761\"/>\n" +
+              "\t\t\t\t\t\t\t</Record>\n" +
+              "\t\t\t\t\t\t</Master>\n" +
+              "\t\t\t\t\t\t<Detail name=\"Detail-A\">\n" +
+              "\t\t\t\t\t\t\t<Record>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg16\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg03\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srgud02\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg04\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg05\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"sfs10\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg06\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg07\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg10\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg19\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t</Record>\n" +
+              "\t\t\t\t\t\t\t<Record>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg16\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg03\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srgud02\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg04\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg05\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"sfs10\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg06\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg07\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg10\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg19\" value=\" \"/>\n" +
+              "\t\t\t\t\t\t\t</Record>\n" +
+              "\t\t\t\t\t\t</Detail>\n" +
+              "\t\t\t\t\t</RecordSet>\n" +
+              "\t\t\t\t</Document>\n" +
+              "\t\t\t</Record>\n" +
+              "\t\t</Parameter>\n" +
+              "\t</RequestContent>\n" +
+              "</Request>\n";
+
+      CreateWOWorkReportDataRequest_CreateWOWorkReportDataRequest createWOWorkReportDataRequest_createWOWorkReportDataRequest = new CreateWOWorkReportDataRequest_CreateWOWorkReportDataRequest();
+      createWOWorkReportDataRequest_createWOWorkReportDataRequest.setRequest(completionStr);
+      CreateWOWorkReportDataResponse_CreateWOWorkReportDataResponse woWorkReportData = tiptopServiceGateWayPortType.createWOWorkReportData(createWOWorkReportDataRequest_createWOWorkReportDataRequest);
+      System.out.println(woWorkReportData.getResponse());
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package mypackage;
+package IMES;
 
-public class WsERPLocator extends org.apache.axis.client.Service implements mypackage.WsERP {
+public class WsERPLocator extends org.apache.axis.client.Service implements WsERP {
 
     public WsERPLocator() {
     }
@@ -39,7 +39,7 @@ public class WsERPLocator extends org.apache.axis.client.Service implements mypa
         wsERPSoapWSDDServiceName = name;
     }
 
-    public mypackage.WsERPSoap_PortType getwsERPSoap() throws javax.xml.rpc.ServiceException {
+    public WsERPSoap_PortType getwsERPSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(wsERPSoap_address);
@@ -50,9 +50,9 @@ public class WsERPLocator extends org.apache.axis.client.Service implements mypa
         return getwsERPSoap(endpoint);
     }
 
-    public mypackage.WsERPSoap_PortType getwsERPSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public WsERPSoap_PortType getwsERPSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            mypackage.WsERPSoap_BindingStub _stub = new mypackage.WsERPSoap_BindingStub(portAddress, this);
+            WsERPSoap_BindingStub _stub = new WsERPSoap_BindingStub(portAddress, this);
             _stub.setPortName(getwsERPSoapWSDDServiceName());
             return _stub;
         }
@@ -84,7 +84,7 @@ public class WsERPLocator extends org.apache.axis.client.Service implements mypa
         wsERPSoap12WSDDServiceName = name;
     }
 
-    public mypackage.WsERPSoap_PortType getwsERPSoap12() throws javax.xml.rpc.ServiceException {
+    public WsERPSoap_PortType getwsERPSoap12() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(wsERPSoap12_address);
@@ -95,9 +95,9 @@ public class WsERPLocator extends org.apache.axis.client.Service implements mypa
         return getwsERPSoap12(endpoint);
     }
 
-    public mypackage.WsERPSoap_PortType getwsERPSoap12(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public WsERPSoap_PortType getwsERPSoap12(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            mypackage.WsERPSoap12Stub _stub = new mypackage.WsERPSoap12Stub(portAddress, this);
+            WsERPSoap12Stub _stub = new WsERPSoap12Stub(portAddress, this);
             _stub.setPortName(getwsERPSoap12WSDDServiceName());
             return _stub;
         }
@@ -119,13 +119,13 @@ public class WsERPLocator extends org.apache.axis.client.Service implements mypa
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (mypackage.WsERPSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                mypackage.WsERPSoap_BindingStub _stub = new mypackage.WsERPSoap_BindingStub(new java.net.URL(wsERPSoap_address), this);
+            if (WsERPSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                WsERPSoap_BindingStub _stub = new WsERPSoap_BindingStub(new java.net.URL(wsERPSoap_address), this);
                 _stub.setPortName(getwsERPSoapWSDDServiceName());
                 return _stub;
             }
-            if (mypackage.WsERPSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                mypackage.WsERPSoap12Stub _stub = new mypackage.WsERPSoap12Stub(new java.net.URL(wsERPSoap12_address), this);
+            if (WsERPSoap_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                WsERPSoap12Stub _stub = new WsERPSoap12Stub(new java.net.URL(wsERPSoap12_address), this);
                 _stub.setPortName(getwsERPSoap12WSDDServiceName());
                 return _stub;
             }

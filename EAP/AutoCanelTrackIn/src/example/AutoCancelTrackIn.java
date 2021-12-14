@@ -10,7 +10,7 @@ public class AutoCancelTrackIn {
           CancelTrackInServiceServiceLocator cancelTrackInServiceServiceLocator = new CancelTrackInServiceServiceLocator();
           CancelTrackInService_PortType cancelTrackInService = cancelTrackInServiceServiceLocator.getCancelTrackInService();
           CancelTrackInDTO cancelTrackInDTO = new CancelTrackInDTO();
-          cancelTrackInDTO.setLotId("D2142001.02");
+          cancelTrackInDTO.setLotId("D2149002");
 //          cancelTrackInDTO.setLotId("aaa");
           cancelTrackInDTO.setOperId("903");
           cancelTrackInDTO.setReason("TEST EAP AutoCancel TrackIn");

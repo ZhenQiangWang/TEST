@@ -1,7 +1,5 @@
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 import java.util.List;
-import java.util.Set;
 
 public class Map {
     public static void main(String[] args) {
@@ -28,10 +26,20 @@ public class Map {
             String key = infos.getKey();
             Set<String> value = infos.getValue();
             System.out.println("key:"+key+"value:"+value.toString());
-
-
         }
 
+        List<HashMap<String, Object>> maps = new ArrayList<>();
+        HashMap<String, Object> objectObjectHashMap1 = new HashMap<>();
+        objectObjectHashMap1.put("123","456");
+        maps.add(objectObjectHashMap1);
+        for (java.util.Map<String, Object> map : maps) {
+            String str = (String)map.get("123");
+            map.put("234","456");
+        }
+        System.out.println("11");
 
+        String lotId = "D2035017,D2035015.01";
+
+        System.out.println(lotId);
     }
 }

@@ -129,34 +129,7 @@ public class WMSClient {
                     "  </DTL> \n" +
                     "</MST> ";*/
 
-            String mesCompleteStr = "<MST>\n" +
-                    " <center>DX</center>\n" +
-                    " <source>SYMES</source>\n" +
-                    " <service>mes_Completion</service>\n" +
-                    " <keyno>QAZWSXEDC</keyno>\n" +
-                    " <DTL>\n" +
-//                    "  <attkey></attkey>\n" +
-                    "  <attkey/>\n" +
-                    "  <bibb32>21/11/30</bibb32>\n" +
-                    "  <bibb181>D2010001</bibb181>\n" +
-                    "  <meslot>D2010001</meslot>\n" +
-//                    "  <bin1></bin1>\n" +
-                    "  <bin1/>\n" +
-                    "  <bibb27>Z</bibb27>\n" +
-                    "  <bsfv11>NG05-21110006</bsfv11>\n" +
-//                    "  <attvalue1></attvalue1>\n" +
-                    "  <attvalue1/>\n" +
-                    "  <bibb25>0</bibb25>\n" +
-                    "  <sfv03>sy211129_Product</sfv03>\n" +
-                    "  <sfv08>Pcs</sfv08>\n" +
-                    "  <sfv06>C0002</sfv06>\n" +
-                    "  <wflot>D2010001</wflot>\n" +
-                    "  <sfv09>100.0</sfv09>\n" +
-                    "  <bin>P</bin>\n" +
-                    "  <bibb011>123321</bibb011>\n" +
-                    " </DTL>\n" +
-                    " <user>tiptop</user>\n" +
-                    "</MST>";
+            String mesCompleteStr = "<MST><center>KS1</center><source>SYMES</source><DTL><attkey></attkey><attvalue>0.0</attvalue><bibb32>21/12/20</bibb32><bibb181>D2029011</bibb181><meslot>D2029011</meslot><bin1></bin1><bsfv11>PA03-KS1021120012</bsfv11><bibb27>Z</bibb27><attvalue1></attvalue1><bibb25>1</bibb25><bibb24></bibb24><sfv03>PANNAA00001</sfv03><wflot></wflot><bin>P</bin><sfv09>100.0</sfv09><sfv08>PCS</sfv08><sfv06>G01</sfv06><bibb011></bibb011></DTL><service>mes_Cancel_Completion</service><keyno>QAZWSXEDC</keyno><user>00000</user></MST>";
             DemoService_ServiceLocator demoService_serviceLocator = new DemoService_ServiceLocator();
             demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9191/services/api");
             DemoService_PortType demoServiceImplPort = demoService_serviceLocator.getDemoServiceImplPort();

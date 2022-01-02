@@ -1,0 +1,75 @@
+<Request>
+    <Access>
+        <Authentication password="tiptop" user="tiptop"/>
+        <Organization name="KS1"/>
+        <Locale language="zh_CN"/>
+        <Connection source="1234" application="asfi514"/>
+        <Appdevice timestamp="2021-12-17 16:13:39" appmodule="" appid="DJ-IMES-LLD"/>
+    </Access>
+    <RequestContent>
+        <Parameter>
+            <Record>
+                <Document>
+                    <RecordSet id="1">
+                        <Master name="Master">
+                            <Record>
+                                <Field name="formid" value="qwfnakdnfsa"/>
+                                <Field name="status" value="1"/>
+                                <Field name="sfpud06" value=""/>
+                                <Field name="sfp02" value="2021/12/17"/>
+                                <Field name="sfp16" value="00000"/>
+                                <Field name="fmes" value="1"/>
+                            </Record>
+                        </Master>
+                        <Detail name="Detail-A">
+                            <Record>
+                                <Field name="formid" value="qwfnakdnfsa"/>
+                                <Field name="sfs03" value="PA03-KS1021120012"/>
+                                <Field name="sfs04" value="A0201A00014"/>
+                                <Field name="sfs07" value="W31"/>
+                                <Field name="sfs08" value=" "/>
+                                <Field name="sfs09" value="CKS11CH9000001-1-1"/>
+                                <Field name="sfs10" value="GFG"/>
+                                <Field name="sfs30" value="PCS"/>
+                                <Field name="sfs05" value="20.0"/>
+                            </Record>
+                            <Record>
+                                <Field name="formid" value="qwfnakdnfsa"/>
+                                <Field name="sfs03" value="PA03-KS1021120012"/>
+                                <Field name="sfs04" value="A0201A00015"/>
+                                <Field name="sfs07" value="W31"/>
+                                <Field name="sfs08" value=" "/>
+                                <Field name="sfs09" value="CKS11CH9000002-1"/>
+                                <Field name="sfs10" value="GFG"/>
+                                <Field name="sfs30" value="PCS"/>
+                                <Field name="sfs05" value="20.0"/>
+                            </Record>
+                            <Record>
+                                <Field name="formid" value="qwfnakdnfsa"/>
+                                <Field name="sfs03" value="PA03-KS1021120012"/>
+                                <Field name="sfs04" value="A0201A00016"/>
+                                <Field name="sfs07" value="W31"/>
+                                <Field name="sfs08" value=" "/>
+                                <Field name="sfs09" value="CKS11CH9000003-1"/>
+                                <Field name="sfs10" value="GFG"/>
+                                <Field name="sfs30" value="PCS"/>
+                                <Field name="sfs05" value="20.0"/>
+                            </Record>
+                            <Record>
+                                <Field name="formid" value="qwfnakdnfsa"/>
+                                <Field name="sfs03" value="PA03-KS1021120012"/>
+                                <Field name="sfs04" value="A0201A00017"/>
+                                <Field name="sfs07" value="W31"/>
+                                <Field name="sfs08" value=" "/>
+                                <Field name="sfs09" value="CKS11CH9000004-1"/>
+                                <Field name="sfs10" value="GFG"/>
+                                <Field name="sfs30" value="PCS"/>
+                                <Field name="sfs05" value="20.0"/>
+                            </Record>
+                        </Detail>
+                    </RecordSet>
+                </Document>
+            </Record>
+        </Parameter>
+    </RequestContent>
+</Request>

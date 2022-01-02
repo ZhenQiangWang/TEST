@@ -13,15 +13,15 @@ public class AutoTrackOutService {
       AutoTrackOutServiceServiceLocator autoTrackOutServiceServiceLocator = new AutoTrackOutServiceServiceLocator();
       AutoTrackOutService_PortType autoTrackOutService = autoTrackOutServiceServiceLocator.getAutoTrackOutService();
       AutoTrackOutDTO autoTrackOutDTO = new AutoTrackOutDTO();
-      autoTrackOutDTO.setLotId("D2149002");
-      autoTrackOutDTO.setOperId("595");
+      autoTrackOutDTO.setLotId("D2201027");
+      autoTrackOutDTO.setOperId("00595");
       autoTrackOutDTO.setEqpId("PDDB06");
       autoTrackOutDTO.setMaterialBoxBarCode("52,lc");
       List<outputList> outputLists = new ArrayList<>();
       List<materialInfo> materialInfos = new ArrayList<>();
       outputList outputList1 = new outputList();
       outputList1.setType("Normal");
-      outputList1.setOutput("1");
+      outputList1.setOutput("10");
       /*List<reasonList> reasonLists1 = new ArrayList<>();
       reasonList reasonList = new reasonList();
       reasonList.setReasonQty("4");
@@ -55,11 +55,11 @@ public class AutoTrackOutService {
       outputList1.setReasonList(reasonLists1);*/
 
       materialInfo materialInfo = new materialInfo();
-      materialInfo.setMaterialNo("sy211130wzq");
+      materialInfo.setMaterialNo("DECBAA00212");
       List<materialList> materialLists = new ArrayList<>();
       materialList materialList = new materialList();
-      materialList.setMaterialLotNo("1242452452");
-      materialList.setMaterialQty("2");
+      materialList.setMaterialLotNo("2021122914");
+      materialList.setMaterialQty("15");
       materialLists.add(materialList);
       materialInfo.setMaterialList(materialLists);
       materialInfos.add(materialInfo);
@@ -67,12 +67,12 @@ public class AutoTrackOutService {
 
 
       materialInfo materialInfo2 = new materialInfo();
-      materialInfo2.setMaterialNo("01.02.01.30121C");
+      materialInfo2.setMaterialNo("M0507A00010");
       List<materialList> materialLotInfos2 = new ArrayList<>();
 
       materialList materialList2 = new materialList();
-      materialList2.setMaterialLotNo("2005160241DS1");
-      materialList2.setMaterialQty("2");
+      materialList2.setMaterialLotNo("CKS1CV6700001");
+      materialList2.setMaterialQty("25");
       materialLotInfos2.add(materialList2);
 
 

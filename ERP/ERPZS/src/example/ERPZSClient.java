@@ -122,6 +122,7 @@ public class ERPZSClient {
       CreateWOWorkReportDataResponse_CreateWOWorkReportDataResponse woWorkReportData = tiptopServiceGateWayPortType.createWOWorkReportData(createWOWorkReportDataRequest_createWOWorkReportDataRequest);
       System.out.println(woWorkReportData.getResponse());*/
 
+
       String strxml = "<Request><Access><Authentication user='' password=\"tiptop\" /><Organization name='' /><Locale language=\"zh_CN\"/><Connection application=\"axmi221\" source = \"1234\"/><Appdevice appid=\"Dynax-FWOA-axmi221\" appmodule=\"Dynax-FWOA\" timestamp=\"2021-01-01 00:00:00\"/></Access><RequestContent><Parameter><Record><Document><RecordSet id=\"1\"><Master name=\"Master\"><Record><Field name=\"occ01\" value=\"\" /><Field name=\"l_status\" value=\"2\" /></Record></Master></RecordSet></Document></Record></Parameter></RequestContent></Request>";
       MergeDataRequest_MergeDataRequest Request = new MergeDataRequest_MergeDataRequest();
       Request.setRequest(strxml);

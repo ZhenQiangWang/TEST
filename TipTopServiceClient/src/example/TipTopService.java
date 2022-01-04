@@ -20,13 +20,13 @@ public class TipTopService {
     private static final List<String> error = new ArrayList();
     public static void main(String[] argv) throws Exception {
 //        File file = new File("TipTopServiceClient/src/example/setMaterial1.sql");
-        File file = new File("TipTopServiceClient/src/example/reciveMaterial.sql");
+        File file = new File("TipTopServiceClient/src/example/wf.sql");
         BufferedReader reader = null;
         try {
             TipTopMycimServiceServiceLocator tipTopMycimServiceServiceLocator = new TipTopMycimServiceServiceLocator();
             TipTopMycimService_PortType tipTopMycimService = tipTopMycimServiceServiceLocator.getTipTopMycimService();
 //            reciveMaterial(tipTopMycimService);
-//            updateWorkOrder(tipTopMycimService);
+            updateWorkOrder(tipTopMycimService);
 //            workOrderClose(tipTopMycimService);
 //            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
@@ -35,34 +35,37 @@ public class TipTopService {
 //            closeWorkorder(tipTopMycimService);
             reader = new BufferedReader(new FileReader(file));
             String tempString = null;
-            int line = 100;
+            int line = 1;
             // 一次读入一行，直到读入null为文件结束
             System.out.println("开始导入。。。。");
-            while ((tempString = reader.readLine()) != null) {
+           /* while ((tempString = reader.readLine()) != null) {
                 // 显示行号
                 System.out.println("--------------------------------------------------------------");
                 System.out.println("line " + line + ": " + tempString);
                 String[] split = tempString.split("@");
-                /*String materialno = split[0].trim();//物料编码
-                String materialname = split[1];//物料名称
-                String materialspec = split[2];//规格型号
-                String unitno = split[3];//单位
-                String validDate = split[4];//失效日期
-                System.out.println("导入料号："+materialno+";名称："+materialname+";规格型号"+materialspec+";单位"+unitno+";失效日期"+validDate);
-                setMaterial(tipTopMycimService,materialno,materialname,materialspec,unitno,validDate);*/
 
-                String materialId = split[0];//物料编码
-                String billid = "DYNAX109-KS002201000"+line;//单据号
-                String lotNumber = split[1];//唯一值
+                *//*String lotNumber = split[0];//唯一值
+                String materialId = split[1];//物料编码
+                String billid = "DYNAX-KS002201000"+line;//单据号
                 String lotId = split[2];//物料批次号
                 String qty = split[4];//数量
                 String waferId = split[1];//waferId
                 String trayId = split[2];//trayId
-                System.out.println("导入料号："+materialId+";单据号："+billid+";lotNumber:"+lotNumber+";物料批次号:"+lotId+";数量"+qty);
+                 System.out.println("导入料号："+materialId+";单据号："+billid+";lotNumber:"+lotNumber+";物料批次号:"+lotId+";数量"+qty);*//*
+                String lotNumber = split[2];//唯一值
+                String materialId = split[0];//物料编码
+                String waferId = split[1];//waferId
+                String trayId = split[2];//trayId
+                String lotId = split[3];//物料批次号
+                String billid = "DYNAXWFT-KS002201000"+line;//单据号
+                String qty = split[4];//数量
+
+                System.out.println("导入料号："+materialId+";单据号："+billid+";lotNumber:"+lotNumber+";物料批次号:"+lotId+";数量"+qty+",waferId:"+waferId+",tryaId:"+trayId);
+
                 reciveMaterial(tipTopMycimService,billid,materialId,lotNumber,qty,lotId,waferId,trayId);
                 line++;
-                Thread.sleep(5000);
-            }
+                Thread.sleep(2000);
+            }*/
             reader.close();
             System.out.println("导入完成");
             System.out.println("有问题："+error);
@@ -173,10 +176,10 @@ public class TipTopService {
                     "<billId>"+billId+"</billId>\n" +//调拨单号
                     "<materialId>"+materialId+"</materialId>\n" +//物料编码
                     "<lotNumber>"+lotNumber+"</lotNumber>\n" +//唯一码
-                    "<waferId></waferId>\n" +//waferID
-                    "<trayId></trayId>\n" +//trayId
-//                    "<waferId>"+waferId+"</waferId>\n" +//waferID
-//                    "<trayId>"+trayId+"</trayId>\n" +//trayId
+//                    "<waferId></waferId>\n" +//waferID
+//                    "<trayId></trayId>\n" +//trayId
+                    "<waferId>"+waferId+"</waferId>\n" +//waferID
+                    "<trayId>"+trayId+"</trayId>\n" +//trayId
                     "<expirationDate>2071-12-29</expirationDate>\n" +
                     "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
                     "<qty>"+qty+"</qty>\n" +//数量
@@ -426,7 +429,7 @@ public class TipTopService {
                 "  <mono>\n" +
                 "    <name>MONo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PA03-KS0021120002123321951</value>\n" +
+                "    <value>PA04</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mono>\n" +
                 "  <rono>\n" +
@@ -499,34 +502,19 @@ public class TipTopService {
                 "    <name>MOMaterialList</name>\n" +
                 "    <type>String</type>\n" +
                 "    <value>\n" +
-                "      <materialno>DECBAA00212</materialno>\n" +
+                "      <materialno>DECBCA00284</materialno>\n" +
                 "      <materiallevel>     1</materiallevel>\n" +
                 "      <stdqty>        1.00000000</stdqty>\n" +
                 "      <unitno>PCS</unitno>\n" +
                 "      <opno>GFG</opno>\n" +
                 "      <putinplacetype>3</putinplacetype>\n" +
-                "      <substitutematerialno>DECBAA00212</substitutematerialno>\n" +
+                "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
                 "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
                 "      <substitutestdqty>        1.10000000</substitutestdqty>\n" +
                 "      <requireqty>            330.000000</requireqty>\n" +
                 "      <characteristics>N</characteristics>\n" +
                 "      <wfid>           </wfid>\n" +
-                "     </value>\n" +
-                "    <value>\n" +
-                "      <materialno>M0507A00010</materialno>\n" +
-                "      <materiallevel>     0</materiallevel>\n" +
-                "      <stdqty>        2.00000000</stdqty>\n" +
-                "      <unitno>PCS</unitno>\n" +
-                "      <opno>GFG</opno>\n" +
-                "      <putinplacetype>3</putinplacetype>\n" +
-                "      <substitutematerialno>M0507A00010</substitutematerialno>\n" +
-                "      <substitutemateriallevel>     0</substitutemateriallevel>\n" +
-                "      <substitutestdqty>        2.20000000</substitutestdqty>\n" +
-                "      <requireqty>            660.000000</requireqty>\n" +
-                "      <characteristics>N</characteristics>\n" +
-                "      <wfid>           </wfid>\n" +
-                "     </value>\n" +
-                "\n" +
+                "     </value>\n"+
                 "  </momateriallist>\n" +
                 " </parameter>\n" +
                 "</request>\n";
@@ -673,7 +661,7 @@ public class TipTopService {
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PANNTA00610123321</value>\n" +
+                "    <value>WZQ</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +
@@ -727,7 +715,7 @@ public class TipTopService {
                 "  <productCategory>\n" +
                 "    <name>productCategory</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>Y</value>\n" +
+                "    <value>M Lot</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productCategory>\n" +
                 "  <packageType>>\n" +

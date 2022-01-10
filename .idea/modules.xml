@@ -20,8 +20,9 @@
       <module fileurl="file://$PROJECT_DIR$/EAP/GetReasonCodeService/GetReasonCodeService.iml" filepath="$PROJECT_DIR$/EAP/GetReasonCodeService/GetReasonCodeService.iml" />
       <module fileurl="file://$PROJECT_DIR$/EAP/HoldLotService/HoldLotService.iml" filepath="$PROJECT_DIR$/EAP/HoldLotService/HoldLotService.iml" />
       <module fileurl="file://$PROJECT_DIR$/IMES/IMES.iml" filepath="$PROJECT_DIR$/IMES/IMES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OA/OA.iml" filepath="$PROJECT_DIR$/OA/OA.iml" />
       <module fileurl="file://$PROJECT_DIR$/OAHRM/OAHRM.iml" filepath="$PROJECT_DIR$/OAHRM/OAHRM.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OA/OA_Model/OA_Model.iml" filepath="$PROJECT_DIR$/OA/OA_Model/OA_Model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OASendALarm/OA_Model/OA_Model.iml" filepath="$PROJECT_DIR$/OASendALarm/OA_Model/OA_Model.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestApi/TestApi.iml" filepath="$PROJECT_DIR$/TestApi/TestApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" filepath="$PROJECT_DIR$/TestXmlToObject/TestXmlToObject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/TipTopErpReciveWorkOrderClient/TipTopErpReciveWorkOrderClient.iml" filepath="$PROJECT_DIR$/ERP/TipTopErpReciveWorkOrderClient/TipTopErpReciveWorkOrderClient.iml" />

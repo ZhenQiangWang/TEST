@@ -26,11 +26,11 @@ public class TipTopService {
             TipTopMycimServiceServiceLocator tipTopMycimServiceServiceLocator = new TipTopMycimServiceServiceLocator();
             TipTopMycimService_PortType tipTopMycimService = tipTopMycimServiceServiceLocator.getTipTopMycimService();
 //            reciveMaterial(tipTopMycimService);
-            updateWorkOrder(tipTopMycimService);
+//            updateWorkOrder(tipTopMycimService);
 //            workOrderClose(tipTopMycimService);
 //            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
-//            setProduct(tipTopMycimService);
+            setProduct(tipTopMycimService);
 //            setMaterial(tipTopMycimService);
 //            closeWorkorder(tipTopMycimService);
             reader = new BufferedReader(new FileReader(file));
@@ -429,7 +429,7 @@ public class TipTopService {
                 "  <mono>\n" +
                 "    <name>MONo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PA04</value>\n" +
+                "    <value>PA05</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mono>\n" +
                 "  <rono>\n" +
@@ -465,7 +465,7 @@ public class TipTopService {
                 "  <productno>\n" +
                 "    <name>ItemNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PANNRA00546</value>\n" +
+                "    <value>WZQ1</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <motypeno>\n" +
@@ -507,6 +507,20 @@ public class TipTopService {
                 "      <stdqty>        1.00000000</stdqty>\n" +
                 "      <unitno>PCS</unitno>\n" +
                 "      <opno>GFG</opno>\n" +
+                "      <putinplacetype>3</putinplacetype>\n" +
+                "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
+                "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
+                "      <substitutestdqty>        1.10000000</substitutestdqty>\n" +
+                "      <requireqty>            330.000000</requireqty>\n" +
+                "      <characteristics>N</characteristics>\n" +
+                "      <wfid>           </wfid>\n" +
+                "     </value>\n"+
+                "    <value>\n" +
+                "      <materialno>DECBCA00284</materialno>\n" +
+                "      <materiallevel>     1</materiallevel>\n" +
+                "      <stdqty>        1.00000000</stdqty>\n" +
+                "      <unitno>PCS</unitno>\n" +
+                "      <opno>LM</opno>\n" +
                 "      <putinplacetype>3</putinplacetype>\n" +
                 "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
                 "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
@@ -661,7 +675,7 @@ public class TipTopService {
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>WZQ</value>\n" +
+                "    <value>WZQ2</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +

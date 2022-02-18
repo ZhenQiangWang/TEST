@@ -13,9 +13,9 @@ public class AutoCancelTrackIn {
           CancelTrackInService_PortType cancelTrackInService = cancelTrackInServiceServiceLocator.getCancelTrackInService();
 
           CancelTrackInDTO cancelTrackInDTO = new CancelTrackInDTO();
-          cancelTrackInDTO.setLotId("D2151001");
+          cancelTrackInDTO.setLotId("D2149002");
 //          cancelTrackInDTO.setLotId("aaa");
-          cancelTrackInDTO.setOperId("903");
+          cancelTrackInDTO.setOperId("00903");
           cancelTrackInDTO.setReason("TEST EAP AutoCancel TrackIn");
           System.out.println(JSON.toJSONString(cancelTrackInDTO));
           String summer = cancelTrackInService.cancelTrackInService(JSON.toJSONString(cancelTrackInDTO));

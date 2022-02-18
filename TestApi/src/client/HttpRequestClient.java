@@ -7,13 +7,19 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.RequestBuilder;
+import org.apache.http.entity.AbstractHttpEntity;
 import org.apache.http.entity.ContentType;
+import org.apache.http.entity.InputStreamEntity;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -33,7 +39,7 @@ public class HttpRequestClient {
     private final static String TEST = "http://192.168.90.160:7001/mycim2/labelField.do?action=saveOrUpdate";
     private final static String LOGIN = "http://192.168.90.160:7001/mycim2/securitylogin.do?Content-Type";
     private final static String testEAP = "http://192.168.68.219:8100/tms/DynaxInterface/GetMeasureData";
-
+    private final static String fileDecryptionURL = "http://192.168.68.175:8081/sec-server/s/rs/uni/";
     private HttpClient httpClient = HttpClientBuilder.create()
             .setDefaultRequestConfig(getRequestConfig(DEFAULT_CONNECT_TIMEOUT, DEFAULT_READ_TIMEOUT))
             .build();
@@ -49,21 +55,47 @@ public class HttpRequestClient {
 
     public static void main(String[] args) throws Exception {
         HttpRequestClient httpRequestClient = new HttpRequestClient();
-//        String json = "{\"data\":{\"lotQty\":\"78.0\",\"materialBoxBarcode\":[\"wzq\",\"mconwo\"],\"materialCode\":\"01.01.01.30096T\",\"materialConsumeFlag\":\"Y\",\"materialNo\":[\"03.06.04.00004A\",\"03.06.03.00019A\"],\"priority\":\"\",\"processId\":\"D1H27110C1_TRAY\",\"product\":\"D1H27110C1\",\"productType\":\"Production\",\"recipeName\":\"UI-780P\",\"routeDesc\":\"贴片\",\"routeId\":\"D2130001\",\"stepDesc\":\"领料核对\",\"stepId\":\"TM\",\"testProgram\":\"UI-780P\",\"workOrder\":\"KSWOE-19100002\"},\"errorCode\":0,\"errorMsg\":\"成功\"}";
-//        String json = "{\"username\":\"admin\",\"password\":\"dynax\",\"facility\":\"1\",\"language\",\"CN\",\"reqCode\":\"login\"}";
-        TestEAPDTO testEAPDTO = new TestEAPDTO();
-        testEAPDTO.setEqpId("11");
-        testEAPDTO.setLotId("333");
-        testEAPDTO.setPortId("jiojoi");
-        String json = JSON.toJSONString(testEAPDTO);
-//        String json = "{\"eqpId\": \"11\",\"lotId\": \"123\",\"portId\": \"1\"}";
-        HttpResponse httpResponse = httpRequestClient.doPostResp(testEAP, json);
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost post = new HttpPost(fileDecryptionURL);
+        File file = new File("D:\\13.xlsx");
+        post.addHeader("method~name", "fileDecryptionRest"); //文件解密
+        post.addHeader("data~fileOffset", "0");
+        post.addHeader("data~counSize", file.length()+"");
+        InputStream in = new FileInputStream(file);
+
+        AbstractHttpEntity entity = new InputStreamEntity(in);
+        post.setEntity(entity);
+
+        CloseableHttpResponse response = httpclient.execute(post);
+        String result = response.getFirstHeader("data~returnFlag").getValue();
+        if("0".equals(result)){//0 表示成功
+            System.out.println("解密成功");
+//            OutputStream out = new FileOutputStream(new File("D:\\jiemi.txt"));
+
+            InputStream ins = response.getEntity().getContent();
+            InputStreamReader inputStreamReader = new InputStreamReader(ins,"UTF-8");
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null){{
+                System.out.println(line);
+            }
+
+            }
+            /*byte[] bs = new byte[1024];
+            int len = 0;
+            while((len=ins.read(bs))>-1){
+                out.write(bs, 0, len);
+            }*/
+//            out.flush();
+//            out.close();
+        }
+        /*HttpResponse httpResponse = httpRequestClient.doPostResp(testEAP, json);
         HttpEntity entity = httpResponse.getEntity();
         if (entity != null) {
             String result = EntityUtils.toString(entity, "UTF-8");
             resultVO resultVO = JSON.parseObject(result, resultVO.class);
             System.out.println(result);
-        }
+        }*/
     }
 
     /**

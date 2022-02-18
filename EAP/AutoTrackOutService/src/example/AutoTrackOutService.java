@@ -13,28 +13,29 @@ public class AutoTrackOutService {
       AutoTrackOutServiceServiceLocator autoTrackOutServiceServiceLocator = new AutoTrackOutServiceServiceLocator();
       AutoTrackOutService_PortType autoTrackOutService = autoTrackOutServiceServiceLocator.getAutoTrackOutService();
       AutoTrackOutDTO autoTrackOutDTO = new AutoTrackOutDTO();
-      autoTrackOutDTO.setLotId("D2201027");
+      autoTrackOutDTO.setLotId("D2201025");
       autoTrackOutDTO.setOperId("00595");
       autoTrackOutDTO.setEqpId("PDDB06");
       autoTrackOutDTO.setMaterialBoxBarCode("52,lc");
+
       List<outputList> outputLists = new ArrayList<>();
       List<materialInfo> materialInfos = new ArrayList<>();
       outputList outputList1 = new outputList();
       outputList1.setType("Normal");
-      outputList1.setOutput("10");
-      /*List<reasonList> reasonLists1 = new ArrayList<>();
+      outputList1.setOutput("-1");
+      List<reasonList> reasonLists1 = new ArrayList<>();
       reasonList reasonList = new reasonList();
-      reasonList.setReasonQty("4");
-      reasonList.setCodeType("loss");
-      reasonList.setReasonCode("BIN4");
-      reasonList.setReasonDesc("AT20：管壳划伤");
-      List<String> sns2 = new ArrayList<>();
+      reasonList.setReasonQty(null);
+      reasonList.setCodeType(null);
+      reasonList.setReasonCode(null);
+      reasonList.setReasonDesc(null);
+      /*List<String> sns2 = new ArrayList<>();
       sns2.add("1");
-      sns2.add("2");
-      reasonList.setReasonSN(sns2);
+      sns2.add("2");*/
+      reasonList.setReasonSN(null);
       reasonLists1.add(reasonList);
 
-      reasonList reasonList3 = new reasonList();
+      /*reasonList reasonList3 = new reasonList();
       List<String> sns1 = new ArrayList<>();
       sns1.add("3");
       sns1.add("4");
@@ -55,18 +56,18 @@ public class AutoTrackOutService {
       outputList1.setReasonList(reasonLists1);*/
 
       materialInfo materialInfo = new materialInfo();
-      materialInfo.setMaterialNo("DECBAA00212");
+      materialInfo.setMaterialNo("DECBCA00284");
       List<materialList> materialLists = new ArrayList<>();
       materialList materialList = new materialList();
-      materialList.setMaterialLotNo("2021122914");
-      materialList.setMaterialQty("15");
+      materialList.setMaterialLotNo("CKS1CX0200084111");
+      materialList.setMaterialQty("1.1");
       materialLists.add(materialList);
       materialInfo.setMaterialList(materialLists);
       materialInfos.add(materialInfo);
 
 
 
-      materialInfo materialInfo2 = new materialInfo();
+      /*materialInfo materialInfo2 = new materialInfo();
       materialInfo2.setMaterialNo("M0507A00010");
       List<materialList> materialLotInfos2 = new ArrayList<>();
 
@@ -77,7 +78,7 @@ public class AutoTrackOutService {
 
 
       materialInfo2.setMaterialList(materialLotInfos2);
-      materialInfos.add(materialInfo2);
+      materialInfos.add(materialInfo2);*/
       outputList1.setMaterialInfo(materialInfos);
 
 

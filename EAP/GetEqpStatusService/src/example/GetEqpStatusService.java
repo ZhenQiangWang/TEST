@@ -9,7 +9,7 @@ public class GetEqpStatusService {
     try {
       GetEqpStatusServiceServiceLocator getEqpStatusServiceServiceLocator = new GetEqpStatusServiceServiceLocator();
       GetEqpStatusService_PortType getEqpStatusService = getEqpStatusServiceServiceLocator.getGetEqpStatusService();
-      String summer = getEqpStatusService.getEqpStatusService("NA");
+      String summer = getEqpStatusService.getEqpStatusService("PWWB04");
       System.out.println(summer);
     } catch (Exception ex) {
       ex.printStackTrace();

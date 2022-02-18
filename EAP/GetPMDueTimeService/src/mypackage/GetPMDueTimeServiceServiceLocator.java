@@ -22,7 +22,9 @@ public class GetPMDueTimeServiceServiceLocator extends org.apache.axis.client.Se
     }
 
     // Use to get a proxy class for GetPMDueTimeService
-    private java.lang.String GetPMDueTimeService_address = "http://192.168.90.160:7001/mycim2/services/GetPMDueTimeService";
+//    private java.lang.String GetPMDueTimeService_address = "http://192.168.90.160:7001/mycim2/services/GetPMDueTimeService";
+    private java.lang.String GetPMDueTimeService_address = "http://192.168.68.60:7001/mycim2/services/GetPMDueTimeService";
+//    private java.lang.String GetPMDueTimeService_address = "http://192.168.68.95/mycim2/services/GetPMDueTimeService";
 
     public java.lang.String getGetPMDueTimeServiceAddress() {
         return GetPMDueTimeService_address;

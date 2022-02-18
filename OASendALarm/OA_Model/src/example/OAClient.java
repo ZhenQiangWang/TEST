@@ -9,7 +9,7 @@ public class OAClient {
             ModeDateServiceLocator modeDateServiceLocator = new ModeDateServiceLocator();
             ModeDateServicePortType modeDateServiceHttpPort = modeDateServiceLocator.getModeDateServiceHttpPort();
             String modeid = "9501";
-            String khmc = "接口测试调用消息提醒";
+            String khmc = "MYCIM系统提醒";
             String dataid = "";
             String doPageexpandInterface = "Y";
             String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
@@ -31,7 +31,7 @@ public class OAClient {
             xml += "<filedname>xtb</filedname>";//数据库名称
             xml += "<filedlabel>xtb</filedlabel>";//字段名称  系统别
             xml += "<fileddbtype>NUMBER(38,0)</fileddbtype>";//数据库类型
-            xml += "<filedvalue>" + 1 + "</filedvalue>";//字段的值
+            xml += "<filedvalue>" + 2 + "</filedvalue>";//字段的值
             xml += "<fieldshowname>名称</fieldshowname>";
             xml += "</field>";
 
@@ -47,7 +47,7 @@ public class OAClient {
             xml += "<filedname>txry</filedname>";//数据库名称
             xml += "<filedlabel>txry</filedlabel>";//字段名称  提醒人员
             xml += "<fileddbtype>CLOB</fileddbtype>";//数据库类型
-            xml += "<filedvalue>" + "110,504,543" + "</filedvalue>";//字段的值
+            xml += "<filedvalue>" + "110" + "</filedvalue>";//字段的值
             xml += "<fieldshowname>名称</fieldshowname>";
             xml += "</field>";
 
@@ -55,7 +55,7 @@ public class OAClient {
             xml += "<filedname>txsj</filedname>";//数据库名称
             xml += "<filedlabel>txsj</filedlabel>";//字段名称  提醒时间
             xml += "<fileddbtype>VARCHAR2(100 BYTE)</fileddbtype>";//数据库类型
-            xml += "<filedvalue>" + "2021-12-15 13:30:00" + "</filedvalue>";//字段的值
+            xml += "<filedvalue>" + "2022-2-17 17:05:00" + "</filedvalue>";//字段的值
             xml += "<fieldshowname>名称</fieldshowname>";
             xml += "</field>";
             xml += "</maintable>";

@@ -22,7 +22,7 @@ public class CancelTrackInServiceServiceLocator extends org.apache.axis.client.S
     }
 
     // Use to get a proxy class for CancelTrackInService
-    private java.lang.String CancelTrackInService_address = "http://192.168.90.160:7001/mycim2/services/CancelTrackInService";
+    private java.lang.String CancelTrackInService_address = "http://localhost:7001/mycim2/services/CancelTrackInService";
 //    private java.lang.String CancelTrackInService_address = "http://192.168.68.60:7001/mycim2/services/CancelTrackInService";
 //    private java.lang.String CancelTrackInService_address = "http://192.168.68.95/mycim2/services/CancelTrackInService";
 

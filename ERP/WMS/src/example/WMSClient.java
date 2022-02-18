@@ -1,140 +1,57 @@
 package example;
 
-import com.alibaba.fastjson.JSON;
-import com.google.gson.Gson;
-import example.Bean.materialVO;
 import example.tool.XmlJsonTransform;
 import mypackage.DemoService_PortType;
 import mypackage.DemoService_ServiceLocator;
 import mypackage.Result;
-import org.json.JSONObject;
-import org.json.XML;
-
-import java.util.ArrayList;
 
 
 public class WMSClient {
 
     public static void main(String[] argv) {
         try {
-            ArrayList<String> trayId = new ArrayList<>();
-            trayId.add("tray1");
-            trayId.add("tray2");
-            materialVO materialVO = new materialVO();
-            materialVO.setMaterialId("料号");
-            materialVO.setQTY(10.00);
-            materialVO.setBillId("调拨单号");
-            materialVO.setTrnflinwarehouse("拨出仓库");
-            materialVO.setLotNumber("物料批次号");
-            materialVO.setExpirationDate("失效日期dd/MM/yyyy");
-            materialVO.setWaferId("waferId");
-            materialVO.setTrayId(trayId);
-            materialVO.setComments("");
-            Gson gson = new Gson();
-            String jsonStr = JSON.toJSONString(materialVO);
-            String gsonStr = gson.toJson(materialVO);
 
-            String jsonXml = XML.toString(new JSONObject(jsonStr));
-            String gsonXml = XML.toString(new JSONObject(gsonStr));
-            System.out.println(jsonXml);
-            System.out.println(gsonXml);
-            /*String transfer =
-//                    "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
-                    "<MST>\n" +
-                    "<source>SYMES</source>\n" +
-                    "<user>tiptop</user>\n" +
-                    "<service>transfer</service>\n" +
-                    "<center>DX</center>\n" +
-                    "<keyno>QAZWSXEDC</keyno>\n" +
-                    "<trnfdocno>A101-2110060001</trnfdocno>\n" +
-                    "<trnfdocdt>2021/10/06</trnfdocdt>\n" +
-                    "<trnfstaff>60272</trnfstaff>\n" +
-                    "<trnfdept>YX01</trnfdept>\n" +
-                    "<trnfmemo> </trnfmemo>\n" +
-                    "<trnfplant>NX</trnfplant>\n" +
-                    "<trnfcrtid>60272</trnfcrtid>\n" +
-                    "<trnfcrtdept>YX01</trnfcrtdept>\n" +
-                    "<trnfconflag>Y</trnfconflag>\n" +
-                    "<trnfcondate>2021/10/06</trnfcondate>\n" +
-                    "<trnfconuser>60272</trnfconuser>\n" +
-                    "<DTL>\n" +
-                    "<trnfldocno>A101-2110060001</trnfldocno>\n" +
-                    "<trnflseq>1</trnflseq>\n" +
-                    "<trnflitem>CS17A64.AiP1302.SA8.TR</trnflitem>\n" +
-                    "<trnfloutqty>25</trnfloutqty>\n" +
-                    "<trnfloutunit>PCS</trnfloutunit>\n" +
-                    "<trnfloutwarehouse>WX006</trnfloutwarehouse>\n" +
-                    "<trnfloutbatch>30B</trnfloutbatch>\n" +
-                    "<trnfloutplant>NX</trnfloutplant>\n" +
-                    "<trnflinqty>25</trnflinqty>\n" +
-                    "<trnflinunit>PCS</trnflinunit>\n" +
-                    "<trnflinwarehouse>SZ001</trnflinwarehouse>\n" +
-                    "<trnflinbatch>30B</trnflinbatch>\n" +
-                    "<trnflinplant>NX</trnflinplant>\n" +
-                    "<idbcnt>1</idbcnt>\n" +
-                    "<idbengravedno>30AE024</idbengravedno>\n" +
-                    "<idbbinlevel>BIN01</idbbinlevel>\n" +
-                    "<idbqty>4980</idbqty>\n" +
-                    "<cassteno>cassteno01</cassteno>\n" +
-                    "<lasermark>U291312314</lasermark>\n" +
-                    "<bresitivity>1.7E+11</bresitivity>\n" +
-                    "<sresitivity>1.7E+11</sresitivity>\n" +
-                    "</DTL>\n" +
-                    "<DTL>\n" +
-                    "<trnfldocno>A101-2110060001</trnfldocno>\n" +
-                    "<trnflseq>1</trnflseq>\n" +
-                    "<trnflitem>XG1002.ATMLH950.SA8.TR</trnflitem>\n" +
-                    "<trnfloutqty>25</trnfloutqty>\n" +
-                    "<trnfloutunit>PCS</trnfloutunit>\n" +
-                    "<trnfloutwarehouse>WX006</trnfloutwarehouse>\n" +
-                    "<trnfloutbatch>DMS329</trnfloutbatch>\n" +
-                    "<trnfloutplant>AX</trnfloutplant>\n" +
-                    "<trnflinqty>25</trnflinqty>\n" +
-                    "<trnflinunit>PCS</trnflinunit>\n" +
-                    "<trnflinwarehouse>SZ001</trnflinwarehouse>\n" +
-                    "<trnflinbatch>DMS329</trnflinbatch>\n" +
-                    "<trnflinplant>AX</trnflinplant>\n" +
-                    "<idbcnt>2</idbcnt>\n" +
-                    "<idbengravedno>Z9G2044</idbengravedno>\n" +
-                    "<idbbinlevel>BIN01</idbbinlevel>\n" +
-                    "<idbqty>5000</idbqty>\n" +
-                    "<cassteno>cassteno01</cassteno>\n" +
-                    "<lasermark>U291312315</lasermark>\n" +
-                    "<bresitivity>1.7E+11</bresitivity>\n" +
-                    "<sresitivity>1.7E+11</sresitivity>\n" +
-                    "</DTL>\n" +
-                    "</MST>\n";
-
-            String Completion = "<MST> \n" +
-                    "  <source>SYMES</source>\n" +
-                    "  <user>tiptop</user>\n" +
-                    "  <keyno>QAZWSXEDC</keyno>\n" +
-                    "  <service>mes_Completion</service>\n" +
-                    "  <center>DX</center>\n" +
-                    "  <DTL> \n" +
-                    "   <bsfv11>SC2012030001</bsfv11>\n" +
-                    "  <bibb24>XS2012200001</bibb24>\n" +
-                    "  <bibb25>1</bibb25>\n" +
-                    "  <bibb27>K001</bibb27>\n" +
-                    "  <bibb011>3.MC3400系列-CCD版-通富微-DFN-AS;Q2000;LMW19470018;20201015</bibb011>\n" +
-                    "  <sfv03>1MC3711AACB-FT</sfv03>\n" +
-                    "  <sfv06>MEMS01</sfv06>\n" +
-                    "  <bibb181>LMW19470018</bibb181>\n" +
-                    "  <meslot>12345678</meslot>\n" +
-                    "  <sfv09>2000</sfv09>\n" +
-                    "  <sfv08>EA</sfv08>\n" +
-                    "  <wflot>WFLOT01</wflot>\n" +
-                    "  <bibb32>20/12/20</bibb32>\n" +
-                    "  <bin>BIN01</bin>\n" +
-                    "  </DTL> \n" +
-                    "</MST> ";*/
-
-            String mesCompleteStr = "<MST><center>KS1</center><source>SYMES</source><DTL><attkey></attkey><attvalue>0.0</attvalue><bibb32>21/12/20</bibb32><bibb181>D2029011</bibb181><meslot>D2029011</meslot><bin1></bin1><bsfv11>PA03-KS1021120012</bsfv11><bibb27>Z</bibb27><attvalue1></attvalue1><bibb25>1</bibb25><bibb24></bibb24><sfv03>PANNAA00001</sfv03><wflot></wflot><bin>P</bin><sfv09>100.0</sfv09><sfv08>PCS</sfv08><sfv06>G01</sfv06><bibb011></bibb011></DTL><service>mes_Cancel_Completion</service><keyno>QAZWSXEDC</keyno><user>00000</user></MST>";
+            String mesCompleteStr = "<MST>\n" +
+                    "\t<mcludocdt>2022/01/26</mcludocdt>\n" +
+                    "\t<DTL>\n" +
+                    "\t\t<mclulunit>PCS</mclulunit>\n" +
+                    "\t\t<cassteno>CKS1CX0100800</cassteno>\n" +
+                    "\t\t<mcluldocno>1643164237301</mcluldocno>\n" +
+                    "\t\t<mclulitem>PANNRA00390</mclulitem>\n" +
+                    "\t\t<idbengravedno/>\n" +
+                    "\t\t<idbqty>600.0</idbqty>\n" +
+                    "\t\t<lasermark/>\n" +
+                    "\t\t<mclulbatch>D2052009_1</mclulbatch>\n" +
+                    "\t\t<mclulseq>1</mclulseq>\n" +
+                    "\t\t<mclulqty>600.0</mclulqty>\n" +
+                    "\t\t<idbbinlevel>P</idbbinlevel>\n" +
+                    "\t\t<bresitivity/>\n" +
+                    "\t\t<mclulplant>KS</mclulplant>\n" +
+                    "\t\t<sresitivity/>\n" +
+                    "\t\t<idbcnt>1</idbcnt>\n" +
+                    "\t\t<mclulwarehouse>G01</mclulwarehouse>\n" +
+                    "\t</DTL>\n" +
+                    "\t<mcludocno>1643164237301</mcludocno>\n" +
+                    "\t<mcludept>W31</mcludept>\n" +
+                    "\t<keyno>QAZWSXEDC</keyno>\n" +
+                    "\t<mcluplant>KS</mcluplant>\n" +
+                    "\t<mclusource>transfer</mclusource>\n" +
+                    "\t<mclucondate>2022/01/26</mclucondate>\n" +
+                    "\t<center>KS</center>\n" +
+                    "\t<mclucrtid>00228</mclucrtid>\n" +
+                    "\t<mclutype>3</mclutype>\n" +
+                    "\t<mclumemo>myCIM退回</mclumemo>\n" +
+                    "\t<source>TOPGP</source>\n" +
+                    "\t<service>otherinventory_sy</service>\n" +
+                    "\t<mcluconflag>Y</mcluconflag>\n" +
+                    "\t<mcluconuser>00228</mcluconuser>\n" +
+                    "\t<user>00228</user>\n" +
+                    "\t<mclucrtdept/>\n" +
+                    "\t<mclustaff>00228</mclustaff>\n" +
+                    "</MST>";
             DemoService_ServiceLocator demoService_serviceLocator = new DemoService_ServiceLocator();
-            demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9191/services/api");
+            demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9091/services/api");
             DemoService_PortType demoServiceImplPort = demoService_serviceLocator.getDemoServiceImplPort();
-            XmlJsonTransform xmlJsonTransform = new XmlJsonTransform();
-//            JSONObject xmltojson = xmlJsonTransform.XMLTOJSON(Completion);
             Result result = demoServiceImplPort.webGen(mesCompleteStr);
             System.out.println(result.getMsg());
         } catch (Exception ex) {

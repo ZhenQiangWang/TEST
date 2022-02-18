@@ -129,7 +129,7 @@ public class ERPZSClient {
               "\t\t<Organization name=\"KS\"/>\n" +
               "\t\t<Locale language=\"zh_CN\"/>\n" +
               "\t\t<Connection source=\"1234\" application=\"asfi300\"/>\n" +
-              "\t\t<Appdevice timestamp=\"2022-01-06 17:33:16\" appmodule=\"\" appid=\"DJ-IMES-BGD\"/>\n" +
+              "\t\t<Appdevice timestamp=\"2022/01/11\" appmodule=\"\" appid=\"DJ-IMES-BGD\"/>\n" +
               "\t</Access>\n" +
               "\t<RequestContent>\n" +
               "\t\t<Parameter>\n" +
@@ -138,30 +138,30 @@ public class ERPZSClient {
               "\t\t\t\t\t<RecordSet id=\"1\">\n" +
               "\t\t\t\t\t\t<Master name=\"Master\">\n" +
               "\t\t\t\t\t\t\t<Record>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"[D50M065/D50M033.05]2022/01/06\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"[D2202001]-12022/01/11\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"status\" value=\"1\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srf01\" value=\"\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srf02\" value=\"2022/01/06\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srf02\" value=\"2022/01/11\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srforiu\" value=\"00913\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srf03\" value=\"PKG\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srf04\" value=\"A01\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srf04\" value=\"2022/01/06\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srfud03\" value=\"[D50M065/D50M033.05]2022/01/06\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srf04\" value=\"2022/01/11\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srfud03\" value=\"[D2202001]2022/01/11\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"fmes\" value=\"1\"/>\n" +
               "\t\t\t\t\t\t\t</Record>\n" +
               "\t\t\t\t\t\t</Master>\n" +
               "\t\t\t\t\t\t<Detail name=\"Detail-A\">\n" +
               "\t\t\t\t\t\t\t<Record>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srg16\" value=\"PA05-KS0021120001\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srg03\" value=\"PANNRA00546\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg16\" value=\"PA03-KS0022010001\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg03\" value=\"PANNTA00633\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srgud02\" value=\"PKG\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srg04\" value=\"PCS\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srg05\" value=\"500.0\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg05\" value=\"120.0\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srg06\" value=\"\"/>\n" +
               "\t\t\t\t\t\t\t\t<Field name=\"srg07\" value=\"\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srg10\" value=\"4322.05\"/>\n" +
-              "\t\t\t\t\t\t\t\t<Field name=\"srg19\" value=\"4322.05\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg10\" value=\"10430\"/>\n" +
+              "\t\t\t\t\t\t\t\t<Field name=\"srg19\" value=\"10430\"/>\n" +
               "\t\t\t\t\t\t\t</Record>\n" +
               "\t\t\t\t\t\t</Detail>\n" +
               "\t\t\t\t\t</RecordSet>\n" +
@@ -169,7 +169,7 @@ public class ERPZSClient {
               "\t\t\t</Record>\n" +
               "\t\t</Parameter>\n" +
               "\t</RequestContent>\n" +
-              "</Request>\t";
+              "</Request>";
 
 
       MergeDataRequest_MergeDataRequest Request = new MergeDataRequest_MergeDataRequest();

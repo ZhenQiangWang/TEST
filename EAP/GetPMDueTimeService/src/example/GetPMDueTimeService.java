@@ -8,7 +8,7 @@ public class GetPMDueTimeService {
         try {
             GetPMDueTimeServiceServiceLocator getPMDueTimeServiceServiceLocator = new GetPMDueTimeServiceServiceLocator();
             GetPMDueTimeService_PortType getPMDueTimeService = getPMDueTimeServiceServiceLocator.getGetPMDueTimeService();
-            String summer = getPMDueTimeService.getPMDueTimeService("PAPT01");
+            String summer = getPMDueTimeService.getPMDueTimeService("PWWB04");
             System.out.println(summer);
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -1,7 +1,7 @@
 package example;
 
 import com.alibaba.fastjson.JSON;
-import example.Bean.SubmitToTipTopVO;
+//import example.Bean.SubmitToTipTopVO;
 import mypackage.TipTopMycimServiceServiceLocator;
 import mypackage.TipTopMycimService_PortType;
 import org.json.JSONObject;
@@ -30,14 +30,15 @@ public class TipTopService {
 //            workOrderClose(tipTopMycimService);
 //            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
-            setProduct(tipTopMycimService);
+//            setProduct(tipTopMycimService);
 //            setMaterial(tipTopMycimService);
 //            closeWorkorder(tipTopMycimService);
-            reader = new BufferedReader(new FileReader(file));
-            String tempString = null;
-            int line = 1;
+            deleteWorkorder(tipTopMycimService);
+//            reader = new BufferedReader(new FileReader(file));
+//            String tempString = null;
+//            int line = 1;
             // 一次读入一行，直到读入null为文件结束
-            System.out.println("开始导入。。。。");
+//            System.out.println("开始导入。。。。");
            /* while ((tempString = reader.readLine()) != null) {
                 // 显示行号
                 System.out.println("--------------------------------------------------------------");
@@ -66,9 +67,9 @@ public class TipTopService {
                 line++;
                 Thread.sleep(2000);
             }*/
-            reader.close();
-            System.out.println("导入完成");
-            System.out.println("有问题："+error);
+//            reader.close();
+//            System.out.println("导入完成");
+//            System.out.println("有问题："+error);
         } catch (Exception ex) {
             throw new Exception(ex);
         } finally {
@@ -79,6 +80,289 @@ public class TipTopService {
                 }
             }
         }
+    }
+
+    private static void deleteWorkorder(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
+        String delStr = "<request>\n" +
+                "  <identity>     \n" +
+                "     <transactionid>2008080508255010</transactionid>\n" +
+                "     <moduleid>TP</moduleid>\n" +
+                "     <functionid>SI</functionid>\n" +
+                "     <computername>MES01</computername>\n" +
+                "     <curuserno>TP</curuserno>\n" +
+                "     <sendtime>2008/08/05 08:25:50</sendtime>\n" +
+                "  </identity>\n" +
+                "  <parameter>\n" +
+                "     <mono>  --第二張工單編號\n" +
+                "        <name>MONo</name>\n" +
+                "        <type>String</type>\n" +
+                "        <value>123321</value>\n" +
+                "        <desc></desc>\n" +
+                "     </mono>\n" +
+                "   </parameter>\n" +
+                "</request>\n";
+        String result = tipTopMycimService.TipTopDeleteWorkOrder(delStr);
+        System.out.println(result);
+    }
+
+    private static void reciveMaterial(TipTopMycimService_PortType tipTopMycimService) {
+        try {
+            String strq = "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>03.06.05.00076A</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId>CKS1CX01015167</trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>PRNNRA0060709</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId></trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>\n" +
+                    "<tipTopMaterialInfoDTOS>\n" +
+                    "<billId>DB09-KS0022010064</billId>\n" +
+                    "<materialId>01.02.01.30099A</materialId>\n" +
+                    "<lotNumber>CKS1CX01015167</lotNumber>\n" +
+                    "<waferId></waferId>\n" +
+                    "<trayId>CKS1CX01015167</trayId>\n" +
+                    "<expirationDate>2022-12-29</expirationDate>\n" +
+                    "<trnflinwarehouse>W31</trnflinwarehouse>\n" +
+                    "<qty>10000.000</qty>\n" +
+                    "<comments>备注</comments>\n" +
+                    "<LotId>D2046049</LotId>\n" +
+                    "<productionDate>2020-12-29 00:00:00.0</productionDate>\n" +
+                    "<userId>00777</userId>\n" +
+                    "<trnfloutwarehouse>G01</trnfloutwarehouse>\n" +
+                    "</tipTopMaterialInfoDTOS>";
+            for (int i = 0; i <200 ; i++) {
+                String result = tipTopMycimService.tipTopReciveMaterial(strq);
+                System.out.println(result);
+                Thread.sleep(1000L);
+            }
+//            String result = tipTopMycimService.tipTopReciveMaterial(strq);
+//            System.out.println(result);
+//            if(result.contains("fail")){
+//                error.add(strq);
+//                throw new Exception(result);
+//            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static void closeWorkorder(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
@@ -429,7 +713,7 @@ public class TipTopService {
                 "  <mono>\n" +
                 "    <name>MONo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PA05</value>\n" +
+                "    <value>PA101112</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mono>\n" +
                 "  <rono>\n" +
@@ -465,7 +749,7 @@ public class TipTopService {
                 "  <productno>\n" +
                 "    <name>ItemNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>WZQ1</value>\n" +
+                "    <value>PANNRA0060700</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <motypeno>\n" +
@@ -506,7 +790,7 @@ public class TipTopService {
                 "      <materiallevel>     1</materiallevel>\n" +
                 "      <stdqty>        1.00000000</stdqty>\n" +
                 "      <unitno>PCS</unitno>\n" +
-                "      <opno>GFG</opno>\n" +
+                "      <opno>CB</opno>\n" +
                 "      <putinplacetype>3</putinplacetype>\n" +
                 "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
                 "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
@@ -514,13 +798,13 @@ public class TipTopService {
                 "      <requireqty>            330.000000</requireqty>\n" +
                 "      <characteristics>N</characteristics>\n" +
                 "      <wfid>           </wfid>\n" +
-                "     </value>\n"+
+                "     </value>\n" +
                 "    <value>\n" +
                 "      <materialno>DECBCA00284</materialno>\n" +
                 "      <materiallevel>     1</materiallevel>\n" +
                 "      <stdqty>        1.00000000</stdqty>\n" +
                 "      <unitno>PCS</unitno>\n" +
-                "      <opno>LM</opno>\n" +
+                "      <opno>UI</opno>\n" +
                 "      <putinplacetype>3</putinplacetype>\n" +
                 "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
                 "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
@@ -528,7 +812,7 @@ public class TipTopService {
                 "      <requireqty>            330.000000</requireqty>\n" +
                 "      <characteristics>N</characteristics>\n" +
                 "      <wfid>           </wfid>\n" +
-                "     </value>\n"+
+                "     </value>\n" +
                 "  </momateriallist>\n" +
                 " </parameter>\n" +
                 "</request>\n";
@@ -536,152 +820,152 @@ public class TipTopService {
         System.out.println(result);
     }
 
-    public static void submitToERP(TipTopMycimService_PortType tipTopMycimService) {
-        String str = "<Request>\n" +
-                "<Access>\n" +
-                "\n" +
-                "\n" +
-                "<Authentication password=\"tiptop\" user=\"tiptop\"/>\n" +
-                "\n" +
-                "\n" +
-                "\n" +
-                "<Organization name=\"OBDEMO\"/>\n" +
-                "\n" +
-                "\n" +
-                "<Locale language=\"zh_CN\"/>\n" +
-                "\n" +
-                "\n" +
-                "<Connection source=\"1234\" application=\"asfi514\"/>\n" +
-                "\n" +
-                "<Appdevice timestamp=\"2021-01-01 00:00:00\" appmodule=\"\" appid=\"DJ-IMES-LLD\"/>\n" +
-                "\n" +
-                "</Access>\n" +
-                "\n" +
-                "\n" +
-                "<RequestContent>\n" +
-                "\n" +
-                "\n" +
-                "<Parameter>\n" +
-                "\n" +
-                "\n" +
-                "<Record>\n" +
-                "\n" +
-                "\n" +
-                "<Document>\n" +
-                "\n" +
-                "\n" +
-                "<RecordSet id=\"1\">\n" +
-                "\n" +
-                "\n" +
-                "<Master name=\"Master\">\n" +
-                "\n" +
-                "\n" +
-                "<Record>\n" +
-                "\n" +
-                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
-                "\n" +
-                "<Field name=\"status\" value=\"\"/>\n" +
-                "\n" +
-                "<Field name=\"sfpud06\" value=\"\"/>\n" +
-                "\n" +
-                "<Field name=\"sfp02\" value=\"2021/08/30\"/>\n" +
-                "\n" +
-                "<Field name=\"sfp16\" value=\"20761\"/>\n" +
-                "\n" +
-                "</Record>\n" +
-                "\n" +
-                "</Master>\n" +
-                "\n" +
-                "\n" +
-                "<Detail name=\"Detail-A\">\n" +
-                "\n" +
-                "\n" +
-                "<Record>\n" +
-                "\n" +
-                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
-                "\n" +
-                "<Field name=\"sfs03\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs04\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs07\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs08\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs10\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs09\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs30\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs05\" value=\" \"/>\n" +
-                "\n" +
-                "</Record>\n" +
-                "\n" +
-                "\n" +
-                "<Record>\n" +
-                "\n" +
-                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
-                "\n" +
-                "<Field name=\"sfs03\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs04\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs07\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs08\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs10\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs09\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs30\" value=\" \"/>\n" +
-                "\n" +
-                "<Field name=\"sfs05\" value=\" \"/>\n" +
-                "\n" +
-                "</Record>\n" +
-                "\n" +
-                "\n" +
-                "</Detail>\n" +
-                "\n" +
-                "</RecordSet>\n" +
-                "\n" +
-                "</Document>\n" +
-                "\n" +
-                "</Record>\n" +
-                "\n" +
-                "</Parameter>\n" +
-                "\n" +
-                "</RequestContent>\n" +
-                "\n" +
-                "</Request>\n";
-        JSONObject jsonObject = XML.toJSONObject(str);
-        SubmitToTipTopVO submitToTipTopVO = JSON.parseObject(jsonObject.toString(), SubmitToTipTopVO.class);
-        System.out.println(submitToTipTopVO);
-    }
+//    public static void submitToERP(TipTopMycimService_PortType tipTopMycimService) {
+//        String str = "<Request>\n" +
+//                "<Access>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Authentication password=\"tiptop\" user=\"tiptop\"/>\n" +
+//                "\n" +
+//                "\n" +
+//                "\n" +
+//                "<Organization name=\"OBDEMO\"/>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Locale language=\"zh_CN\"/>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Connection source=\"1234\" application=\"asfi514\"/>\n" +
+//                "\n" +
+//                "<Appdevice timestamp=\"2021-01-01 00:00:00\" appmodule=\"\" appid=\"DJ-IMES-LLD\"/>\n" +
+//                "\n" +
+//                "</Access>\n" +
+//                "\n" +
+//                "\n" +
+//                "<RequestContent>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Parameter>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Record>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Document>\n" +
+//                "\n" +
+//                "\n" +
+//                "<RecordSet id=\"1\">\n" +
+//                "\n" +
+//                "\n" +
+//                "<Master name=\"Master\">\n" +
+//                "\n" +
+//                "\n" +
+//                "<Record>\n" +
+//                "\n" +
+//                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
+//                "\n" +
+//                "<Field name=\"status\" value=\"\"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfpud06\" value=\"\"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfp02\" value=\"2021/08/30\"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfp16\" value=\"20761\"/>\n" +
+//                "\n" +
+//                "</Record>\n" +
+//                "\n" +
+//                "</Master>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Detail name=\"Detail-A\">\n" +
+//                "\n" +
+//                "\n" +
+//                "<Record>\n" +
+//                "\n" +
+//                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs03\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs04\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs07\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs08\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs10\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs09\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs30\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs05\" value=\" \"/>\n" +
+//                "\n" +
+//                "</Record>\n" +
+//                "\n" +
+//                "\n" +
+//                "<Record>\n" +
+//                "\n" +
+//                "<Field name=\"formid\" value=\"qwfnakdnfsa\"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs03\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs04\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs07\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs08\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs10\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs09\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs30\" value=\" \"/>\n" +
+//                "\n" +
+//                "<Field name=\"sfs05\" value=\" \"/>\n" +
+//                "\n" +
+//                "</Record>\n" +
+//                "\n" +
+//                "\n" +
+//                "</Detail>\n" +
+//                "\n" +
+//                "</RecordSet>\n" +
+//                "\n" +
+//                "</Document>\n" +
+//                "\n" +
+//                "</Record>\n" +
+//                "\n" +
+//                "</Parameter>\n" +
+//                "\n" +
+//                "</RequestContent>\n" +
+//                "\n" +
+//                "</Request>\n";
+//        JSONObject jsonObject = XML.toJSONObject(str);
+//        SubmitToTipTopVO submitToTipTopVO = JSON.parseObject(jsonObject.toString(), SubmitToTipTopVO.class);
+//        System.out.println(submitToTipTopVO);
+//    }
 
     public static void setProduct(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
         String request = "<request>\n" +
-                " <identity>\n" +
-                "   <transactionid>2021122911242561</transactionid>\n" +
+                "<identity>\n" +
+                "   <transactionid>2022011110293215</transactionid>\n" +
                 "   <moduleid>TP</moduleid>\n" +
                 "   <functionid>SI</functionid>\n" +
                 "   <computername>MES01</computername>\n" +
-                "   <curuserno>01200</curuserno>\n" +
-                "   <sendtime>2021/12/29 11:24:25</sendtime>\n" +
-                " </identity>\n" +
-                " <parameter>\n" +
+                "   <curuserno>00904</curuserno>\n" +
+                "   <sendtime>2022/01/11 10:29:32</sendtime>\n" +
+                "</identity>\n" +
+                "<parameter>\n" +
                 "\n" +
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>WZQ2</value>\n" +
+                "    <value>PRNNRA00607010</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +
                 "    <name>ProductVersion</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>1</value>\n" +
+                "     <value>WS1.08.03.085P-001</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productversion>\n" +
                 "  <productname>\n" +
@@ -705,13 +989,13 @@ public class TipTopService {
                 "  <specno>\n" +
                 "    <name>SpecNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>N/A</value>\n" +
+                "    <value>WS1.08.03.085P</value>\n" +
                 "    <desc></desc>\n" +
                 "  </specno>\n" +
                 "  <creator>\n" +
                 "    <name>Creator</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>01200</value>\n" +
+                "    <value>00904</value>\n" +
                 "    <desc></desc>\n" +
                 "  </creator>\n" +
                 "  <msl>\n" +
@@ -723,7 +1007,7 @@ public class TipTopService {
                 "  <mark>\n" +
                 "    <name>MARK</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>YP；40601625T-R1；XXXX代表年周）</value>\n" +
+                "    <value>WS1.08.03.085P; 批号 序列号</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mark>\n" +
                 "  <productCategory>\n" +
@@ -735,18 +1019,18 @@ public class TipTopService {
                 "  <packageType>>\n" +
                 "    <name>packageType</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>托盘</value>\n" +
+                "    <value>编带</value>\n" +
                 "    <desc></desc>\n" +
                 "  </packageType>\n" +
                 "  <packOutQty>\n" +
                 "    <name>packOutQty</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>20_玉洁</value>\n" +
+                "    <value>100</value>\n" +
                 "    <desc></desc>\n" +
                 "  </packOutQty>\n" +
                 "\n" +
-                " </parameter>\n" +
-                "</request>\n";
+                "</parameter>\n" +
+                "</request>";
         String s = tipTopMycimService.tipTopSetProduct(request);
         System.out.println(s);
     }

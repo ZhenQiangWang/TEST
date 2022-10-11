@@ -1,9 +1,15 @@
 package client;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.Arrays;
 
 import com.alibaba.fastjson.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -18,7 +24,8 @@ public class HttpClientUtil {
 
     private final static String CONTENT_TYPE_TEXT_JSON = "text/json";
     private final static String EAPURL = "http://192.168.68:8080";
-    private final static String TEST = "http://192.168.90.160:7001/mycim2/labelField.do?action=saveOrUpdate";
+//    private final static String TEST = "http://192.168.68.60:7001/mycim2/roleAction.do?reqCode=qryRoleGrantTree&_dc=1654052095499&sys=OA&roleid=85013";
+    private final static String TEST = "http://192.168.68.95/mycim2/roleAction.do?reqCode=qryRoleGrantTree&_dc=1654052095499&sys=OA&roleid=85013";
     private final static String LOGIN = "http://192.168.90.160:7001/mycim2/securitylogin.do?Content-Type";
 
 
@@ -26,8 +33,11 @@ public class HttpClientUtil {
         HttpClientUtil httpClientUtil = new HttpClientUtil();
         String save = "{\"params\":{\"labelDesc\":\"批次号1\",\"labelFieldName\":\"LOTID\",\"labelFieldValue\":\"record.data.lotId.split('_')[0]\"}}";
         String json = "{\"username\":\"admin\",\"password\":\"dynax\",\"facility\":\"1\",\"language\",\"CN\",\"reqCode\":\"login\"}";
-       httpClientUtil.postRequest(LOGIN,json);
-        httpClientUtil.postRequest(TEST,save);
+//       httpClientUtil.postRequest(LOGIN,json);
+        String s = httpClientUtil.postRequest(TEST, json);
+
+
+        System.out.println("");
     }
 
     public static String postRequest(String url, Map<String, Object> param) throws ClientProtocolException, IOException{
@@ -68,7 +78,6 @@ public class HttpClientUtil {
         CloseableHttpResponse response = client.execute(httpPost);
         HttpEntity entity = response.getEntity();
         String result = EntityUtils.toString(entity, "UTF-8");
-
         return result;
     }
 

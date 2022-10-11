@@ -22,8 +22,10 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
     }
 
     // Use to get a proxy class for GetLotInfoService
-    private java.lang.String GetLotInfoService_address = "http://localhost:7001/mycim2/services/GetLotInfoService";
+//    private java.lang.String GetLotInfoService_address = "http://localhost:7001/mycim2/services/GetLotInfoService";
+//    private java.lang.String GetLotInfoService_address = "http://192.168.68.60:7001/mycim2/services/GetLotInfoService";
 //    private java.lang.String GetLotInfoService_address = "http://192.168.68.95/mycim2/services/GetLotInfoService";
+    private java.lang.String GetLotInfoService_address = "http://192.168.68.57:7003/mycim2/services/GetLotInfoService";
 
     public java.lang.String getGetLotInfoServiceAddress() {
         return GetLotInfoService_address;

@@ -2,6 +2,7 @@ package example;
 
 
 import java.io.Serializable;
+import java.util.List;
 
 public class AutoTrackInDTO implements Serializable {
     //LotId
@@ -15,6 +16,12 @@ public class AutoTrackInDTO implements Serializable {
 
     //零头批
     private String oddLotId;
+
+    //数量
+    private int oddLotQty;
+
+    //载具号
+    private List<String> materialBoxBarCode;
 
     public String getLotId() {
         return LotId;
@@ -46,5 +53,21 @@ public class AutoTrackInDTO implements Serializable {
 
     public void setOddLotId(String oddLotId) {
         this.oddLotId = oddLotId;
+    }
+
+    public int getOddLotQty() {
+        return oddLotQty;
+    }
+
+    public void setOddLotQty(int oddLotQty) {
+        this.oddLotQty = oddLotQty;
+    }
+
+    public List<String> getMaterialBoxBarCode() {
+        return materialBoxBarCode;
+    }
+
+    public void setMaterialBoxBarCode(List<String> materialBoxBarCode) {
+        this.materialBoxBarCode = materialBoxBarCode;
     }
 }

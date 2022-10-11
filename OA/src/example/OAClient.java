@@ -11,7 +11,9 @@ public class OAClient {
             String rquest = "";
             WorkflowServiceLocator workflowServiceLocator = new WorkflowServiceLocator();
             WorkflowServicePortType workflowServiceHttpPort = workflowServiceLocator.getWorkflowServiceHttpPort();
-            WorkflowRequestInfo workflowRequestInfo = JSON.parseObject(rquest, WorkflowRequestInfo.class);
+//            WorkflowRequestInfo workflowRequestInfo = JSON.parseObject(rquest, WorkflowRequestInfo.class);
+            WorkflowRequestInfo workflowRequestInfo = new WorkflowRequestInfo();
+
             String result = workflowServiceHttpPort.doCreateWorkflowRequest(workflowRequestInfo, 31523);
             System.out.println(result);
         }  catch (Exception ex) {

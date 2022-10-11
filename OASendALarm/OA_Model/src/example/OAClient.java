@@ -47,7 +47,7 @@ public class OAClient {
             xml += "<filedname>txry</filedname>";//数据库名称
             xml += "<filedlabel>txry</filedlabel>";//字段名称  提醒人员
             xml += "<fileddbtype>CLOB</fileddbtype>";//数据库类型
-            xml += "<filedvalue>" + "110" + "</filedvalue>";//字段的值
+            xml += "<filedvalue>" + "110,504" + "</filedvalue>";//字段的值
             xml += "<fieldshowname>名称</fieldshowname>";
             xml += "</field>";
 
@@ -55,7 +55,7 @@ public class OAClient {
             xml += "<filedname>txsj</filedname>";//数据库名称
             xml += "<filedlabel>txsj</filedlabel>";//字段名称  提醒时间
             xml += "<fileddbtype>VARCHAR2(100 BYTE)</fileddbtype>";//数据库类型
-            xml += "<filedvalue>" + "2022-2-17 17:05:00" + "</filedvalue>";//字段的值
+            xml += "<filedvalue>" + "2022-03-21 14:41:00" + "</filedvalue>";//字段的值
             xml += "<fieldshowname>名称</fieldshowname>";
             xml += "</field>";
             xml += "</maintable>";

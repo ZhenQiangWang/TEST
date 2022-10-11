@@ -25,7 +25,9 @@ public class GetReasonCodeServiceSoapBindingStub extends org.apache.axis.client.
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetReasonCodeService");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "StepId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "stepId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "lotId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://schemas.xmlsoap.org/soap/encoding/", "string"));
         oper.setReturnClass(java.lang.String.class);
@@ -87,7 +89,7 @@ public class GetReasonCodeServiceSoapBindingStub extends org.apache.axis.client.
         }
     }
 
-    public java.lang.String getReasonCodeService(java.lang.String stepId) throws java.rmi.RemoteException {
+    public java.lang.String getReasonCodeService(java.lang.String stepId, java.lang.String lotId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -100,7 +102,7 @@ public class GetReasonCodeServiceSoapBindingStub extends org.apache.axis.client.
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {stepId});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {stepId, lotId});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

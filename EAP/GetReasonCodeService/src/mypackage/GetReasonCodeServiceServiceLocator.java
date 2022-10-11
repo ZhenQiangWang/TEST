@@ -22,7 +22,7 @@ public class GetReasonCodeServiceServiceLocator extends org.apache.axis.client.S
     }
 
     // Use to get a proxy class for GetReasonCodeService
-    private java.lang.String GetReasonCodeService_address = "http://192.168.90.160:7001/mycim2/services/GetReasonCodeService";
+    private java.lang.String GetReasonCodeService_address = "http://localhost:7001/mycim2/services/GetReasonCodeService";
 
     public java.lang.String getGetReasonCodeServiceAddress() {
         return GetReasonCodeService_address;

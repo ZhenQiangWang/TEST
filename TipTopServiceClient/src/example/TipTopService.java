@@ -25,15 +25,16 @@ public class TipTopService {
         try {
             TipTopMycimServiceServiceLocator tipTopMycimServiceServiceLocator = new TipTopMycimServiceServiceLocator();
             TipTopMycimService_PortType tipTopMycimService = tipTopMycimServiceServiceLocator.getTipTopMycimService();
+//             reportToTipTop(tipTopMycimService);
 //            reciveMaterial(tipTopMycimService);
 //            updateWorkOrder(tipTopMycimService);
 //            workOrderClose(tipTopMycimService);
 //            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
-//            setProduct(tipTopMycimService);
+            setProduct(tipTopMycimService);
 //            setMaterial(tipTopMycimService);
 //            closeWorkorder(tipTopMycimService);
-            deleteWorkorder(tipTopMycimService);
+//            deleteWorkorder(tipTopMycimService);
 //            reader = new BufferedReader(new FileReader(file));
 //            String tempString = null;
 //            int line = 1;
@@ -79,6 +80,17 @@ public class TipTopService {
                 } catch (IOException e1) {
                 }
             }
+        }
+    }
+
+    private static void reportToTipTop(TipTopMycimService_PortType tipTopMycimService) {
+        try {
+            String strq = "";
+            String result = tipTopMycimService.tipTopReciveMaterial(strq);
+            System.out.println(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -700,20 +712,20 @@ public class TipTopService {
 
     public static void reciveWorkOrder(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
         String titopWorkOrder = "<request>\n" +
-                " <identity>\n" +
-                "   <transactionid>2021122914310463</transactionid>\n" +
+                "<identity>\n" +
+                "   <transactionid>2022070413215723</transactionid>\n" +
                 "   <moduleid>TP</moduleid>\n" +
                 "   <functionid>SI</functionid>\n" +
                 "   <computername>MES01</computername>\n" +
-                "   <curuserno>01059</curuserno>\n" +
-                "   <sendtime>2021/12/29 14:31:04</sendtime>\n" +
-                " </identity>\n" +
-                " <parameter>\n" +
+                "   <curuserno>00234</curuserno>\n" +
+                "   <sendtime>2022/07/04 13:21:57</sendtime>\n" +
+                "</identity>\n" +
+                "<parameter>\n" +
                 "\n" +
                 "  <mono>\n" +
                 "    <name>MONo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PA101112</value>\n" +
+                "    <value>PA05-KS00220700011</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mono>\n" +
                 "  <rono>\n" +
@@ -725,7 +737,7 @@ public class TipTopService {
                 "  <itemno>\n" +
                 "    <name>ItemNo</name>\n" +
                 "    <type>Numeric</type>\n" +
-                "    <value>      </value>\n" +
+                "    <value>       </value>\n" +
                 "    <desc></desc>\n" +
                 "  </itemno>\n" +
                 "  <customerno>\n" +
@@ -743,25 +755,25 @@ public class TipTopService {
                 "  <moqty>\n" +
                 "    <name>MOQty</name>\n" +
                 "    <type>Numeric</type>\n" +
-                "    <value>          300.000</value>\n" +
+                "    <value>             5.000</value>\n" +
                 "    <desc></desc>\n" +
                 "  </moqty>\n" +
                 "  <productno>\n" +
                 "    <name>ItemNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PANNRA0060700</value>\n" +
+                "    <value>PANNTA006522</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <motypeno>\n" +
                 "    <name>MOTypeNo</name>\n" +
                 "    <type>Numeric</type>\n" +
-                "    <value>     1</value>\n" +
+                "    <value>      5</value>\n" +
                 "    <desc></desc>\n" +
                 "  </motypeno>\n" +
                 "  <planfinishdate>\n" +
                 "    <name>PlanFinishDate</name>\n" +
                 "    <type>Date</type>\n" +
-                "    <value>21/12/29</value>\n" +
+                "    <value>22/07/04</value>\n" +
                 "    <desc></desc>\n" +
                 "  </planfinishdate>\n" +
                 "  <mounitno>\n" +
@@ -773,53 +785,39 @@ public class TipTopService {
                 "  <creator>\n" +
                 "    <name>Creator</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>01059</value>\n" +
+                "    <value>00234</value>\n" +
                 "    <desc></desc>\n" +
                 "  </creator>\n" +
                 "  <planStartTime>>\n" +
                 "    <name>planStartTime</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>21/12/29</value>\n" +
+                "    <value>22/07/04</value>\n" +
                 "    <desc></desc>\n" +
                 "  </planStartTime>\n" +
                 "  <momateriallist>\n" +
                 "    <name>MOMaterialList</name>\n" +
                 "    <type>String</type>\n" +
                 "    <value>\n" +
-                "      <materialno>DECBCA00284</materialno>\n" +
-                "      <materiallevel>     1</materiallevel>\n" +
-                "      <stdqty>        1.00000000</stdqty>\n" +
+                "      <materialno>PANNTA00652</materialno>\n" +
+                "      <materiallevel>      1</materiallevel>\n" +
+                "      <stdqty>         1.00000000</stdqty>\n" +
                 "      <unitno>PCS</unitno>\n" +
-                "      <opno>CB</opno>\n" +
+                "      <opno></opno>\n" +
                 "      <putinplacetype>3</putinplacetype>\n" +
-                "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
-                "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
-                "      <substitutestdqty>        1.10000000</substitutestdqty>\n" +
-                "      <requireqty>            330.000000</requireqty>\n" +
+                "      <substitutematerialno>PANNTA00652</substitutematerialno>\n" +
+                "      <substitutemateriallevel>      1</substitutemateriallevel>\n" +
+                "      <substitutestdqty>         1.00000000</substitutestdqty>\n" +
+                "      <requireqty>               5.00000000</requireqty>\n" +
                 "      <characteristics>N</characteristics>\n" +
-                "      <wfid>           </wfid>\n" +
+                "      <wfid>            </wfid>\n" +
                 "     </value>\n" +
-                "    <value>\n" +
-                "      <materialno>DECBCA00284</materialno>\n" +
-                "      <materiallevel>     1</materiallevel>\n" +
-                "      <stdqty>        1.00000000</stdqty>\n" +
-                "      <unitno>PCS</unitno>\n" +
-                "      <opno>UI</opno>\n" +
-                "      <putinplacetype>3</putinplacetype>\n" +
-                "      <substitutematerialno>DECBCA00284</substitutematerialno>\n" +
-                "      <substitutemateriallevel>     1</substitutemateriallevel>\n" +
-                "      <substitutestdqty>        1.10000000</substitutestdqty>\n" +
-                "      <requireqty>            330.000000</requireqty>\n" +
-                "      <characteristics>N</characteristics>\n" +
-                "      <wfid>           </wfid>\n" +
-                "     </value>\n" +
+                "\n" +
                 "  </momateriallist>\n" +
-                " </parameter>\n" +
-                "</request>\n";
+                "</parameter>\n" +
+                "</request>";
         String result = tipTopMycimService.tipTopReciveWorkOrder(titopWorkOrder);
         System.out.println(result);
     }
-
 //    public static void submitToERP(TipTopMycimService_PortType tipTopMycimService) {
 //        String str = "<Request>\n" +
 //                "<Access>\n" +
@@ -943,29 +941,28 @@ public class TipTopService {
 //        SubmitToTipTopVO submitToTipTopVO = JSON.parseObject(jsonObject.toString(), SubmitToTipTopVO.class);
 //        System.out.println(submitToTipTopVO);
 //    }
-
     public static void setProduct(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
         String request = "<request>\n" +
                 "<identity>\n" +
-                "   <transactionid>2022011110293215</transactionid>\n" +
+                "   <transactionid>2022092218070774</transactionid>\n" +
                 "   <moduleid>TP</moduleid>\n" +
                 "   <functionid>SI</functionid>\n" +
                 "   <computername>MES01</computername>\n" +
-                "   <curuserno>00904</curuserno>\n" +
-                "   <sendtime>2022/01/11 10:29:32</sendtime>\n" +
+                "   <curuserno>00228</curuserno>\n" +
+                "   <sendtime>2022/09/22 18:07:07</sendtime>\n" +
                 "</identity>\n" +
                 "<parameter>\n" +
                 "\n" +
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PRNNRA00607010</value>\n" +
+                "    <value>PANNTA00649</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +
                 "    <name>ProductVersion</name>\n" +
                 "    <type>String</type>\n" +
-                "     <value>WS1.08.03.085P-001</value>\n" +
+                "     <value>DF1G0040-45DF-NM-001</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productversion>\n" +
                 "  <productname>\n" +
@@ -989,13 +986,13 @@ public class TipTopService {
                 "  <specno>\n" +
                 "    <name>SpecNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>WS1.08.03.085P</value>\n" +
+                "    <value>DF1G0040-45DF-NM</value>\n" +
                 "    <desc></desc>\n" +
                 "  </specno>\n" +
                 "  <creator>\n" +
                 "    <name>Creator</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>00904</value>\n" +
+                "    <value>00228</value>\n" +
                 "    <desc></desc>\n" +
                 "  </creator>\n" +
                 "  <msl>\n" +
@@ -1007,25 +1004,25 @@ public class TipTopService {
                 "  <mark>\n" +
                 "    <name>MARK</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>WS1.08.03.085P; 批号 序列号</value>\n" +
+                "    <value>空白</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mark>\n" +
                 "  <productCategory>\n" +
                 "    <name>productCategory</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>M Lot</value>\n" +
+                "    <value>E Lot</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productCategory>\n" +
                 "  <packageType>>\n" +
                 "    <name>packageType</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>编带</value>\n" +
+                "    <value>托盘</value>\n" +
                 "    <desc></desc>\n" +
                 "  </packageType>\n" +
                 "  <packOutQty>\n" +
                 "    <name>packOutQty</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>100</value>\n" +
+                "    <value>20</value>\n" +
                 "    <desc></desc>\n" +
                 "  </packOutQty>\n" +
                 "\n" +
@@ -1033,5 +1030,6 @@ public class TipTopService {
                 "</request>";
         String s = tipTopMycimService.tipTopSetProduct(request);
         System.out.println(s);
+//        PK_NAMED_OBJECT_H
     }
 }

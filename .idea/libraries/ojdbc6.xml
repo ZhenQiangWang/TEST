@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="ojdbc6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../jar/test/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../jar/test/oracle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

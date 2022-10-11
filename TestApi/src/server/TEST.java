@@ -123,6 +123,7 @@ public class TEST implements Runnable {
                 fis.close();
             }
         }catch(Exception e){
+            e.getMessage();
             System.out.println("传送文件时出错:" + e.getLocalizedMessage());
         }
     }

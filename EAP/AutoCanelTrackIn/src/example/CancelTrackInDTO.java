@@ -13,6 +13,9 @@ public class CancelTrackInDTO implements Serializable {
     //操作人员
     private String OperId;
 
+    //工步
+    private String stepID;
+
     public String getLotId() {
         return LotId;
     }
@@ -35,5 +38,13 @@ public class CancelTrackInDTO implements Serializable {
 
     public void setOperId(String operId) {
         OperId = operId;
+    }
+
+    public String getStepID() {
+        return stepID;
+    }
+
+    public void setStepID(String stepID) {
+        this.stepID = stepID;
     }
 }

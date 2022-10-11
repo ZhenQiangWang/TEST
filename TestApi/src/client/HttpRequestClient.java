@@ -55,9 +55,9 @@ public class HttpRequestClient {
 
     public static void main(String[] args) throws Exception {
         HttpRequestClient httpRequestClient = new HttpRequestClient();
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpPost post = new HttpPost(fileDecryptionURL);
-        File file = new File("D:\\13.xlsx");
+//        CloseableHttpClient httpclient = HttpClients.createDefault();
+//        HttpPost post = new HttpPost(fileDecryptionURL);
+        /*File file = new File("D:\\13.xlsx");
         post.addHeader("method~name", "fileDecryptionRest"); //文件解密
         post.addHeader("data~fileOffset", "0");
         post.addHeader("data~counSize", file.length()+"");
@@ -81,21 +81,28 @@ public class HttpRequestClient {
             }
 
             }
-            /*byte[] bs = new byte[1024];
+            *//*byte[] bs = new byte[1024];
             int len = 0;
             while((len=ins.read(bs))>-1){
                 out.write(bs, 0, len);
-            }*/
+            }*//*
 //            out.flush();
 //            out.close();
-        }
-        /*HttpResponse httpResponse = httpRequestClient.doPostResp(testEAP, json);
+        }*/
+        DataColletcionVO dataColletcionVO = new DataColletcionVO();
+        dataColletcionVO.setTrackInTime("2022-06-06 08:48:25");
+        dataColletcionVO.setLotId("D2223013");
+        dataColletcionVO.setEqpId("PVVI04");
+        dataColletcionVO.setStepId("CDBPI");
+//        String json = JSON.toJSONString(dataColletcionVO);
+        String json = "{\"eqpId\":\"PVVI04\",\"lotId\":\"D2223013\",\"stepId\":\"CDBPI\",\"trackInTime\":\"2022-06-06 08:48:25\"}";
+        HttpResponse httpResponse = httpRequestClient.doPostResp("http://192.168.68.219:8100/tms/DynaxInterface/GetMeasureData", json);
         HttpEntity entity = httpResponse.getEntity();
         if (entity != null) {
             String result = EntityUtils.toString(entity, "UTF-8");
             resultVO resultVO = JSON.parseObject(result, resultVO.class);
             System.out.println(result);
-        }*/
+        }
     }
 
     /**

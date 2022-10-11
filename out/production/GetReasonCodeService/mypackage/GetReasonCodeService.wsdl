@@ -5,7 +5,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:message name="GetReasonCodeServiceRequest">
 
-      <wsdl:part name="StepId" type="soapenc:string"/>
+      <wsdl:part name="stepId" type="soapenc:string"/>
+
+      <wsdl:part name="lotId" type="soapenc:string"/>
 
    </wsdl:message>
 
@@ -17,7 +19,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="GetReasonCodeService">
 
-      <wsdl:operation name="GetReasonCodeService" parameterOrder="StepId">
+      <wsdl:operation name="GetReasonCodeService" parameterOrder="stepId lotId">
 
          <wsdl:input message="impl:GetReasonCodeServiceRequest" name="GetReasonCodeServiceRequest"/>
 
@@ -55,7 +57,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:GetReasonCodeServiceSoapBinding" name="GetReasonCodeService">
 
-         <wsdlsoap:address location="http://192.168.90.160:7001/mycim2/services/GetReasonCodeService"/>
+         <wsdlsoap:address location="http://localhost:7001/mycim2/services/GetReasonCodeService"/>
 
       </wsdl:port>
 

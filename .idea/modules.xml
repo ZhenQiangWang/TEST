@@ -33,6 +33,7 @@
       <module fileurl="file://$PROJECT_DIR$/Tool/Tool.iml" filepath="$PROJECT_DIR$/Tool/Tool.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/TopTopReciveWorkOrderClient/TopTopReciveWorkOrderClient.iml" filepath="$PROJECT_DIR$/ERP/TopTopReciveWorkOrderClient/TopTopReciveWorkOrderClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/WMS/WMS.iml" filepath="$PROJECT_DIR$/ERP/WMS/WMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myCIM/myCIM.iml" filepath="$PROJECT_DIR$/myCIM/myCIM.iml" />
       <module fileurl="file://$PROJECT_DIR$/testWebService.iml" filepath="$PROJECT_DIR$/testWebService.iml" />
     </modules>
   </component>

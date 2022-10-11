@@ -22,7 +22,9 @@ public class ChangeEqpStatusServiceServiceLocator extends org.apache.axis.client
     }
 
     // Use to get a proxy class for ChangeEqpStatusService
-    private java.lang.String ChangeEqpStatusService_address = "http://192.168.90.160:7001/mycim2/services/ChangeEqpStatusService";
+    private java.lang.String ChangeEqpStatusService_address = "http://localhost:7001/mycim2/services/ChangeEqpStatusService";
+//    private java.lang.String ChangeEqpStatusService_address = "http://192.168.90.160:7001/mycim2/services/ChangeEqpStatusService";
+//    private java.lang.String ChangeEqpStatusService_address = "http://192.168.68.95/mycim2/services/ChangeEqpStatusService";
 
     public java.lang.String getChangeEqpStatusServiceAddress() {
         return ChangeEqpStatusService_address;

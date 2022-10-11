@@ -8,5 +8,5 @@
 package mypackage;
 
 public interface GetReasonCodeService_PortType extends java.rmi.Remote {
-    public java.lang.String getReasonCodeService(java.lang.String stepId) throws java.rmi.RemoteException;
+    public java.lang.String getReasonCodeService(java.lang.String stepId, java.lang.String lotId) throws java.rmi.RemoteException;
 }

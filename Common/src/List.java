@@ -1,11 +1,19 @@
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.*;
 
 public class List {
     public static void main(String[] args) throws SQLException {
         Connection connection = null;
         try {
+            Long rrn = 123489l;
+            String msg = "ceshi"+rrn;
+            System.out.println(msg);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date parse = simpleDateFormat.parse("2022-06-08 17:29:38");
+            long time = parse.getTime();
             java.util.List<Long> eapMaterialRrns = new ArrayList<>();
             eapMaterialRrns.add(12L);
             eapMaterialRrns.add(13L);

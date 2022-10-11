@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="OALib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../OALib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../OALib/classbean" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../OALib" recursive="false" />
+  </library>
+</component>

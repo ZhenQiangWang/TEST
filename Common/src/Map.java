@@ -41,5 +41,8 @@ public class Map {
         String lotId = "D2035017,D2035015.01";
 
         System.out.println(lotId);
+
+        HashMap<Object, Object> objectObjectHashMap2 = new HashMap<>();
+        System.out.println(objectObjectHashMap2.isEmpty());
     }
 }

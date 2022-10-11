@@ -10,7 +10,8 @@ public class jdbc {
     private static String USERNAMR = "nx_mes";
     private static String PASSWORD = "nx_mes";
     private static String DRVIER = "oracle.jdbc.OracleDriver";
-    private static String URL = "jdbc:oracle:thin:@192.168.68.60:1521:orcl";
+//    private static String URL = "jdbc:oracle:thin:@192.168.68.60:1521:orcl";
+    private static String URL = "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.68.111)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=mycim)))";
     private Connection connection;
 
    /* public jdbc() {

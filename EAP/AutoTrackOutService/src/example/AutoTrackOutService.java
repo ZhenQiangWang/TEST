@@ -13,27 +13,29 @@ public class AutoTrackOutService {
       AutoTrackOutServiceServiceLocator autoTrackOutServiceServiceLocator = new AutoTrackOutServiceServiceLocator();
       AutoTrackOutService_PortType autoTrackOutService = autoTrackOutServiceServiceLocator.getAutoTrackOutService();
       AutoTrackOutDTO autoTrackOutDTO = new AutoTrackOutDTO();
-      autoTrackOutDTO.setLotId("D2201025");
-      autoTrackOutDTO.setOperId("00595");
-      autoTrackOutDTO.setEqpId("PDDB06");
-      autoTrackOutDTO.setMaterialBoxBarCode("52,lc");
+      autoTrackOutDTO.setLotId("E02M045.01");
+      autoTrackOutDTO.setOperId("ADMIN");
+//      autoTrackOutDTO.setEqpId("PTDT01_EQC");
+      autoTrackOutDTO.setEqpId("PPTR01");
+//      autoTrackOutDTO.setEqpId("PPPS02");
+//      autoTrackOutDTO.setMaterialBoxBarCode("123");
 
       List<outputList> outputLists = new ArrayList<>();
       List<materialInfo> materialInfos = new ArrayList<>();
       outputList outputList1 = new outputList();
       outputList1.setType("Normal");
-      outputList1.setOutput("-1");
-      List<reasonList> reasonLists1 = new ArrayList<>();
-      reasonList reasonList = new reasonList();
-      reasonList.setReasonQty(null);
-      reasonList.setCodeType(null);
-      reasonList.setReasonCode(null);
-      reasonList.setReasonDesc(null);
-      /*List<String> sns2 = new ArrayList<>();
-      sns2.add("1");
-      sns2.add("2");*/
-      reasonList.setReasonSN(null);
-      reasonLists1.add(reasonList);
+      outputList1.setOutput("232");
+//      List<reasonList> reasonLists1 = new ArrayList<>();
+//      reasonList reasonList = new reasonList();
+//      reasonList.setReasonQty("1");
+//      reasonList.setCodeType("loss");
+//      reasonList.setReasonCode("LOSS_CODE_FOR_WB043");
+//      reasonList.setReasonDesc("WB43：首件消耗");
+//      /*List<String> sns2 = new ArrayList<>();
+//      sns2.add("1");
+//      sns2.add("2");*/
+//      reasonList.setReasonSN(null);
+//      reasonLists1.add(reasonList);
 
       /*reasonList reasonList3 = new reasonList();
       List<String> sns1 = new ArrayList<>();
@@ -44,8 +46,8 @@ public class AutoTrackOutService {
       reasonList3.setCodeType("loss");
       reasonList3.setReasonCode("BIN3");
       reasonList3.setReasonDesc("AT20：管壳划伤");
-      reasonLists1.add(reasonList3);
-      outputList1.setReasonList(reasonLists1);*/
+      reasonLists1.add(reasonList3);*/
+//      outputList1.setReasonList(reasonLists1);
       outputLists.add(outputList1);
       /*reasonList reasonList1 = new reasonList();
       reasonList1.setReasonQty("1");
@@ -55,15 +57,15 @@ public class AutoTrackOutService {
       reasonLists1.add(reasonList1);
       outputList1.setReasonList(reasonLists1);*/
 
-      materialInfo materialInfo = new materialInfo();
-      materialInfo.setMaterialNo("DECBCA00284");
-      List<materialList> materialLists = new ArrayList<>();
-      materialList materialList = new materialList();
-      materialList.setMaterialLotNo("CKS1CX0200084111");
-      materialList.setMaterialQty("1.1");
-      materialLists.add(materialList);
-      materialInfo.setMaterialList(materialLists);
-      materialInfos.add(materialInfo);
+//      materialInfo materialInfo = new materialInfo();
+//      materialInfo.setMaterialNo("DECBCA00371");
+//      List<materialList> materialLists = new ArrayList<>();
+//      materialList materialList = new materialList();
+//      materialList.setMaterialLotNo("CKS1CX0302129");
+//      materialList.setMaterialQty("8");
+//      materialLists.add(materialList);
+//      materialInfo.setMaterialList(materialLists);
+//      materialInfos.add(materialInfo);
 
 
 
@@ -79,10 +81,10 @@ public class AutoTrackOutService {
 
       materialInfo2.setMaterialList(materialLotInfos2);
       materialInfos.add(materialInfo2);*/
-      outputList1.setMaterialInfo(materialInfos);
+      /*outputList1.setMaterialInfo(materialInfos);
 
 
-      /*outputList outputList2 = new outputList();
+      outputList outputList2 = new outputList();
       outputList2.setType("RT");
       outputList2.setOutput("2");
       List<reasonList> reasonLists = new ArrayList<>();
@@ -104,9 +106,12 @@ public class AutoTrackOutService {
 
 
       autoTrackOutDTO.setOutputList(outputLists);
-      System.out.println(JSON.toJSONString(autoTrackOutDTO));
-      String summer = autoTrackOutService.autoTrackOutService(JSON.toJSONString(autoTrackOutDTO));
+      String info = JSON.toJSONString(autoTrackOutDTO);
+      System.out.println(info);
+//      String info = "\t{\"eqpId\":\"PTDT05\",\"lotId\":\"D2224009.03\",\"materialBoxBarcode\":[],\"materialInfo\":[],\"operId\":\"nxadmin\",\"outputList\":[{\"inputQty\":[],\"output\":\"2\",\"reasonList\":[],\"type\":\"FT\"},{\"inputQty\":[],\"output\":\"2\",\"reasonList\":[],\"type\":\"Normal\"}]}";
+      String summer = autoTrackOutService.autoTrackOutService(info);
       System.out.println(summer);
+      System.out.println("123");
     } catch (Exception ex) {
       ex.printStackTrace();
     }

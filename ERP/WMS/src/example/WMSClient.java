@@ -12,45 +12,36 @@ public class WMSClient {
         try {
 
             String mesCompleteStr = "<MST>\n" +
-                    "\t<mcludocdt>2022/01/26</mcludocdt>\n" +
-                    "\t<DTL>\n" +
-                    "\t\t<mclulunit>PCS</mclulunit>\n" +
-                    "\t\t<cassteno>CKS1CX0100800</cassteno>\n" +
-                    "\t\t<mcluldocno>1643164237301</mcluldocno>\n" +
-                    "\t\t<mclulitem>PANNRA00390</mclulitem>\n" +
-                    "\t\t<idbengravedno/>\n" +
-                    "\t\t<idbqty>600.0</idbqty>\n" +
-                    "\t\t<lasermark/>\n" +
-                    "\t\t<mclulbatch>D2052009_1</mclulbatch>\n" +
-                    "\t\t<mclulseq>1</mclulseq>\n" +
-                    "\t\t<mclulqty>600.0</mclulqty>\n" +
-                    "\t\t<idbbinlevel>P</idbbinlevel>\n" +
-                    "\t\t<bresitivity/>\n" +
-                    "\t\t<mclulplant>KS</mclulplant>\n" +
-                    "\t\t<sresitivity/>\n" +
-                    "\t\t<idbcnt>1</idbcnt>\n" +
-                    "\t\t<mclulwarehouse>G01</mclulwarehouse>\n" +
-                    "\t</DTL>\n" +
-                    "\t<mcludocno>1643164237301</mcludocno>\n" +
-                    "\t<mcludept>W31</mcludept>\n" +
-                    "\t<keyno>QAZWSXEDC</keyno>\n" +
-                    "\t<mcluplant>KS</mcluplant>\n" +
-                    "\t<mclusource>transfer</mclusource>\n" +
-                    "\t<mclucondate>2022/01/26</mclucondate>\n" +
                     "\t<center>KS</center>\n" +
-                    "\t<mclucrtid>00228</mclucrtid>\n" +
-                    "\t<mclutype>3</mclutype>\n" +
-                    "\t<mclumemo>myCIM退回</mclumemo>\n" +
-                    "\t<source>TOPGP</source>\n" +
-                    "\t<service>otherinventory_sy</service>\n" +
-                    "\t<mcluconflag>Y</mcluconflag>\n" +
-                    "\t<mcluconuser>00228</mcluconuser>\n" +
-                    "\t<user>00228</user>\n" +
-                    "\t<mclucrtdept/>\n" +
-                    "\t<mclustaff>00228</mclustaff>\n" +
+                    "\t<source>SYMES</source>\n" +
+                    "\t<DTL>\n" +
+                    "\t\t<dc>2230</dc>\n" +
+                    "\t\t<attkey/>\n" +
+                    "\t\t<attvalue/>\n" +
+                    "\t\t<bibb32>22/08/25</bibb32>\n" +
+                    "\t\t<bibb181>D2230003</bibb181>\n" +
+                    "\t\t<meslot>D2230003</meslot>\n" +
+                    "\t\t<wfid/>\n" +
+                    "\t\t<bin1/>\n" +
+                    "\t\t<bsfv11>PA03-KS0022070013</bsfv11>\n" +
+                    "\t\t<bibb27/>\n" +
+                    "\t\t<attvalue1/>\n" +
+                    "\t\t<bibb25/>\n" +
+                    "\t\t<bibb24/>\n" +
+                    "\t\t<sfv03>PANNRA00636</sfv03>\n" +
+                    "\t\t<wflot/>\n" +
+                    "\t\t<bin>P</bin>\n" +
+                    "\t\t<sfv09>100.0</sfv09>\n" +
+                    "\t\t<sfv08>PCS</sfv08>\n" +
+                    "\t\t<sfv06>G01</sfv06>\n" +
+                    "\t\t<bibb011>PANNRA00636,D2230001,2022-07-18,0,2022-07-18,P,,,,,100,,,,,,GaN RF 功放管,MESH,2230,DYNAXD2230001-04</bibb011>\n" +
+                    "\t</DTL>\n" +
+                    "\t<service>mes_Completion</service>\n" +
+                    "\t<keyno>QAZWSXEDC</keyno>\n" +
+                    "\t<user>00851</user>\n" +
                     "</MST>";
             DemoService_ServiceLocator demoService_serviceLocator = new DemoService_ServiceLocator();
-            demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9091/services/api");
+            demoService_serviceLocator.setDemoServiceImplPortEndpointAddress("http://192.168.68.159:9091/services/api?wsdl");
             DemoService_PortType demoServiceImplPort = demoService_serviceLocator.getDemoServiceImplPort();
             Result result = demoServiceImplPort.webGen(mesCompleteStr);
             System.out.println(result.getMsg());

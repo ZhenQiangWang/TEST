@@ -15,6 +15,9 @@ public class AutoTrackOutDTO implements Serializable {
     //载具号，以逗号隔开
     private String materialBoxBarCode;
 
+    private String remark;
+    private List<data> data;
+
     public String getEqpId() {
         return EqpId;
     }
@@ -53,5 +56,21 @@ public class AutoTrackOutDTO implements Serializable {
 
     public void setMaterialBoxBarCode(String materialBoxBarCode) {
         this.materialBoxBarCode = materialBoxBarCode;
+    }
+
+    public List<example.data> getData() {
+        return data;
+    }
+
+    public void setData(List<example.data> data) {
+        this.data = data;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

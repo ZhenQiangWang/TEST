@@ -13,18 +13,26 @@ public class AutoTrackOutService {
       AutoTrackOutServiceServiceLocator autoTrackOutServiceServiceLocator = new AutoTrackOutServiceServiceLocator();
       AutoTrackOutService_PortType autoTrackOutService = autoTrackOutServiceServiceLocator.getAutoTrackOutService();
       AutoTrackOutDTO autoTrackOutDTO = new AutoTrackOutDTO();
-      autoTrackOutDTO.setLotId("E02M045.01");
+      autoTrackOutDTO.setLotId("D2224006");
       autoTrackOutDTO.setOperId("ADMIN");
 //      autoTrackOutDTO.setEqpId("PTDT01_EQC");
-      autoTrackOutDTO.setEqpId("PPTR01");
+      autoTrackOutDTO.setEqpId("PMLM01");
 //      autoTrackOutDTO.setEqpId("PPPS02");
 //      autoTrackOutDTO.setMaterialBoxBarCode("123");
+//      autoTrackOutDTO.setRemark("测试");
+
+//      List<data> data = new ArrayList<>();
+//      data data1 = new data();
+//      data1.setParameter();
 
       List<outputList> outputLists = new ArrayList<>();
       List<materialInfo> materialInfos = new ArrayList<>();
       outputList outputList1 = new outputList();
       outputList1.setType("Normal");
-      outputList1.setOutput("232");
+      outputList1.setOutput("458");
+      outputList outputList2 = new outputList();
+      outputList2.setType("RT");
+      outputList2.setOutput("2");
 //      List<reasonList> reasonLists1 = new ArrayList<>();
 //      reasonList reasonList = new reasonList();
 //      reasonList.setReasonQty("1");
@@ -49,6 +57,7 @@ public class AutoTrackOutService {
       reasonLists1.add(reasonList3);*/
 //      outputList1.setReasonList(reasonLists1);
       outputLists.add(outputList1);
+//      outputLists.add(outputList2);
       /*reasonList reasonList1 = new reasonList();
       reasonList1.setReasonQty("1");
       reasonList1.setCodeType("loss");
@@ -106,12 +115,85 @@ public class AutoTrackOutService {
 
 
       autoTrackOutDTO.setOutputList(outputLists);
-      String info = JSON.toJSONString(autoTrackOutDTO);
-      System.out.println(info);
-//      String info = "\t{\"eqpId\":\"PTDT05\",\"lotId\":\"D2224009.03\",\"materialBoxBarcode\":[],\"materialInfo\":[],\"operId\":\"nxadmin\",\"outputList\":[{\"inputQty\":[],\"output\":\"2\",\"reasonList\":[],\"type\":\"FT\"},{\"inputQty\":[],\"output\":\"2\",\"reasonList\":[],\"type\":\"Normal\"}]}";
+//      String info = JSON.toJSONString(autoTrackOutDTO);
+//      System.out.println(info);
+      String info = "{\n" +
+              "    \"eqpId\": \"PMLM01\",\n" +
+              "    \"lotId\": \"D2224006\",\n" +
+              "    \"materialBoxBarcode\": [],\n" +
+              "    \"materialInfo\": [],\n" +
+              "    \"operId\": \"ADMIN\",\n" +
+              "\t\"testerId\": null,\n" +
+              "\t\"remark\":\"测试\",\n" +
+              "    \"outputList\": [{\n" +
+              "            \"inputQty\": [],\n" +
+              "            \"output\": \"458\",\n" +
+              "            \"reasonList\": [],\n" +
+              "            \"type\": \"Normal\"\n" +
+              "        }\n" +
+              "    ],\n" +
+              "\t\"data\": [{\n" +
+              "            \"parameter\": \"LBL_LIDS_POSITION_X2\",\n" +
+              "            \"tubeNumValue\": [{\n" +
+              "                    \"eqpID\": \"\",\n" +
+              "                    \"operId\": \"\",\n" +
+              "                    \"qualifiedVal\": \"\",\n" +
+              "                    \"mean\": \"\",\n" +
+              "                    \"std\": \"\",\n" +
+              "                    \"cpk\": \"\",\n" +
+              "                    \"dateTime\": \"\",\n" +
+              "                    \"sampleCode\": \"\",\n" +
+              "                    \"tubeNum\": \"C1\",\n" +
+              "                    \"rawData\": [\"-515\"],\n" +
+              "                    \"remark\": []\n" +
+              "                },{\n" +
+              "                    \"eqpID\": \"\",\n" +
+              "                    \"operId\": \"\",\n" +
+              "                    \"qualifiedVal\": \"\",\n" +
+              "                    \"mean\": \"\",\n" +
+              "                    \"std\": \"\",\n" +
+              "                    \"cpk\": \"\",\n" +
+              "                    \"dateTime\": \"\",\n" +
+              "                    \"sampleCode\": \"\",\n" +
+              "                    \"tubeNum\": \"C2\",\n" +
+              "                    \"rawData\": [\"-514\"],\n" +
+              "                    \"remark\": []\n" +
+              "                }\n" +
+              "            ]\n" +
+              "        }, {\n" +
+              "            \"parameter\": \"LBL_MARK _POSITION_X1\",\n" +
+              "            \"tubeNumValue\": [{\n" +
+              "                    \"eqpID\": \"\",\n" +
+              "                    \"operId\": \"\",\n" +
+              "                    \"qualifiedVal\": \"\",\n" +
+              "                    \"mean\": \"\",\n" +
+              "                    \"std\": \"\",\n" +
+              "                    \"cpk\": \"\",\n" +
+              "                    \"dateTime\": \"\",\n" +
+              "                    \"sampleCode\": \"\",\n" +
+              "                    \"tubeNum\": \"C1\",\n" +
+              "                    \"rawData\": [\"-595\"],\n" +
+              "                    \"remark\": []\n" +
+              "                },{\n" +
+              "                    \"eqpID\": \"\",\n" +
+              "                    \"operId\": \"\",\n" +
+              "                    \"qualifiedVal\": \"\",\n" +
+              "                    \"mean\": \"\",\n" +
+              "                    \"std\": \"\",\n" +
+              "                    \"cpk\": \"\",\n" +
+              "                    \"dateTime\": \"\",\n" +
+              "                    \"sampleCode\": \"\",\n" +
+              "                    \"tubeNum\": \"C2\",\n" +
+              "                    \"rawData\": [\"-695\"],\n" +
+              "                    \"remark\": []\n" +
+              "                }\n" +
+              "            ]\n" +
+              "        }\n" +
+              "    ]\n" +
+              "    \n" +
+              "}\n";
       String summer = autoTrackOutService.autoTrackOutService(info);
       System.out.println(summer);
-      System.out.println("123");
     } catch (Exception ex) {
       ex.printStackTrace();
     }

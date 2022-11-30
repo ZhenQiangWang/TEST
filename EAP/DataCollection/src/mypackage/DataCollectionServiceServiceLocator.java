@@ -1,5 +1,5 @@
 /**
- * GetLotInfoServiceServiceLocator.java
+ * DataCollectionServiceServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,56 +7,53 @@
 
 package mypackage;
 
-public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Service implements mypackage.GetLotInfoServiceService {
+public class DataCollectionServiceServiceLocator extends org.apache.axis.client.Service implements mypackage.DataCollectionServiceService {
 
-    public GetLotInfoServiceServiceLocator() {
+    public DataCollectionServiceServiceLocator() {
     }
 
 
-    public GetLotInfoServiceServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public DataCollectionServiceServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public GetLotInfoServiceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public DataCollectionServiceServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for GetLotInfoService
-    private java.lang.String GetLotInfoService_address = "http://localhost:7001/mycim2/services/GetLotInfoService";
-//    private java.lang.String GetLotInfoService_address = "http://192.168.68.60:7001/mycim2/services/GetLotInfoService";
-//    private java.lang.String GetLotInfoService_address = "http://192.168.68.95/mycim2/services/GetLotInfoService";
-//    private java.lang.String GetLotInfoService_address = "http://192.168.68.57:7003/mycim2/services/GetLotInfoService";
+    // Use to get a proxy class for DataCollectionService
+    private java.lang.String DataCollectionService_address = "http://localhost:7001/mycim2/services/DataCollectionService";
 
-    public java.lang.String getGetLotInfoServiceAddress() {
-        return GetLotInfoService_address;
+    public java.lang.String getDataCollectionServiceAddress() {
+        return DataCollectionService_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String GetLotInfoServiceWSDDServiceName = "GetLotInfoService";
+    private java.lang.String DataCollectionServiceWSDDServiceName = "DataCollectionService";
 
-    public java.lang.String getGetLotInfoServiceWSDDServiceName() {
-        return GetLotInfoServiceWSDDServiceName;
+    public java.lang.String getDataCollectionServiceWSDDServiceName() {
+        return DataCollectionServiceWSDDServiceName;
     }
 
-    public void setGetLotInfoServiceWSDDServiceName(java.lang.String name) {
-        GetLotInfoServiceWSDDServiceName = name;
+    public void setDataCollectionServiceWSDDServiceName(java.lang.String name) {
+        DataCollectionServiceWSDDServiceName = name;
     }
 
-    public mypackage.GetLotInfoService_PortType getGetLotInfoService() throws javax.xml.rpc.ServiceException {
+    public mypackage.DataCollectionService_PortType getDataCollectionService() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(GetLotInfoService_address);
+            endpoint = new java.net.URL(DataCollectionService_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getGetLotInfoService(endpoint);
+        return getDataCollectionService(endpoint);
     }
 
-    public mypackage.GetLotInfoService_PortType getGetLotInfoService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public mypackage.DataCollectionService_PortType getDataCollectionService(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            mypackage.GetLotInfoServiceSoapBindingStub _stub = new mypackage.GetLotInfoServiceSoapBindingStub(portAddress, this);
-            _stub.setPortName(getGetLotInfoServiceWSDDServiceName());
+            mypackage.DataCollectionServiceSoapBindingStub _stub = new mypackage.DataCollectionServiceSoapBindingStub(portAddress, this);
+            _stub.setPortName(getDataCollectionServiceWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -64,8 +61,8 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
         }
     }
 
-    public void setGetLotInfoServiceEndpointAddress(java.lang.String address) {
-        GetLotInfoService_address = address;
+    public void setDataCollectionServiceEndpointAddress(java.lang.String address) {
+        DataCollectionService_address = address;
     }
 
     /**
@@ -75,9 +72,9 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (mypackage.GetLotInfoService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
-                mypackage.GetLotInfoServiceSoapBindingStub _stub = new mypackage.GetLotInfoServiceSoapBindingStub(new java.net.URL(GetLotInfoService_address), this);
-                _stub.setPortName(getGetLotInfoServiceWSDDServiceName());
+            if (mypackage.DataCollectionService_PortType.class.isAssignableFrom(serviceEndpointInterface)) {
+                mypackage.DataCollectionServiceSoapBindingStub _stub = new mypackage.DataCollectionServiceSoapBindingStub(new java.net.URL(DataCollectionService_address), this);
+                _stub.setPortName(getDataCollectionServiceWSDDServiceName());
                 return _stub;
             }
         }
@@ -97,8 +94,8 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("GetLotInfoService".equals(inputPortName)) {
-            return getGetLotInfoService();
+        if ("DataCollectionService".equals(inputPortName)) {
+            return getDataCollectionService();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -108,7 +105,7 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "GetLotInfoServiceService");
+        return new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "DataCollectionServiceService");
     }
 
     private java.util.HashSet ports = null;
@@ -116,7 +113,7 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "GetLotInfoService"));
+            ports.add(new javax.xml.namespace.QName("http://xml.fa-software.com/mycim/wsdd/", "DataCollectionService"));
         }
         return ports.iterator();
     }
@@ -126,8 +123,8 @@ public class GetLotInfoServiceServiceLocator extends org.apache.axis.client.Serv
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("GetLotInfoService".equals(portName)) {
-            setGetLotInfoServiceEndpointAddress(address);
+if ("DataCollectionService".equals(portName)) {
+            setDataCollectionServiceEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

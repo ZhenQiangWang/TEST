@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/EAP/ChangeEqpStatusService/ChangeEqpStatusService.iml" filepath="$PROJECT_DIR$/EAP/ChangeEqpStatusService/ChangeEqpStatusService.iml" />
       <module fileurl="file://$PROJECT_DIR$/EAP/CheckMaterialService/CheckMaterialService.iml" filepath="$PROJECT_DIR$/EAP/CheckMaterialService/CheckMaterialService.iml" />
       <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EAP/DataCollection/DataCollection.iml" filepath="$PROJECT_DIR$/EAP/DataCollection/DataCollection.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/ERP.iml" filepath="$PROJECT_DIR$/ERP/ERP.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/ERPTest/ERPTest.iml" filepath="$PROJECT_DIR$/ERP/ERPTest/ERPTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/ERP/ERPZS/ERPZS.iml" filepath="$PROJECT_DIR$/ERP/ERPZS/ERPZS.iml" />

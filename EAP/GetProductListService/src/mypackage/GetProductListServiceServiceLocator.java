@@ -22,7 +22,8 @@ public class GetProductListServiceServiceLocator extends org.apache.axis.client.
     }
 
     // Use to get a proxy class for GetProductListService
-    private java.lang.String GetProductListService_address = "http://192.168.90.160:7001/mycim2/services/GetProductListService";
+//    private java.lang.String GetProductListService_address = "http://192.168.90.160:7001/mycim2/services/GetProductListService";
+    private java.lang.String GetProductListService_address = "http://localhost:7001/mycim2/services/GetProductListService";
 
     public java.lang.String getGetProductListServiceAddress() {
         return GetProductListService_address;

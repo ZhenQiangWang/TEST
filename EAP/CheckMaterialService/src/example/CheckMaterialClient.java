@@ -15,7 +15,7 @@ public class CheckMaterialClient {
     try {
       CheckMaterialServiceServiceLocator checkMaterialServiceServiceLocator = new CheckMaterialServiceServiceLocator();
       CheckMaterialService_PortType checkMaterialService = checkMaterialServiceServiceLocator.getCheckMaterialService();
-      MaterialCheckDTO materialCheckDTO = new MaterialCheckDTO();
+     /* MaterialCheckDTO materialCheckDTO = new MaterialCheckDTO();
       List<materialCheckInfo> materialCheckInfos = new ArrayList<>();
       materialCheckDTO.setLotId("D1930016");
 
@@ -53,10 +53,10 @@ public class CheckMaterialClient {
       materialList2.setMaterialQty("12");
       materialLotInfos2.add(materialList2);
 
-     /* materialList materialList3 = new materialList();
+     *//* materialList materialList3 = new materialList();
       materialList3.setMaterialLotNo("03.06.03.00019A200400");
       materialList3.setMaterialQty("30000");
-      materialLotInfos2.add(materialList3);*/
+      materialLotInfos2.add(materialList3);*//*
 
       materialCheckInfo2.setMaterialList(materialLotInfos2);
       materialCheckInfos.add(materialCheckInfo2);
@@ -64,8 +64,40 @@ public class CheckMaterialClient {
 
 
       materialCheckDTO.setMaterialCheckInfos(materialCheckInfos);
-      System.out.println(JSON.toJSONString(materialCheckDTO));
-      String summer = checkMaterialService.checkMaterialService(JSON.toJSONString(materialCheckDTO));
+      System.out.println(JSON.toJSONString(materialCheckDTO));*/
+      String str1 = "{\n" +
+              "    \"lotId\": \"D2224007\",\n" +
+              "    \"materialCheckInfos\": [{\n" +
+              "            \"materialList\": [{\n" +
+              "                    \"materialLotNo\": \"CKS23H3300010\",\n" +
+              "                    \"materialQty\": \"1\"\n" +
+              "                }, {\n" +
+              "                    \"materialLotNo\": \"CKS23H3300011\",\n" +
+              "                    \"materialQty\": \"1\"\n" +
+              "                },\n" +
+              "            ],\n" +
+              "            \"materialNo\": \"DECBCA00453\"\n" +
+              "        }, {\n" +
+              "            \"materialList\": [{\n" +
+              "                    \"materialLotNo\": \"CKS1CX0100339-2\",\n" +
+              "                    \"materialQty\": \"1\"\n" +
+              "                }, {\n" +
+              "                    \"materialLotNo\": \"CKS1CX0100339-1\",\n" +
+              "                    \"materialQty\": \"1\"\n" +
+              "                }\n" +
+              "            ],\n" +
+              "            \"materialNo\": \"PANNRA00535\"\n" +
+              "        }, {\n" +
+              "            \"materialList\": [{\n" +
+              "                    \"materialLotNo\": \"CKS1CX0200036\",\n" +
+              "                    \"materialQty\": \"1\"\n" +
+              "                }\n" +
+              "            ],\n" +
+              "            \"materialNo\": \"M0501A00041\"\n" +
+              "        }\n" +
+              "    ]\n" +
+              "}\n";
+      String summer = checkMaterialService.checkMaterialService(str1);
       System.out.println(summer);
     } catch (Exception ex) {
       ex.printStackTrace();

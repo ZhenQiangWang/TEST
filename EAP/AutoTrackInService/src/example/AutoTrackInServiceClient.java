@@ -14,9 +14,9 @@ public class AutoTrackInServiceClient {
             AutoTrackInService_PortType autoTrackInService = autoTrackInServiceServiceLocator.getAutoTrackInService();
             AutoTrackInDTO autoTrackInDTO = new AutoTrackInDTO();
 //            autoTrackInDTO.setLotId("D1751039_1");
-            autoTrackInDTO.setLotId("E02M045.01");
+            autoTrackInDTO.setLotId("D2224006");
             autoTrackInDTO.setOperId("ADMIN");
-            autoTrackInDTO.setEqpId("PPTR01");
+            autoTrackInDTO.setEqpId("PMLM01");
 //            autoTrackInDTO.setEqpId("PPPS02");
 //            autoTrackInDTO.setOddLotId("D2222017.01");
 //            autoTrackInDTO.setOddLotQty(5);

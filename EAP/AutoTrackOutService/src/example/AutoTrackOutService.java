@@ -123,8 +123,8 @@ public class AutoTrackOutService {
               "    \"materialBoxBarcode\": [],\n" +
               "    \"materialInfo\": [],\n" +
               "    \"operId\": \"ADMIN\",\n" +
-              "\t\"testerId\": null,\n" +
-              "\t\"remark\":\"测试\",\n" +
+              "    \"testerId\": null,\n" +
+              "    \"remark\": \"\",\n" +
               "    \"outputList\": [{\n" +
               "            \"inputQty\": [],\n" +
               "            \"output\": \"458\",\n" +
@@ -132,66 +132,66 @@ public class AutoTrackOutService {
               "            \"type\": \"Normal\"\n" +
               "        }\n" +
               "    ],\n" +
-              "\t\"data\": [{\n" +
-              "            \"parameter\": \"LBL_LIDS_POSITION_X2\",\n" +
-              "            \"tubeNumValue\": [{\n" +
-              "                    \"eqpID\": \"\",\n" +
-              "                    \"operId\": \"\",\n" +
-              "                    \"qualifiedVal\": \"\",\n" +
-              "                    \"mean\": \"\",\n" +
-              "                    \"std\": \"\",\n" +
-              "                    \"cpk\": \"\",\n" +
-              "                    \"dateTime\": \"\",\n" +
-              "                    \"sampleCode\": \"\",\n" +
-              "                    \"tubeNum\": \"C1\",\n" +
-              "                    \"rawData\": [\"-515\"],\n" +
-              "                    \"remark\": []\n" +
-              "                },{\n" +
-              "                    \"eqpID\": \"\",\n" +
-              "                    \"operId\": \"\",\n" +
-              "                    \"qualifiedVal\": \"\",\n" +
-              "                    \"mean\": \"\",\n" +
-              "                    \"std\": \"\",\n" +
-              "                    \"cpk\": \"\",\n" +
-              "                    \"dateTime\": \"\",\n" +
-              "                    \"sampleCode\": \"\",\n" +
-              "                    \"tubeNum\": \"C2\",\n" +
-              "                    \"rawData\": [\"-514\"],\n" +
-              "                    \"remark\": []\n" +
-              "                }\n" +
-              "            ]\n" +
-              "        }, {\n" +
-              "            \"parameter\": \"LBL_MARK _POSITION_X1\",\n" +
-              "            \"tubeNumValue\": [{\n" +
-              "                    \"eqpID\": \"\",\n" +
-              "                    \"operId\": \"\",\n" +
-              "                    \"qualifiedVal\": \"\",\n" +
-              "                    \"mean\": \"\",\n" +
-              "                    \"std\": \"\",\n" +
-              "                    \"cpk\": \"\",\n" +
-              "                    \"dateTime\": \"\",\n" +
-              "                    \"sampleCode\": \"\",\n" +
-              "                    \"tubeNum\": \"C1\",\n" +
-              "                    \"rawData\": [\"-595\"],\n" +
-              "                    \"remark\": []\n" +
-              "                },{\n" +
-              "                    \"eqpID\": \"\",\n" +
-              "                    \"operId\": \"\",\n" +
-              "                    \"qualifiedVal\": \"\",\n" +
-              "                    \"mean\": \"\",\n" +
-              "                    \"std\": \"\",\n" +
-              "                    \"cpk\": \"\",\n" +
-              "                    \"dateTime\": \"\",\n" +
-              "                    \"sampleCode\": \"\",\n" +
-              "                    \"tubeNum\": \"C2\",\n" +
-              "                    \"rawData\": [\"-695\"],\n" +
-              "                    \"remark\": []\n" +
-              "                }\n" +
-              "            ]\n" +
+              "    \"data\": [{\n" +
+              "            \"tubeNum\": \"C2\",\n" +
+              "            \"params\":[{\n" +
+              "                    \"param\": \"BINNO\",\n" +
+              "                    \"value\": \"1\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Recipe\",\n" +
+              "                    \"value\": \"DWX19G73-37HC_V08&TestPlanV05\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Tester\",\n" +
+              "                    \"value\": \"PTDT04\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"P/F\",\n" +
+              "                    \"value\": \"Pass\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Idoff(mA)\",\n" +
+              "                    \"value\": \"P\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Idon(mA)\",\n" +
+              "                    \"value\": \"P\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Freq_375M(Hz)\",\n" +
+              "                    \"value\": \"P375M\"\n" +
+              "                },\n" +
+              "            ],\n" +
+              "            \"parameter\": [\"LBL_LIDS_POSITION_X2\", \"LBL_MARK _POSITION_X1\"],\n" +
+              "            \"rawData\": [\"-386\", \"-387\"]\n" +
+              "        },{\n" +
+              "            \"tubeNum\": \"C3\",\n" +
+              "            \"params\":[{\n" +
+              "                    \"param\": \"BINNO\",\n" +
+              "                    \"value\": \"1\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Recipe\",\n" +
+              "                    \"value\": \"DWX19G73-37HC_V08&TestPlanV05\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Tester\",\n" +
+              "                    \"value\": \"PTDT04\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"P/F\",\n" +
+              "                    \"value\": \"Pass\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Idoff(mA)\",\n" +
+              "                    \"value\": \"P\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Idon(mA)\",\n" +
+              "                    \"value\": \"P\"\n" +
+              "                }, {\n" +
+              "                    \"param\": \"Freq_375M(Hz)\",\n" +
+              "                    \"value\": \"P375M\"\n" +
+              "                },\n" +
+              "            ],\n" +
+              "            \"parameter\": [\"LBL_LIDS_POSITION_X2\", \"LBL_MARK _POSITION_X1\"],\n" +
+              "            \"rawData\": [\"-486\", \"-487\"]\n" +
               "        }\n" +
               "    ]\n" +
-              "    \n" +
+              "\n" +
               "}\n";
+
+      System.out.println(info);
       String summer = autoTrackOutService.autoTrackOutService(info);
       System.out.println(summer);
     } catch (Exception ex) {

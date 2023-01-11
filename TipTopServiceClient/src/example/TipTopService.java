@@ -120,17 +120,17 @@ public class TipTopService {
     private static void reciveMaterial(TipTopMycimService_PortType tipTopMycimService) {
         try {
             String strq = "<tipTopMaterialInfoDTOS>\n" +
-                    "\t<billId>DB09-KS0022100109</billId>\n" +
-                    "\t<materialId>PANNRA00548</materialId>\n" +
-                    "\t<lotNumber>202211101400</lotNumber>\n" +
-                    "\t<waferId>123<waferId/>\n" +
-                    "\t<trayId>456<trayId/>\n" +
+                    "\t<billId>SPLI-KS0022120110</billId>\n" +
+                    "\t<materialId>PANNRA00426</materialId>\n" +
+                    "\t<lotNumber>CKS1CX0100125-1.007</lotNumber>\n" +
+                    "\t<waferId/>\n" +
+                    "\t<trayId/>\n" +
                     "\t<expirationDate>2023-09-15</expirationDate>\n" +
                     "\t<trnflinwarehouse>W31</trnflinwarehouse>\n" +
-                    "\t<qty>220.000</qty>\n" +
-                    "\t<comments>备注</comments>\n" +
-                    "\t<LotId>N000322022092001</LotId>\n" +
-                    "\t<productionDate>2022-09-20 00:00:00.0</productionDate>\n" +
+                    "\t<qty>1.000</qty>\n" +
+                    "\t<comments>物料拆包</comments>\n" +
+                    "\t<LotId>2108001</LotId>\n" +
+                    "\t<productionDate>2021-01-30 00:00:00.0</productionDate>\n" +
                     "\t<userId>01333</userId>\n" +
                     "\t<trnfloutwarehouse>A01</trnfloutwarehouse>\n" +
                     "</tipTopMaterialInfoDTOS>";
@@ -721,25 +721,25 @@ public class TipTopService {
     public static void setProduct(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
         String request = "<request>\n" +
                 "<identity>\n" +
-                "   <transactionid>2022112515383385</transactionid>\n" +
+                "   <transactionid>2023011016571103</transactionid>\n" +
                 "   <moduleid>TP</moduleid>\n" +
                 "   <functionid>SI</functionid>\n" +
                 "   <computername>MES01</computername>\n" +
                 "   <curuserno>01200</curuserno>\n" +
-                "   <sendtime>2022/11/25 15:38:33</sendtime>\n" +
+                "   <sendtime>2023/01/10 16:57:11</sendtime>\n" +
                 "</identity>\n" +
                 "<parameter>\n" +
                 "\n" +
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PANNRA00645</value>\n" +
+                "    <value>PANNRA00643</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +
                 "    <name>ProductVersion</name>\n" +
                 "    <type>String</type>\n" +
-                "     <value>DXG2PH60B-14N-002</value>\n" +
+                "     <value>DXG2PH36A-70N-002</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productversion>\n" +
                 "  <productname>\n" +
@@ -763,7 +763,7 @@ public class TipTopService {
                 "  <specno>\n" +
                 "    <name>SpecNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>DXG2PH60B-14N</value>\n" +
+                "    <value>DXG2PH36A-70N</value>\n" +
                 "    <desc></desc>\n" +
                 "  </specno>\n" +
                 "  <creator>\n" +
@@ -781,7 +781,7 @@ public class TipTopService {
                 "  <mark>\n" +
                 "    <name>MARK</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>DC14B</value>\n" +
+                "    <value>DS7C</value>\n" +
                 "    <desc></desc>\n" +
                 "  </mark>\n" +
                 "  <productCategory>\n" +
@@ -793,7 +793,7 @@ public class TipTopService {
                 "  <packageType>>\n" +
                 "    <name>packageType</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>卷带</value>\n" +
+                "    <value>卷带式</value>\n" +
                 "    <desc></desc>\n" +
                 "  </packageType>\n" +
                 "  <packOutQty>\n" +

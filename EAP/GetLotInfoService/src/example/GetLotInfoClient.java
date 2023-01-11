@@ -8,7 +8,7 @@ public class GetLotInfoClient {
       try {
           GetLotInfoServiceServiceLocator getLotInfoServiceServiceLocator = new GetLotInfoServiceServiceLocator();
           GetLotInfoService_PortType getLotInfoService = getLotInfoServiceServiceLocator.getGetLotInfoService();
-          String summer = getLotInfoService.getLotInfoService("D1931005");
+          String summer = getLotInfoService.getLotInfoService("D1931010");
           System.out.println(summer);
       } catch (Exception ex) {
           ex.printStackTrace();

@@ -1,5 +1,8 @@
 package example;
 
+import example.EAPAutoDataCollection.Params;
+import example.EAPAutoDataCollection.RawData;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,7 +19,10 @@ public class AutoTrackOutDTO implements Serializable {
     private String materialBoxBarCode;
 
     private String remark;
-    private List<data> data;
+
+    private List<Params> Tester;
+
+    private List<RawData> data;
 
     public String getEqpId() {
         return EqpId;
@@ -58,19 +64,27 @@ public class AutoTrackOutDTO implements Serializable {
         this.materialBoxBarCode = materialBoxBarCode;
     }
 
-    public List<example.data> getData() {
-        return data;
-    }
-
-    public void setData(List<example.data> data) {
-        this.data = data;
-    }
-
     public String getRemark() {
         return remark;
     }
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public List<Params> getTester() {
+        return Tester;
+    }
+
+    public void setTester(List<Params> tester) {
+        Tester = tester;
+    }
+
+    public List<RawData> getData() {
+        return data;
+    }
+
+    public void setData(List<RawData> data) {
+        this.data = data;
     }
 }

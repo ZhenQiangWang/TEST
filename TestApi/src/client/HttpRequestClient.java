@@ -3,6 +3,9 @@ package client;
 import DTO.TestEAPDTO;
 import DTO.resultVO;
 import com.alibaba.fastjson.JSON;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfImportedPage;
+import com.itextpdf.text.pdf.PdfReader;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -18,11 +21,21 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 
 /**
  * @author wxweven
@@ -55,9 +68,10 @@ public class HttpRequestClient {
 
     public static void main(String[] args) throws Exception {
         HttpRequestClient httpRequestClient = new HttpRequestClient();
-//        CloseableHttpClient httpclient = HttpClients.createDefault();
-//        HttpPost post = new HttpPost(fileDecryptionURL);
-        /*File file = new File("D:\\13.xlsx");
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost post = new HttpPost(fileDecryptionURL);
+//        File file = new File("C://Users//zhenqiang.wang//Desktop//SOP//设备组定义.pdf");
+        File file = new File("D://新建文件夹//PWWB03//RMS-Recipe-PWWB03-BB-60-10EC-001-V0-20230214-135945.xls");
         post.addHeader("method~name", "fileDecryptionRest"); //文件解密
         post.addHeader("data~fileOffset", "0");
         post.addHeader("data~counSize", file.length()+"");
@@ -70,26 +84,49 @@ public class HttpRequestClient {
         String result = response.getFirstHeader("data~returnFlag").getValue();
         if("0".equals(result)){//0 表示成功
             System.out.println("解密成功");
-//            OutputStream out = new FileOutputStream(new File("D:\\jiemi.txt"));
+            InputStream inputStream = response.getEntity().getContent();
+            InputStreamReader inputStreamReader = new InputStreamReader(inputStream,"UTF-8");
+            // 创建工作簿对象
+//            Workbook workbook = new HSSFWorkbook(inputStream);
+            Workbook workbook = WorkbookFactory.create(inputStream);
 
-            InputStream ins = response.getEntity().getContent();
-            InputStreamReader inputStreamReader = new InputStreamReader(ins,"UTF-8");
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-            String line;
-            while ((line = bufferedReader.readLine()) != null){{
-                System.out.println(line);
+            // 创建文件输出流
+            FileOutputStream outputStream = new FileOutputStream("D://新建文件夹//PWWB03//RMS-Recipe-PWWB03-BB-60-10EC-001-V0-20230214-135945_jiemi.xls");
+
+            // 将工作簿写入到文件输出流中
+            workbook.write(outputStream);
+
+            // 关闭输出流和输入流
+            outputStream.close();
+            inputStream.close();
+
+            /*// 创建 Document 对象
+            Document document = new Document();
+
+            // 创建 PdfWriter 并将 Document 对象写入文件
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("C://Users//zhenqiang.wang//Desktop//SOP//解密//设备组定义.pdf"));
+
+            // 打开 Document 对象
+            document.open();
+
+            // 创建 PdfContentByte 对象
+            PdfContentByte cb = writer.getDirectContent();
+
+            // 使用 PdfWriter 将 InputStream 对象写入 PDF 文件
+            PdfReader reader = new PdfReader(inputStream);
+            for (int i = 1; i <= reader.getNumberOfPages(); i++) {
+                document.newPage();
+                PdfImportedPage page = writer.getImportedPage(reader, i);
+                cb.addTemplate(page, 0, 0);
             }
 
-            }
-            *//*byte[] bs = new byte[1024];
-            int len = 0;
-            while((len=ins.read(bs))>-1){
-                out.write(bs, 0, len);
-            }*//*
-//            out.flush();
-//            out.close();
-        }*/
-        DataColletcionVO dataColletcionVO = new DataColletcionVO();
+            // 关闭 Document 对象和 InputStream 对象
+            document.close();*/
+            inputStream.close();
+//            System.out.println("PDF 文件写入成功！");
+
+        }
+       /* DataColletcionVO dataColletcionVO = new DataColletcionVO();
         dataColletcionVO.setTrackInTime("2022-06-06 08:48:25");
         dataColletcionVO.setLotId("D2223013");
         dataColletcionVO.setEqpId("PVVI04");
@@ -102,7 +139,7 @@ public class HttpRequestClient {
             String result = EntityUtils.toString(entity, "UTF-8");
             resultVO resultVO = JSON.parseObject(result, resultVO.class);
             System.out.println(result);
-        }
+        }*/
     }
 
     /**

@@ -8,7 +8,7 @@ public class GetReasonCodeService {
       try {
           GetReasonCodeServiceServiceLocator getReasonCodeServiceServiceLocator = new GetReasonCodeServiceServiceLocator();
           GetReasonCodeService_PortType getProductListService = getReasonCodeServiceServiceLocator.getGetReasonCodeService();
-          String result = getProductListService.getReasonCodeService("FT","D2224009.01");
+          String result = getProductListService.getReasonCodeService("FT123","D2224009.01");
           System.out.println(result);
       } catch (Exception ex) {
 

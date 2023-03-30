@@ -29,9 +29,9 @@ public class TipTopService {
 //            reciveMaterial(tipTopMycimService);
 //            updateWorkOrder(tipTopMycimService);
 //            workOrderClose(tipTopMycimService);
-//            reciveWorkOrder(tipTopMycimService);
+            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
-            setProduct(tipTopMycimService);
+//            setProduct(tipTopMycimService);
 //            setMaterial(tipTopMycimService);
 //            closeWorkorder(tipTopMycimService);
 //            deleteWorkorder(tipTopMycimService);
@@ -489,109 +489,211 @@ public class TipTopService {
 
     public static void reciveWorkOrder(TipTopMycimService_PortType tipTopMycimService) throws RemoteException {
         String titopWorkOrder = "<request>\n" +
-                "<identity>\n" +
-                "   <transactionid>2022070413215723</transactionid>\n" +
-                "   <moduleid>TP</moduleid>\n" +
-                "   <functionid>SI</functionid>\n" +
-                "   <computername>MES01</computername>\n" +
-                "   <curuserno>00234</curuserno>\n" +
-                "   <sendtime>2022/07/04 13:21:57</sendtime>\n" +
-                "</identity>\n" +
-                "<parameter>\n" +
-                "\n" +
-                "  <mono>\n" +
-                "    <name>MONo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>PA05-KS00220700011</value>\n" +
-                "    <desc></desc>\n" +
-                "  </mono>\n" +
-                "  <rono>\n" +
-                "    <name>RONo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value></value>\n" +
-                "    <desc></desc>\n" +
-                "  </rono>\n" +
-                "  <itemno>\n" +
-                "    <name>ItemNo</name>\n" +
-                "    <type>Numeric</type>\n" +
-                "    <value>       </value>\n" +
-                "    <desc></desc>\n" +
-                "  </itemno>\n" +
-                "  <customerno>\n" +
-                "    <name>CustomerNo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value></value>\n" +
-                "    <desc></desc>\n" +
-                "  </customerno>\n" +
-                "  <factoryno>\n" +
-                "    <name>FactoryNo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>KS</value>\n" +
-                "    <desc></desc>\n" +
-                "  </factoryno>\n" +
-                "  <moqty>\n" +
-                "    <name>MOQty</name>\n" +
-                "    <type>Numeric</type>\n" +
-                "    <value>             5.000</value>\n" +
-                "    <desc></desc>\n" +
-                "  </moqty>\n" +
-                "  <productno>\n" +
-                "    <name>ItemNo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>PANNTA006522</value>\n" +
-                "    <desc></desc>\n" +
-                "  </productno>\n" +
-                "  <motypeno>\n" +
-                "    <name>MOTypeNo</name>\n" +
-                "    <type>Numeric</type>\n" +
-                "    <value>      5</value>\n" +
-                "    <desc></desc>\n" +
-                "  </motypeno>\n" +
-                "  <planfinishdate>\n" +
-                "    <name>PlanFinishDate</name>\n" +
-                "    <type>Date</type>\n" +
-                "    <value>22/07/04</value>\n" +
-                "    <desc></desc>\n" +
-                "  </planfinishdate>\n" +
-                "  <mounitno>\n" +
-                "    <name>MOUnitNo</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>PCS</value>\n" +
-                "    <desc></desc>\n" +
-                "  </mounitno>\n" +
-                "  <creator>\n" +
-                "    <name>Creator</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>00234</value>\n" +
-                "    <desc></desc>\n" +
-                "  </creator>\n" +
-                "  <planStartTime>>\n" +
+                "\t<identity>\n" +
+                "\t\t<transactionid>2023031114281720</transactionid>\n" +
+                "\t\t<moduleid>TP</moduleid>\n" +
+                "\t\t<functionid>SI</functionid>\n" +
+                "\t\t<computername>MES01</computername>\n" +
+                "\t\t<curuserno>00228</curuserno>\n" +
+                "\t\t<sendtime>2023/03/11 14:28:17</sendtime>\n" +
+                "\t</identity>\n" +
+                "\t<parameter>\n" +
+                "\t\t<mono>\n" +
+                "\t\t\t<name>MONo</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value>PA03-KS0023030006</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</mono>\n" +
+                "\t\t<rono>\n" +
+                "\t\t\t<name>RONo</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value/>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</rono>\n" +
+                "\t\t<itemno>\n" +
+                "\t\t\t<name>ItemNo</name>\n" +
+                "\t\t\t<type>Numeric</type>\n" +
+                "\t\t\t<value>      </value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</itemno>\n" +
+                "\t\t<customerno>\n" +
+                "\t\t\t<name>CustomerNo</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value/>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</customerno>\n" +
+                "\t\t<moqty>\n" +
+                "\t\t\t<name>MOQty</name>\n" +
+                "\t\t\t<type>Numeric</type>\n" +
+                "\t\t\t<value>          120.000</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</moqty>\n" +
+                "\t\t\t<productno>\n" +
+                "\t\t\t<name>ItemNo</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value>PANNRA00659</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</productno>\n" +
+                "\t\t<motypeno>\n" +
+                "\t\t\t<name>MOTypeNo</name>\n" +
+                "\t\t\t<type>Numeric</type>\n" +
+                "\t\t\t<value>     1</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</motypeno>\n" +
+                "\t\t<planfinishdate>\n" +
+                "\t\t\t<name>PlanFinishDate</name>\n" +
+                "\t\t\t<type>Date</type>\n" +
+                "\t\t\t<value>23/03/22</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</planfinishdate>\n" +
+                "\t\t<planStartTime>>\n" +
                 "    <name>planStartTime</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>22/07/04</value>\n" +
-                "    <desc></desc>\n" +
-                "  </planStartTime>\n" +
-                "  <momateriallist>\n" +
-                "    <name>MOMaterialList</name>\n" +
-                "    <type>String</type>\n" +
-                "    <value>\n" +
-                "      <materialno>PANNTA00652</materialno>\n" +
-                "      <materiallevel>      1</materiallevel>\n" +
-                "      <stdqty>         1.00000000</stdqty>\n" +
-                "      <unitno>PCS</unitno>\n" +
-                "      <opno></opno>\n" +
-                "      <putinplacetype>3</putinplacetype>\n" +
-                "      <substitutematerialno>PANNTA00652</substitutematerialno>\n" +
-                "      <substitutemateriallevel>      1</substitutemateriallevel>\n" +
-                "      <substitutestdqty>         1.00000000</substitutestdqty>\n" +
-                "      <requireqty>               5.00000000</requireqty>\n" +
-                "      <characteristics>N</characteristics>\n" +
-                "      <wfid>            </wfid>\n" +
-                "     </value>\n" +
-                "\n" +
-                "  </momateriallist>\n" +
-                "</parameter>\n" +
-                "</request>";
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value>23/03/08</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</planStartTime>\n" +
+                "\t\t<mounitno>\n" +
+                "\t\t\t<name>MOUnitNo</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value>PCS</value>\n" +
+                "\t\t\t<desc/>\n" +
+                "\t\t</mounitno>\n" +
+                "\t\t<momateriallist>\n" +
+                "\t\t\t<name>MOMaterialList</name>\n" +
+                "\t\t\t<type>String</type>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>DECBCA00459</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     1</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>DDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>DECBCA00459</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     1</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        4.40000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>M0503A00006</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>DDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>M0503A00006</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        3.66666667</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>M0503A00013</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>DDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>M0503A00013</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        4.40000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>M0504A00004</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>      569.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>MM</unitno>\n" +
+                "\t\t\t\t<opno>WB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>M0504A00004</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>      521.58333333</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>          62590.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000099</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        1.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>CDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000099</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        1.10000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            110.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000100</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        1.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>LM</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000100</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        1.10000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            110.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000106</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>DDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000106</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        3.66666667</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000112</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        3.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>DDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000112</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        2.75000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            330.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000113</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>CDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000113</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        4.40000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t\t<value>\n" +
+                "\t\t\t\t<materialno>NPI10000114</materialno>\n" +
+                "\t\t\t\t<materialtype/>\n" +
+                "\t\t\t\t<materiallevel>     0</materiallevel>\n" +
+                "\t\t\t\t<stdqty>        4.00000000</stdqty>\n" +
+                "\t\t\t\t<unitno>PCS</unitno>\n" +
+                "\t\t\t\t<opno>CDB</opno>\n" +
+                "\t\t\t\t<putinplacetype>3</putinplacetype>\n" +
+                "\t\t\t\t<substitutematerialno>NPI10000114</substitutematerialno>\n" +
+                "\t\t\t\t<substitutemateriallevel>     0</substitutemateriallevel>\n" +
+                "\t\t\t\t<substitutestdqty>        4.40000000</substitutestdqty>\n" +
+                "\t\t\t\t<requireqty>            440.00000000</requireqty>\n" +
+                "\t\t\t</value>\n" +
+                "\t\t</momateriallist>\n" +
+                "\t</parameter>\n" +
+                "</request> ";
         String result = tipTopMycimService.tipTopReciveWorkOrder(titopWorkOrder);
         System.out.println(result);
     }

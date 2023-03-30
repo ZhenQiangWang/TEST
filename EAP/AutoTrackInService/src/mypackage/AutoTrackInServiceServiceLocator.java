@@ -22,10 +22,10 @@ public class AutoTrackInServiceServiceLocator extends org.apache.axis.client.Ser
     }
 
     // Use to get a proxy class for AutoTrackInService
-//    private java.lang.String AutoTrackInService_address = "http://localhost:7001/mycim2/services/AutoTrackInService";
+    private java.lang.String AutoTrackInService_address = "http://localhost:7001/mycim2/services/AutoTrackInService";
 //    private java.lang.String AutoTrackInService_address = "http://192.168.68.95/mycim2/services/AutoTrackInService";
 //    private java.lang.String AutoTrackInService_address = "http://localhost:7001/mycim2/services/AutoTrackInService";
-    private java.lang.String AutoTrackInService_address = "http://192.168.68.57:7003/mycim2/services/AutoTrackInService";
+//    private java.lang.String AutoTrackInService_address = "http://192.168.68.57:7003/mycim2/services/AutoTrackInService";
 
 
     public java.lang.String getAutoTrackInServiceAddress() {

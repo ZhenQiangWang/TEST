@@ -22,7 +22,8 @@ public class GetEqpStatusServiceServiceLocator extends org.apache.axis.client.Se
     }
 
     // Use to get a proxy class for GetEqpStatusService
-    private java.lang.String GetEqpStatusService_address = "http://192.168.90.160:7001/mycim2/services/GetEqpStatusService";
+    private java.lang.String GetEqpStatusService_address = "http://localhost:7001/mycim2/services/GetEqpStatusService";
+//    private java.lang.String GetEqpStatusService_address = "http://192.168.90.160:7001/mycim2/services/GetEqpStatusService";
 
     public java.lang.String getGetEqpStatusServiceAddress() {
         return GetEqpStatusService_address;

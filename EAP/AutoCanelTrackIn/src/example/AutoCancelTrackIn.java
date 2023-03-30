@@ -16,7 +16,7 @@ public class AutoCancelTrackIn {
           cancelTrackInDTO.setLotId("D2224003");
           cancelTrackInDTO.setStepID("123");
 //          cancelTrackInDTO.setLotId("aaa");
-          cancelTrackInDTO.setOperId("ADMIN");
+          cancelTrackInDTO.setOperId("");
           cancelTrackInDTO.setReason("TEST EAP AutoCancel TrackIn");
           System.out.println(JSON.toJSONString(cancelTrackInDTO));
           String summer = cancelTrackInService.cancelTrackInService(JSON.toJSONString(cancelTrackInDTO));

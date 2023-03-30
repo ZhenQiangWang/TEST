@@ -22,9 +22,9 @@ public class TipTopMycimServiceServiceLocator extends org.apache.axis.client.Ser
     }
 
     // Use to get a proxy class for TipTopMycimService
-    private java.lang.String TipTopMycimService_address = "http://localhost:7001/mycim2/services/TipTopMycimService";
-//    private java.lang.String TipTopMycimService_address = "http://192.168.68.60:7001/mycim2/services/TipTopMycimService";
-//    private java.lang.String TipTopMycimService_address = "http://192.168.68.95/mycim2/services/TipTopMycimService";
+//    private java.lang.String TipTopMycimService_address = "http://localhost:7001/mycim2/services/TipTopMycimService";
+//    private java.lang.String TipTopMycimService_address = "http://192.168.68.57:7003/mycim2/services/TipTopMycimService";
+    private java.lang.String TipTopMycimService_address = "http://192.168.68.95/mycim2/services/TipTopMycimService";
 
     public java.lang.String getTipTopMycimServiceAddress() {
         return TipTopMycimService_address;

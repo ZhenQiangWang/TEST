@@ -9,7 +9,7 @@ import java.io.*;
 public class FileDecryption {
     public static final String outPutPath = "D://解密";
     public static void main(String[] args) throws Exception {
-        File dir = new File("D://新建文件夹"); // 替换成实际的目录路径
+        File dir = new File("D://bfyy"); // 替换成实际的目录路径
         listFiles(dir);
 //        decFile("D://项目管理//EAP//NI//备件寿命计算逻辑.xlsx","备件寿命计算逻辑.xlsx");
     }

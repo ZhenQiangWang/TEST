@@ -23,7 +23,7 @@ public class AutoTrackInServiceClient {
             /*List<String> materialBoxBarCode = new ArrayList<>();
             materialBoxBarCode.add("2");
             autoTrackInDTO.setMaterialBoxBarCode(materialBoxBarCode);*/
-            String trackInStr = "{\"eqpId\":\"PTDT04\",\"lotId\":\"D2224003\",\"materialBoxBarcode\":[],\"oddLotId\":null,\"oddLotQty\":0,\"operId\":\"nxadmin\"}";
+            String trackInStr = "{\"eqpId\":\"PTDT03\",\"lotId\":\"D2224003_ENG\",\"materialBoxBarcode\":[],\"oddLotId\":null,\"oddLotQty\":0,\"operId\":\"nxadmin\"}";
             System.out.println(JSON.toJSONString(autoTrackInDTO));
             String summer = autoTrackInService.autoTrackInService(trackInStr);
             System.out.println(summer);

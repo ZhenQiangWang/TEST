@@ -22,8 +22,9 @@ public class AutoTrackOutServiceServiceLocator extends org.apache.axis.client.Se
     }
 
     // Use to get a proxy class for AutoTrackOutService
-//    private java.lang.String AutoTrackOutService_address = "http://192.168.68.95/mycim2/services/AutoTrackOutService";
-    private java.lang.String AutoTrackOutService_address = "http://localhost:7001/mycim2/services/AutoTrackOutService";
+    private java.lang.String AutoTrackOutService_address = "http://192.168.68.95/mycim2/services/AutoTrackOutService";
+//    private java.lang.String AutoTrackOutService_address = "http://localhost:7001/mycim2/services/AutoTrackOutService";
+//    private java.lang.String AutoTrackOutService_address = "http://192.168.68.57:7003/mycim2/services/AutoTrackOutService";
 
     public java.lang.String getAutoTrackOutServiceAddress() {
         return AutoTrackOutService_address;

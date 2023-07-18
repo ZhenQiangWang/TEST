@@ -22,7 +22,7 @@ public class CallWebService {
         call.setTargetEndpointAddress(endpoint);
 //        call.setOperationName("GetEqpStatusService");//WSDL里面描述的接口名称
 //        call.addParameter("GetEqpStatusService", org.apache.axis.encoding.XMLType.XSD_DATE, javax.xml.rpc.ParameterMode.IN);//接口的参数
-        call.setOperationName("completeTecn");//WSDL里面描述的接口名称
+        call.setOperationName("delTecn");//WSDL里面描述的接口名称
 //        addTecn,completeTecn
         call.addParameter("TecnInfo", org.apache.axis.encoding.XMLType.XSD_DATE,
                 javax.xml.rpc.ParameterMode.IN);//接口的参数

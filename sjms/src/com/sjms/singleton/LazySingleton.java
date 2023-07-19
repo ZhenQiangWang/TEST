@@ -1,7 +1,8 @@
 package com.sjms.singleton;
 
 /**
- * 当 getInstance 方法第一次被调用的时候，它第一次读取 SingletonHolder.instance，导致 SingletonHolder 类得到初始化；而这个类在装载并被初始化的时候，会初始化它的静态域，从而创建 Singleton 的实例，由于是静态的域，因此只会被虚拟机在装载类的时候初始化一次，并由虚拟机来保证它的线程安全性。
+ * 当 getInstance 方法第一次被调用的时候，它第一次读取 SingletonHolder.instance，导致 SingletonHolder 类得到初始化；
+ * 而这个类在装载并被初始化的时候，会初始化它的静态域，从而创建 Singleton 的实例，由于是静态的域，因此只会被虚拟机在装载类的时候初始化一次，并由虚拟机来保证它的线程安全性。
  * 这个模式的优势在于，getInstance 方法并没有被同步，并且只是执行一个域的访问，因此延迟初始化并没有增加任何访问成本。
  */
 public class LazySingleton {

@@ -13,8 +13,8 @@ import net.sf.json.JSONObject;
 public class CallWebService {
     public static void main(String[] args) throws Exception {
 //        String endpoint = "http://localhost:7001/mycim2/services/GetEqpStatusService?wsdl";
-//        String endpoint = "http://localhost:7001/mycim2/services/TipTopMycimService?wsdl";
-        String endpoint = "http://192.168.82.85:7001/mycim2/services/TECNService?wsdl";
+        String endpoint = "http://localhost:7001/mycim2/services/TECNService?wsdl";
+//        String endpoint = "http://192.168.82.85:7001/mycim2/services/TECNService?wsdl";
         //直接引用远程的wsdl文件
         //以下都是套路
         Service service = new Service();
@@ -22,8 +22,8 @@ public class CallWebService {
         call.setTargetEndpointAddress(endpoint);
 //        call.setOperationName("GetEqpStatusService");//WSDL里面描述的接口名称
 //        call.addParameter("GetEqpStatusService", org.apache.axis.encoding.XMLType.XSD_DATE, javax.xml.rpc.ParameterMode.IN);//接口的参数
-        call.setOperationName("delTecn");//WSDL里面描述的接口名称
-//        addTecn,completeTecn
+        call.setOperationName("addTecn");//WSDL里面描述的接口名称
+//        addTecn,completeTecn,delTecn
         call.addParameter("TecnInfo", org.apache.axis.encoding.XMLType.XSD_DATE,
                 javax.xml.rpc.ParameterMode.IN);//接口的参数
        /* call.setOperationName("GetProductListService");//WSDL里面描述的接口名称
@@ -33,16 +33,17 @@ public class CallWebService {
 //        String result = (String) call.invoke(new Object[]{});
         HashMap<String, String> stringStringHashMap = new HashMap<>();
         stringStringHashMap.put("lcbh","lcbh3");
-        stringStringHashMap.put("tecnzxgx","DIE BONDING,WIREBONDING");
+        stringStringHashMap.put("tecnzxgx","DIE BONDING,WIREBONDING,WB");
         stringStringHashMap.put("sqr","sqr");
         stringStringHashMap.put("tecnsjpc","D1928007,D1931005");
+        stringStringHashMap.put("wlbm","01.01.01.30022,PANNRA00390");
         JSONObject jsonObject = new JSONObject();
         for (Map.Entry<String, String> entry : stringStringHashMap.entrySet()) {
             jsonObject.put(entry.getKey(), entry.getValue());
         }
 
 
-        String result = (String) call.invoke(new Object[]{jsonObject.toString()});//给方法传递参数，并且调用方法
+        String result = (String) call.invoke(new Object[]{"{\"sqr\":\"169\",\"tecnsjpc\":\"\",\"wlbm\":\"PANNRA00390,PANNRA00384\",\"lcbh\":\"TECN23080201\",\"tecnzxgx\":\"DB1,DB2\"}\t"});//给方法传递参数，并且调用方法
         System.out.println("result is " + result);
     }
 }

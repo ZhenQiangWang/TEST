@@ -36,7 +36,7 @@
       <module fileurl="file://$PROJECT_DIR$/ERP/WMS/WMS.iml" filepath="$PROJECT_DIR$/ERP/WMS/WMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/myCIM/myCIM.iml" filepath="$PROJECT_DIR$/myCIM/myCIM.iml" />
       <module fileurl="file://$PROJECT_DIR$/my_webservice/my_webservice.iml" filepath="$PROJECT_DIR$/my_webservice/my_webservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sjms/sjms.iml" filepath="$PROJECT_DIR$/sjms/sjms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pattern/pattern.iml" filepath="$PROJECT_DIR$/pattern/pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/testWebService.iml" filepath="$PROJECT_DIR$/testWebService.iml" />
     </modules>
   </component>

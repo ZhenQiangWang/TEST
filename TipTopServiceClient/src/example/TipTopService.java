@@ -26,12 +26,12 @@ public class TipTopService {
             TipTopMycimServiceServiceLocator tipTopMycimServiceServiceLocator = new TipTopMycimServiceServiceLocator();
             TipTopMycimService_PortType tipTopMycimService = tipTopMycimServiceServiceLocator.getTipTopMycimService();
 //             reportToTipTop(tipTopMycimService);
-            reciveMaterial(tipTopMycimService);
+//            reciveMaterial(tipTopMycimService);
 //            updateWorkOrder(tipTopMycimService);
 //            workOrderClose(tipTopMycimService);
 //            reciveWorkOrder(tipTopMycimService);
 //            submitToERP(tipTopMycimService);
-//            setProduct(tipTopMycimService);
+            setProduct(tipTopMycimService);
 //            setMaterial(tipTopMycimService);
 //            closeWorkorder(tipTopMycimService);
 //            deleteWorkorder(tipTopMycimService);
@@ -818,7 +818,7 @@ public class TipTopService {
                 "  <productno>\n" +
                 "    <name>ProductNo</name>\n" +
                 "    <type>String</type>\n" +
-                "    <value>PANNRA00643</value>\n" +
+                "    <value>PANNRA00644</value>\n" +
                 "    <desc></desc>\n" +
                 "  </productno>\n" +
                 "  <productversion>\n" +

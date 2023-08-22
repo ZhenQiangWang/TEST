@@ -1,8 +1,10 @@
 package client;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import java.io.*;
 
@@ -35,17 +37,53 @@ public class FileDecryption {
         if ("0".equals(result)) {//0 表示成功
             System.out.println("解密成功");
             InputStream inputStream = response.getEntity().getContent();
-//            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
-            // 创建工作簿对象
+//            writeExcel(inputStream,fileName);
+            writeWord(inputStream,fileName);
+            inputStream.close();
+        }
+    }
+
+    private static void writeWord(InputStream inputStream, String fileName) {
+        try {
+            OutputStream outputStream = new FileOutputStream(outPutPath+"//"+fileName); // Output Word document path
+            XWPFDocument document = new XWPFDocument();
+            document.createParagraph().createRun().setText(readInputStreamAsString(inputStream));
+            document.write(outputStream);
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static String readInputStreamAsString(InputStream inputStream) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        StringBuilder stringBuilder = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            stringBuilder.append(line).append("\n");
+        }
+        reader.close();
+        return stringBuilder.toString();
+    }
+
+    private static void writeExcel(InputStream inputStream, String fileName){
+        //            InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+        // 创建工作簿对象
 //            Workbook workbook = new HSSFWorkbook(inputStream);
-            Workbook workbook = WorkbookFactory.create(inputStream);
+        Workbook workbook = null;
+        try {
+            workbook = WorkbookFactory.create(inputStream);
             // 创建文件输出流
             FileOutputStream outputStream = new FileOutputStream(outPutPath+"//"+fileName);
             // 将工作簿写入到文件输出流中
             workbook.write(outputStream);
             // 关闭输出流和输入流
             outputStream.close();
-            inputStream.close();
+//            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InvalidFormatException e) {
+            e.printStackTrace();
         }
     }
 }

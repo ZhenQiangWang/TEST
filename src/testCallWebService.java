@@ -12,13 +12,13 @@ public class testCallWebService {
 
     public static void main(String[] args) {
         try {
-            String endpoint = "http://localhost:7003/mycim2/services/TECNService";
+            String endpoint = "http://localhost:7001/mycim2/services/TipTopMycimService";
             Service service = new Service();
             Call call = (Call) service.createCall();
             call.setTargetEndpointAddress(endpoint);
-            String parametersName = "TecnInfo"; 		// 参数名//对应的是 public String printWord(@WebParam(name = "settle_num") String settle_num);
+            String parametersName = "tblPRDProductBasis"; 		// 参数名//对应的是 public String printWord(@WebParam(name = "settle_num") String settle_num);
 //	            call.setOperationName("printWord");  		// 调用的方法名//当这种调用不到的时候,可以使用下面的,加入命名空间名
-            call.setOperationName(new QName("http://WebXml.com.cn/", "TECNService"));// 调用的方法名
+            call.setOperationName(new QName("http://WebXml.com.cn/", "TipTopSetProduct"));// 调用的方法名
             call.addParameter(parametersName, XMLType.XSD_STRING, ParameterMode.IN);//参数名//XSD_STRING:String类型//.IN入参
             call.setReturnType(XMLType.XSD_STRING); 	// 返回值类型：String
             ParamObject paramObject = new ParamObject();

@@ -4,9 +4,13 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xslf.usermodel.XMLSlideShow;
+import org.apache.poi.xslf.usermodel.XSLFSlide;
+import org.apache.poi.xslf.usermodel.XSLFTextShape;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class FileDecryption {
     public static final String outPutPath = "D://解密";
@@ -38,10 +42,24 @@ public class FileDecryption {
             System.out.println("解密成功");
             InputStream inputStream = response.getEntity().getContent();
 //            writeExcel(inputStream,fileName);
-            writeWord(inputStream,fileName);
+//            writeWord(inputStream,fileName);
+            writeToPpt(inputStream,fileName);
             inputStream.close();
         }
     }
+
+    private static void writeToPpt(InputStream inputStream, String fileName) throws IOException {
+        OutputStream outputStream = new FileOutputStream(outPutPath + "//" + fileName);
+        byte[] buffer = new byte[1024];
+        int bytesRead;
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);
+        }
+        inputStream.close();
+        outputStream.close();
+        outputStream.close();
+    }
+
 
     private static void writeWord(InputStream inputStream, String fileName) {
         try {
